@@ -1,0 +1,26 @@
+.cube {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  background-color: purple;
+  width: 400px;
+}
+
+.cube-inside {
+  position: absolute;
+  top: 40px;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.redline {
+  width: 150px;
+  height: 25px;
+  border-radius: 15px;
+  display: block;
+  background-color: #DA2E35;
+}/*# sourceMappingURL=global.css.map */
