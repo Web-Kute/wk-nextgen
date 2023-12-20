@@ -1,24 +1,24 @@
-.cube {
+body {
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: purple;
-  width: 400px;
-}
-.cube-inside {
-  position: absolute;
-  top: 40px;
-//   left: 50px;
-//   background-color: green;
+  align-items: center;
+  height: 100vh;
+  font-size: 16px;
 }
 
-.wrapper{
-    position: relative;
+h1,
+a {
+  position: absolute;
+  text-align: center;
+  color: #da2e35;
+  font-size: 3rem;
 }
-.redline{
-    width: 150px;
-    height: 25px;
-    border-radius: 15px;
-    display: block;
-    background-color: #DA2E35;
+
+a {
+  position: absolute;
+  text-align: center;
+  color: #da2e35;
+  font-size: 3rem;
+  top: 1rem;
 }

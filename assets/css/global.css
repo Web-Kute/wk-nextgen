@@ -1,26 +1,27 @@
-.cube {
+body {
   position: relative;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
-  background-color: purple;
-  width: 400px;
+  -ms-flex-align: center;
+      align-items: center;
+  height: 100vh;
+  font-size: 16px;
 }
 
-.cube-inside {
+h1,
+a {
   position: absolute;
-  top: 40px;
+  text-align: center;
+  color: #da2e35;
+  font-size: 3rem;
 }
 
-.wrapper {
-  position: relative;
-}
-
-.redline {
-  width: 150px;
-  height: 25px;
-  border-radius: 15px;
-  display: block;
-  background-color: #DA2E35;
+a {
+  position: absolute;
+  text-align: center;
+  color: #da2e35;
+  font-size: 3rem;
+  top: 1rem;
 }/*# sourceMappingURL=global.css.map */
