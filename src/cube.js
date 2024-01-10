@@ -19,12 +19,12 @@ import {
   DirectionalLight,
   Color,
   CanvasTexture,
+  MeshPhongMaterial,
 } from "/node_modules/three/build/three.module.js";
 
 import { OrbitControls } from "/node_modules/three/examples/jsm/controls/OrbitControls.js";
 import { TextGeometry } from "/node_modules/three/examples/jsm/geometries/TextGeometry.js";
-
-// boring stuff, scroll down to the next comment
+import { FontLoader } from "/node_modules/three/examples/jsm/loaders/FontLoader.js";
 
 const scene = new Scene();
 
@@ -66,27 +66,7 @@ context.fillStyle = "rgba(255, 255, 255, 0.1)";
 context.fillRect(0, 0, 512, 512);
 context.strokeStyle = "#ff0000";
 context.lineWidth = 32;
-// context.roundRect(16, 16, 512 - 32, 512 - 32, 5);
-// context.stroke();
 context.strokeRect(16, 16, 512 - 32, 512 - 32);
-
-// on commence un tracé
-context.beginPath();
-// on déplace le crayon
-// context.moveTo(0, 0);
-// context.lineTo(120, 120);
-// context.lineWidth = 30;
-// context.strokeStyle = "red";
-// context.stroke();
-
-// on commence un tracé
-context.beginPath();
-// on déplace le crayon
-// context.moveTo(400, 400);
-// context.lineTo(550, 550);
-// context.lineWidth = 30;
-// context.strokeStyle = "red";
-// context.stroke();
 
 // a cube with a texture from the canvas image
 const cube = new Mesh(
@@ -96,6 +76,8 @@ const cube = new Mesh(
 cube.rotation.x = 0;
 cube.rotation.y = 0.2;
 cube.rotation.z = 0.8;
+
+cube.scale.set(0.3, 0.3, 0.3);
 scene.add(cube);
 
 const cubeIn = new Mesh(
@@ -105,7 +87,8 @@ const cubeIn = new Mesh(
 cubeIn.rotation.x = 0;
 cubeIn.rotation.y = 0.2;
 cubeIn.rotation.z = 0.8;
-cubeIn.position.y = -0.2;
+cubeIn.position.y = -0.06;
+cubeIn.scale.set(0.25, 0.25, 0.25);
 scene.add(cubeIn);
 
 function animationLoop(t) {
@@ -122,22 +105,32 @@ const orbit = new OrbitControls(camera, renderer.domElement);
 camera.position.set(2, 2, 10);
 orbit.update();
 
-const axesHelper = new AxesHelper(5);
-scene.add(axesHelper);
-
-
 const loader = new FontLoader();
 
-loader.load("fonts/helvetiker_regular.typeface.json", function (font) {
-  const geometry = new TextGeometry("Hello three.js!", {
-    font: font,
-    size: 80,
-    height: 5,
-    curveSegments: 12,
-    bevelEnabled: true,
-    bevelThickness: 10,
-    bevelSize: 8,
-    bevelOffset: 0,
-    bevelSegments: 5,
-  });
-});
+loader.load(
+  "/node_modules/three/examples/fonts/helvetiker_bold.typeface.json",
+  function (font) {
+    const geometry = new TextGeometry("Jim", {
+      font: font,
+      size: 12,
+      height: 5,
+      curveSegments: 12,
+      bevelEnabled: true,
+      bevelThickness: 10,
+      bevelSize: 8,
+      bevelOffset: 0,
+      bevelSegments: 5,
+    });
+    const textMaterial = new MeshPhongMaterial({ color: 0xff0000 });
+
+    const mesh = new Mesh(geometry, textMaterial);
+    mesh.position.set(0, 0, 0);
+
+    // scene.add(mesh);
+  }
+);
+
+
+const axesHelper = new AxesHelper(5);
+// scene.add(axesHelper);
+

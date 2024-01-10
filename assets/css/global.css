@@ -1,27 +1,153 @@
 body {
-  position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  height: 100vh;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
+  color: hsl(210, 29%, 29%);
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(204, 64%, 44%);
+  transition: color 200ms ease;
+}
+a:hover {
+  color: hsl(358, 70%, 52%);
 }
 
 h1,
-a {
-  position: absolute;
+h2 {
+  font-family: "Roboto Slab";
+  color: hsl(204, 64%, 44%);
   text-align: center;
-  color: #da2e35;
-  font-size: 3rem;
 }
 
-a {
-  position: absolute;
+h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+header {
+  margin: 20px auto;
+}
+
+aside {
+  position: fixed;
+  z-index: 10;
+  top: 200px;
+  left: 50px;
+}
+aside nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  row-gap: 10px;
+}
+aside nav a {
+  font-size: 2rem;
+}
+
+figure {
   text-align: center;
-  color: #da2e35;
-  font-size: 3rem;
-  top: 1rem;
+}
+
+main {
+  position: relative;
+}
+
+.container > div {
+  width: 280px;
+  min-width: 280px;
+  height: 500px;
+  padding: 10px;
+  border-radius: 8px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  box-shadow: 3px 3px 3px hsl(204, 8%, 76%);
+}
+
+.container {
+  margin-left: 175px;
+}
+.container .item1 {
+  height: 150px;
+  background-color: hsl(192, 15%, 94%);
+}
+.container .item2 {
+  height: 130px;
+  background-color: hsl(24, 100%, 41%);
+}
+.container .item3 {
+  height: 110px;
+  background-color: hsl(168, 76%, 36%);
+}
+.container .item4 {
+  height: 200px;
+  background-color: hsl(204, 70%, 53%);
+}
+.container .item5 {
+  height: 230px;
+  background-color: hsl(204, 64%, 44%);
+}
+.container .item6 {
+  height: 400px;
+  background-color: hsl(283, 39%, 53%);
+}
+.container .item7 {
+  height: 200px;
+  background-color: hsl(282, 44%, 47%);
+}
+.container .item8 {
+  height: 100px;
+  background-color: hsl(28, 80%, 52%);
+}
+.container .item9 {
+  height: 300px;
+  background-color: hsl(6, 78%, 57%);
+}
+.container .item10 {
+  height: 400px;
+  background-color: hsl(48, 89%, 50%);
+}
+.container .item {
+  background-color: hsl(192, 15%, 94%);
+}
+.container svg {
+  width: 2em;
+  height: 2em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.container svg.opquast {
+  width: 5em;
+}
+
+.skills__header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.skills__title {
+  font-family: "Roboto Medium", sans-serif;
+  text-transform: uppercase;
+  color: hsl(210, 29%, 24%);
+}
+.skills__star {
+  text-align: right;
+  color: hsl(210, 29%, 29%);
 }/*# sourceMappingURL=global.css.map */
