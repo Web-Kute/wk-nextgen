@@ -4,7 +4,10 @@ let magicGrid = new MagicGrid({
   gutter: 20,
   static: true,
   useMin: true,
-  items:10,
+  maxColumns: 5,
+  items: 10,
 });
 
 magicGrid.listen();
+// reposition
+magicGrid.positionItems();

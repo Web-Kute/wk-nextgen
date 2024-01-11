@@ -13,6 +13,7 @@
   "author": "WeeKub",
   "license": "ISC",
   "dependencies": {
+    "magic-grid": "^3.2.4",
     "node": "^21.2.0",
     "three": "^0.159.0"
   },
