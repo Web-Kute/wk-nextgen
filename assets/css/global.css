@@ -127,7 +127,7 @@ main {
   height: 230px;
 }
 .container .item6 {
-  height: 400px;
+  height: 370px;
 }
 .container .item7 {
   height: 100px;
@@ -307,6 +307,7 @@ aside {
 @media (max-width: 599px) {
   aside {
     margin-left: 5px;
+    top: 26px;
   }
 }
 
@@ -360,7 +361,7 @@ aside {
   border-left: 1px solid hsl(204, 8%, 76%);
   visibility: hidden;
   opacity: 0;
-  transition: opacity 200ms ease;
+  transition: opacity 500ms ease;
 }
 .burger__menu .menu.active {
   color: hsl(358, 70%, 52%);

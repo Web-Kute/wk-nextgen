@@ -115,7 +115,7 @@ main {
     height: 230px;
   }
   .item6 {
-    height: 400px;
+    height: 370px;
   }
   .item7 {
     height: 100px;
@@ -290,6 +290,7 @@ aside {
   z-index: 99999;
   @include mixin.mobile-only() {
     margin-left: 5px;
+    top: 26px;
   }
 }
 
@@ -342,7 +343,7 @@ aside {
   border-left: 1px solid map-get($map: variables.$colors, $key: "silver");
   visibility: hidden;
   opacity: 0;
-  transition: opacity 200ms ease;
+  transition: opacity 500ms ease;
   .menu {
     &.active {
       color: map-get($map: variables.$colors, $key: "logocolor");
