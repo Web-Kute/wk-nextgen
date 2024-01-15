@@ -1,12 +1,16 @@
 <!doctype html>
-<html>
+<html lang="fr" itemscope itemtype="http://schema.org/WebPage">
 
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/png" sizes="16x16" href="dist/favicon.ico" />
-
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" sizes="16x16" href="dist/favicon.ico">
   <title>Intégrateur / Développeur web</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta name="description" content="Denis Godec, Intégrateur HTML / CSS /JS Freelance situé en région parisienne.">
+  <meta name="author" content="Denis Godec">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
@@ -111,7 +115,7 @@
         d="M12 7C11.7239 7 11.5 6.77614 11.5 6.5C11.5 6.22386 11.7239 6 12 6C12.2761 6 12.5 6.22386 12.5 6.5C12.5 6.77614 12.2761 7 12 7Z"
         fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
-    <symbol version="1.1" id="opquast" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    <symbol id="opquast" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="21.5 1 290 65" enable-background="new 21.5 1 290 65" xml:space="preserve">
       <path d="M92.162,31.879c0-8.852,7.57-15.805,16.182-15.805c8.613,0,16.11,6.987,16.11,15.839c0,8.853-7.492,15.905-16.106,15.905
 		C99.735,47.818,92.162,40.731,92.162,31.879 M98.68,31.875c0,5.703,4.039,10.393,9.629,10.393c5.188,0,9.595-4.578,9.595-10.393
@@ -165,227 +169,534 @@
     </symbol>
   </svg>
   <header>
+    <h1>Denis Godec</h1>
     <figure>
-      <img src="assets/images/logo-no-text.png" alt="WeeKub" width="70px" />
+      <a href="index.html"><img src="assets/images/logo-no-text.png" alt="WeeKub" width="70"></a>
       <figcaption>WeeKub</figcaption>
     </figure>
     <div>
-      <h1>Denis Godec</h1>
       <h1>Intégrateur</h1>
       <h2>HTML / CSS / JS</h2>
     </div>
-    <nav>
-      <a href="#about" class="apropos menu">À propos</a>
-      <a href="#customers" class="references menu">Références</a>
-      <a href="#contact" class="contact menu">Contact</a>
-    </nav>
+    <!-- <nav>
+      <a href="#about" class="apropos menu" data-id="">À propos</a>
+      <a href="#skills" class="skills menu" data-id="">Compétences</a>
+      <a href="#customers" class="customers menu" data-id="">Références</a>
+      <a href="#contact" class="contact menu" data-id="">Contact</a>
+    </nav> -->
   </header>
   <main>
     <aside>
-
+      <div class="toggle__menu">
+        <div class="toggle__menu-bar">&nbsp;</div>
+        <div class="toggle__menu-bar">&nbsp;</div>
+        <div class="toggle__menu-bar">&nbsp;</div>
+      </div>
+      <nav class="burger__menu">
+        <a href="#about" class="apropos menu" data-id="about">À propos</a>
+        <a href="#skills" class="skills menu" data-id="skills">Compétences</a>
+        <a href="#customers" class="customers menu" data-id="customers">Références</a>
+        <a href="#contact" class="contact menu" data-id="contact">Contact</a>
+      </nav>
     </aside>
-    <div class="container">
-      <div class="skills item item1 html">
-        <div class="skills__header">
-          <h3 class="skills__title">Intégration HTML5</h3>
-          <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-            <use xlink:href="#html5"></use>
-          </svg>
-        </div>
-        <p>Respect des standards du web</p>
-        <p>
-          Certification
-          <a href="https://www.opquast.com/certification/" target="_blank"><svg class="skills__icon svg opquast"
-              aria-hidden="true" focusable="false">
-              <use xlink:href="#opquast"></use>
-            </svg></a>
-          : 725 points
-        </p>
-        <p>W3C, Markup Validation Service</p>
-        <p>Sensibilité à l’UX et UI Design</p>
-
-        <div class="skills__star">&starf;&starf;&starf;&starf;&starf;</div>
-      </div>
-
-      <div class="skills item item2 css">
-        <div class="skills__header">
-          <h3 class="skills__title">Feuille de style CSS3</h3>
-          <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-            <use xlink:href="#css3"></use>
-          </svg>
-        </div>
-        <p>
-          Dart Sass&nbsp;
-          <a href="http://sass-lang.com/" target="_blank" rel="noopener">
-            <svg class="svg" role="img" aria-label="Sass" focusable="false">
-              <use xlink:href="#sass"></use>
-            </svg>
-          </a>
-          ou
-          <a href="http://lesscss.org/Less" target="_blank" rel="noopener">
-            <svg class="svg" role="img" aria-label="Less" focusable="false">
-              <use xlink:href="#less"></use>
-            </svg></a>
-        </p>
-        <p>Gulp</p>
-        <p>
-          Application de la méthodologie
-          <a href="http://getbem.com/" target="_blank" rel="noopener">BEM</a>
-        </p>
-
-        <div class="skills__star">&starf;&starf;&starf;&starf;&star;</div>
-      </div>
-
-      <div class="skills item item3 js">
-        <div class="skills__header">
-          <h3 class="skills__title">JavaScript</h3>
-          <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-            <use xlink:href="#js"></use>
-          </svg>
-        </div>
-        <p>Vanilla JavaScript (ES6)</p>
-        <p>Framework jQuery</p>
-        <p>Connection APIs</p>
-        <p>Bundle via webpack</p>
-
-        <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
-      </div>
-
-      <div class="skills item item4 responsive">
-        <div class="skills__header">
-          <h3 class="skills__title">Responsive</h3>
-          <span>
-            <svg class="skills__icon svg desktop" aria-hidden="true" focusable="false">
-              <use xlink:href="#desktop"></use>
-            </svg>
-            <svg class="skills__icon svg tablet" aria-hidden="true" focusable="false">
-              <use xlink:href="#tablet"></use>
-            </svg>
-            <svg class="skills__icon svg mobile" aria-hidden="true" focusable="false">
-              <use xlink:href="#mobile"></use>
-            </svg>
-          </span>
-        </div>
-        <p>
-          Un site web responsive s'adapte aux différentes tailles d'écrans,
-          smartphone, PC, tablettes ou TV
-        </p>
-        <p>Mobile First</p>
-        <p>Compatibilité cross-navigateur</p>
-
-        <div class="skills__star">&starf;&starf;&starf;&starf;&starf;</div>
-      </div>
-      <div class="skills item item5 a11y">
-        <div class="skills__header">
-          <h3 class="skills__title">Accessibilité RGAA</h3>
-          <span>
-            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-              <use xlink:href="#a11y"></use>
-            </svg>
-          </span>
-        </div>
-        <p>
-          Un site web accessible le rend utilisable par tout le monde, peu
-          importe l’âge et le handicap.
-        </p>
-        <p>
-          Le référencement, la navigation et L'UX s'en trouveront également
-          àméliorés.
-        </p>
-
-        <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
-      </div>
-      <div class="skills item item6 tools">
-        <div class="skills__header">
-          <h3 class="skills__title">
-            Outils +<br />
-            environnement de travail
-          </h3>
-          <span>
-            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-              <use xlink:href="#tools"></use>
-            </svg>
-          </span>
-        </div>
-        <ul>
-          <li>Visual Studio Code</li>
-          <li>Jira</li>
-          <li>Confluence</li>
-          <li>Méthode Agile - Scrum</li>
-          <li>Git / GitLab</li>
-          <li>process CI/CD (Jenkins, BitBucket)</li>
-          <li>Docker</li>
-          <li>Photoshop</li>
-          <li>Adobe XD</li>
-          <li>Figma (récupération des maquettes et des assets)</li>
-          <li>Framework Symfony - Twig</li>
-          <li>Anglais (niveau A1)</li>
-        </ul>
-        <div class="skills__star"></div>
-      </div>
-      <div class="skills item item7 bootstrap">
-        <div class="skills__header">
-          <h3 class="skills__title">Bootstrap 5</h3>
-          <span>
-            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-              <use xlink:href="#bootstrap"></use>
-            </svg>
-          </span>
-        </div>
-        <p>Framework responsive</p>
-        <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
-      </div>
-      <div class="skills item item8 wordpress">
-        <div class="skills__header">
-          <h3 class="skills__title">WordPress</h3>
-          <span>
-            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-              <use xlink:href="#wordpress"></use>
-            </svg>
-          </span>
-        </div>
-        <p>Développement avec thème enfant</p>
-        <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
-      </div>
-      <div class="skills item item9">9</div>
-      <div class="skills item item10">10</div>
-    </div>
-    <section id="about" class="section">
+    <section id="about" class="section noskills" data-section="about">
       <h2>À propos</h2>
       <div class="about__content">
         <p>
-          15 ans d'expérience comme intégrateur ou développeur front-end pour
-          des grands comptes. J'ai travaillé sur de nombreux projets et obtenu
-          la certification opquast concernant les bonnes pratiques. J'ai
-          également travaillé sur des projets responsives et accessibles
-          permettant un meilleur S.E.O.
+          Vous cherchez une ressource pour vos travaux d'intégration HTML / CSS / JS ?
+        </p>
+        <p>Intégrateur ou développeur front-end depuis 15 ans pour des grands comptes.</p>
+        <p>Je développe également des projets avec le CMS WordPress.</p>
+        <p>La performance et l'accessibilité sont des aspects auxquels j'apporte une importance lors de la réalisation.
+        </p>
+        <p>J'interviens avec le statut de freelance.</p>
+        <p>
+          Certifié <a href="https://www.opquast.com/certification/" target="_blank"><svg
+              class="skills__icon svg opquast" aria-hidden="true" focusable="false">
+              <use xlink:href="#opquast"></use>
+            </svg></a>
+          : 725 points.
         </p>
       </div>
     </section>
-    <section id="customers" class="section">
+    <section id="skills" class="section" data-section="skills">
+      <h2 class="section__skills-title">Compétences</h2>
+      <div class="container">
+        <div class="skills item item1 html">
+          <div class="skills__header">
+            <h3 class="skills__title">Intégration HTML5</h3>
+            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+              <use xlink:href="#html5"></use>
+            </svg>
+          </div>
+          <p>Respect des standards du web</p>
+          <p>W3C, Markup Validation Service</p>
+          <p>Sensibilité à l’UX et UI Design</p>
+
+          <div class="skills__star">&starf;&starf;&starf;&starf;&starf;</div>
+        </div>
+
+        <div class="skills item item2 css">
+          <div class="skills__header">
+            <h3 class="skills__title">Feuille de style CSS3</h3>
+            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+              <use xlink:href="#css3"></use>
+            </svg>
+          </div>
+          <p>
+            Dart Sass&nbsp;
+            <a href="http://sass-lang.com/" target="_blank" rel="noopener">
+              <svg class="svg" role="img" aria-label="Sass" focusable="false">
+                <use xlink:href="#sass"></use>
+              </svg>
+            </a>
+            ou
+            <a href="http://lesscss.org/Less" target="_blank" rel="noopener">
+              <svg class="svg" role="img" aria-label="Less" focusable="false">
+                <use xlink:href="#less"></use>
+              </svg></a>
+          </p>
+          <p>Gulp</p>
+          <p>
+            Application de la méthodologie
+            <a href="http://getbem.com/" target="_blank" rel="noopener">BEM</a>
+          </p>
+
+          <div class="skills__star">&starf;&starf;&starf;&starf;&star;</div>
+        </div>
+
+        <div class="skills item item3 js">
+          <div class="skills__header">
+            <h3 class="skills__title">JavaScript</h3>
+            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+              <use xlink:href="#js"></use>
+            </svg>
+          </div>
+          <p>Vanilla JavaScript (ES6)</p>
+          <p>Framework jQuery</p>
+          <p>Connection APIs</p>
+          <p>Bundle via webpack</p>
+
+          <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
+        </div>
+
+        <div class="skills item item4 responsive">
+          <div class="skills__header">
+            <h3 class="skills__title">Responsive</h3>
+            <span>
+              <svg class="skills__icon svg desktop" aria-hidden="true" focusable="false">
+                <use xlink:href="#desktop"></use>
+              </svg>
+              <svg class="skills__icon svg tablet" aria-hidden="true" focusable="false">
+                <use xlink:href="#tablet"></use>
+              </svg>
+              <svg class="skills__icon svg mobile" aria-hidden="true" focusable="false">
+                <use xlink:href="#mobile"></use>
+              </svg>
+            </span>
+          </div>
+          <p>
+            Un site web responsive s'adapte aux différentes tailles d'écrans,
+            smartphone, PC, tablettes ou TV
+          </p>
+          <p>Mobile First</p>
+          <p>Compatibilité cross-navigateur</p>
+
+          <div class="skills__star">&starf;&starf;&starf;&starf;&starf;</div>
+        </div>
+        <div class="skills item item5 a11y">
+          <div class="skills__header">
+            <h3 class="skills__title">Accessibilité RGAA</h3>
+            <span>
+              <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#a11y"></use>
+              </svg>
+            </span>
+          </div>
+          <p>
+            Un site web accessible le rend utilisable par tout le monde, peu
+            importe l’âge et le handicap.
+          </p>
+          <p>
+            Le référencement, la navigation et L'UX s'en trouveront également
+            àméliorés.
+          </p>
+
+          <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
+        </div>
+        <div class="skills item item6 tools">
+          <div class="skills__header">
+            <h3 class="skills__title">
+              Outils +<br>
+              environnement de travail
+            </h3>
+            <span>
+              <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#tools"></use>
+              </svg>
+            </span>
+          </div>
+          <ul>
+            <li>Visual Studio Code</li>
+            <li>Jira</li>
+            <li>Confluence</li>
+            <li>Méthode Agile - Scrum</li>
+            <li>Git / GitLab - process CI/CD (Jenkins)</li>
+            <li>Docker</li>
+            <li>Photoshop</li>
+            <li>Adobe XD</li>
+            <li>Figma (récupération des maquettes et des assets)</li>
+            <li>Framework Symfony - Twig</li>
+            <li>Anglais (niveau A1)</li>
+          </ul>
+          <div class="skills__star"></div>
+        </div>
+        <div class="skills item item7 bootstrap">
+          <div class="skills__header">
+            <h3 class="skills__title">Bootstrap 5</h3>
+            <span>
+              <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#bootstrap"></use>
+              </svg>
+            </span>
+          </div>
+          <p>Framework responsive</p>
+          <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
+        </div>
+        <div class="skills item item8 wordpress">
+          <div class="skills__header">
+            <h3 class="skills__title">WordPress</h3>
+            <span>
+              <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#wordpress"></use>
+              </svg>
+            </span>
+          </div>
+          <p>Développement avec thème enfant</p>
+          <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="customers" class="section noskills" data-section="customers">
       <h2>Références</h2>
       <div class="customers__content">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum
-          earum eaque eveniet voluptate illum magni, doloremque temporibus.
-          Assumenda, cumque magnam!
-        </p>
+        <div class="customers__item">
+          <figure><img src="assets/images/antalis.webp" alt="Vignette Antalis" width="300" height="169">
+            <figcaption>Antalis</figcaption>
+          </figure>
+          <div class="customers__description">
+            <h3 class="customers__title">Antalis - E-commerce | 2023</h3>
+            <p class="customers__summary">
+              Développement des sliders produits<br>
+              Développement du système atomic design<br>
+              HTML | CSS | JavaScript / jQuery | Bootstrap
+            </p>
+            <a class="customers__link" href="https://www.antalis.fr/" target="_blank" rel="noopener"
+              aria-label="Ouvrir le site dans un nouvel onglet">
+              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#link-ext"></use>
+              </svg>
+              <span class="customers__url">Ouvrir le site</span>
+            </a>
+          </div>
+        </div>
+        <div class="customers__item">
+          <figure><img src="assets/images/francetv.webp" alt="Vignette France TV" width="300" height="169">
+            <figcaption>France TV, la 1ere</figcaption>
+          </figure>
+          <div class="customers__description">
+            <h3 class="customers__title">France TV - Audiovisuel | 2022</h3>
+            <p class="customers__summary">
+              Développement du player direct-radio<br>
+              Mise en place de l'accessibilité<br>
+              Optimisation de la performance<br>
+              Twig | CSS / Sass | JavaScript
+            </p>
+            <a class="customers__link" href="https://la1ere.francetvinfo.fr/direct-radio/" target="_blank"
+              rel="noopener" aria-label="Ouvrir le site dans un nouvel onglet">
+              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#link-ext"></use>
+              </svg>
+              <span class="customers__url">Ouvrir le site</span>
+            </a>
+          </div>
+        </div>
+        <div class="customers__item">
+          <figure><img src="assets/images/actioncontrelafaim.webp" alt="Vignette Action contre la faim" width="300"
+              height="169">
+            <figcaption>Action contre la faim</figcaption>
+          </figure>
+          <div class="customers__description">
+            <h3 class="customers__title">Action contre la faim | 2021</h3>
+            <p class="customers__summary">
+              Développement de la modale cookies<br>
+              Responsive<br>
+              HTML | CSS / Sass | JavaScript
+            </p>
+            <a class="customers__link" href="https://www.actioncontrelafaim.org/" target="_blank" rel="noopener"
+              aria-label="Ouvrir le site dans un nouvel onglet">
+              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#link-ext"></use>
+              </svg>
+              <span class="customers__url">Ouvrir le site</span>
+            </a>
+          </div>
+        </div>
+        <div class="customers__item">
+          <figure><img src="assets/images/louboutin.webp" alt="Vignette Christian Louboutin" width="300" height="169">
+            <figcaption>Christian Louboutin</figcaption>
+          </figure>
+          <div class="customers__description">
+            <h3 class="customers__title">Christian Louboutin | 2019</h3>
+            <p class="customers__summary">
+              Développement de la FAQ<br>
+              Intégration de templates pour Emails transactionnels<br>
+              HTML | CSS | jQuery
+            </p>
+            <a class="customers__link" href="https://eu.christianlouboutin.com/fr_fr/" target="_blank" rel="noopener"
+              aria-label="Ouvrir le site dans un nouvel onglet">
+              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#link-ext"></use>
+              </svg>
+              <span class="customers__url">Ouvrir le site</span>
+            </a>
+          </div>
+        </div>
+        <div class="customers__item">
+          <figure><img src="assets/images/louisvuitton.webp" alt="Vignette Louis Vuitton" width="300" height="169">
+            <figcaption>Louis Vuitton</figcaption>
+          </figure>
+          <div class="customers__description">
+            <h3 class="customers__title">Louis Vuitton - Luxe | 2018 - 2019</h3>
+            <p class="customers__summary">
+              Dév from scratch du site carrière LVMH<br>
+              Mise en place de l'accessibilité<br>
+              HTML | CSS / Less | jQuery
+            </p>
+            <a class="customers__link" href="hhttps://fr.louisvuitton.com/fra-fr/homepage" target="_blank"
+              rel="noopener" aria-label="Ouvrir le site dans un nouvel onglet">
+              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#link-ext"></use>
+              </svg>
+              <span class="customers__url">Ouvrir le site</span>
+            </a>
+          </div>
+        </div>
+        <div class="customers__item">
+          <figure><img src="assets/images/angelusplongee.webp" alt="Vignette Angelus Plongée" width="300" height="169">
+            <figcaption>Angelus Plongée</figcaption>
+          </figure>
+          <div class="customers__description">
+            <h3 class="customers__title">Angelus Plongée | 2020</h3>
+            <p class="customers__summary">
+              Dév du site from scratch - CMS WordPress <br>
+              Optimisation de la performance <br>
+              Aspect UI / UX<br>
+              S.E.O naturel
+            </p>
+            <a class="customers__link" href="https://angelus-plongee.com/" target="_blank" rel="noopener"
+              aria-label="Ouvrir le site dans un nouvel onglet">
+              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#link-ext"></use>
+              </svg>
+              <span class="customers__url">Ouvrir le site</span>
+            </a>
+          </div>
+        </div>
+        <div class="customers__item">
+          <figure><img src="assets/images/bnpparibas.webp" alt="Vignette BNP Paribas" width="300" height="169">
+            <figcaption>BNP Paribas</figcaption>
+          </figure>
+          <div class="customers__description">
+            <h3 class="customers__title">BNP Paribas - Banque | 2002</h3>
+            <p class="customers__summary">
+              Intégration landing page<br>
+              HTML | CSS
+            </p>
+            <a class="customers__link" href="https://mabanque.bnpparibas/" target="_blank" rel="noopener"
+              aria-label="Ouvrir le site dans un nouvel onglet">
+              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#link-ext"></use>
+              </svg>
+              <span class="customers__url">Ouvrir le site</span>
+            </a>
+          </div>
+        </div>
+        <div class="customers__item">
+          <figure><img src="assets/images/dotline.webp" alt="Vignette Dotline" width="300" height="169">
+            <figcaption>Dotline</figcaption>
+          </figure>
+          <div class="customers__description">
+            <h3 class="customers__title">Dotline - Informatique | 2015</h3>
+            <p class="customers__summary">
+              Dév WordPress from scratch<br>
+              HTML | CSS | jQuery<br>
+            </p>
+            <a class="customers__link" href="https://www.dotline.fr/" target="_blank" rel="noopener"
+              aria-label="Ouvrir le site dans un nouvel onglet">
+              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#link-ext"></use>
+              </svg>
+              <span class="customers__url">Ouvrir le site</span>
+            </a>
+          </div>
+        </div>
+        <div class="customers__item">
+          <figure><img src="assets/images/sodexo.webp" alt="Vignette Sodexo" width="300" height="169">
+            <figcaption>Sodexo</figcaption>
+          </figure>
+          <div class="customers__description">
+            <h3 class="customers__title">Sodexo - Restauration | 2016</h3>
+            <p class="customers__summary">
+              Migration du site vers le CMS Jahia<br>
+              Intégration du contenu<br>
+            </p>
+            <a class="customers__link" href="https://fr.sodexo.com/home.html" target="_blank" rel="noopener"
+              aria-label="Ouvrir le site dans un nouvel onglet">
+              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#link-ext"></use>
+              </svg>
+              <span class="customers__url">Ouvrir le site</span>
+            </a>
+          </div>
+        </div>
+        <div class="customers__item">
+          <figure><img src="assets/images/canalplus.webp" alt="Vignette Canal +" width="300" height="169">
+            <figcaption>Canal +</figcaption>
+          </figure>
+          <div class="customers__description">
+            <h3 class="customers__title">Canal + - Audiovisuel | 2003</h3>
+            <p class="customers__summary">
+              Intégration landing page<br>
+              HTML | CSS
+            </p>
+            <a class="customers__link" href="hhttps://www.canalplus.com/" target="_blank" rel="noopener"
+              aria-label="Ouvrir le site dans un nouvel onglet">
+              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#link-ext"></use>
+              </svg>
+              <span class="customers__url">Ouvrir le site</span>
+            </a>
+          </div>
+        </div>
+        <div class="customers__item">
+          <figure><img src="assets/images/fondationmallet.webp" alt="Vignette Fondation Mallet" width="300"
+              height="169">
+            <figcaption>Fondation Mallet</figcaption>
+          </figure>
+          <div class="customers__description">
+            <h3 class="customers__title">Fondation Mallet | 2010</h3>
+            <p class="customers__summary">
+              Développement WordPress<br>
+              HTML | CSS | Php<br>
+            </p>
+            <a class="customers__link" href="https://www.fondationmallet.fr/" target="_blank" rel="noopener"
+              aria-label="Ouvrir le site dans un nouvel onglet">
+              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#link-ext"></use>
+              </svg>
+              <span class="customers__url">Ouvrir le site</span>
+            </a>
+          </div>
+        </div>
+        <div class="customers__item">
+          <figure><img src="assets/images/lagardere.webp" alt="Vignette Lagardère" width="300" height="169">
+            <figcaption>Lagardère</figcaption>
+          </figure>
+          <div class="customers__description">
+            <h3 class="customers__title">Lagardère - Presse | 2009</h3>
+            <p class="customers__summary">
+              Développement Intranet du livre blanc<br>
+              HTML | CSS | Php<br>
+            </p>
+            <a class="customers__link" href="https://www.lagardere.com/" target="_blank" rel="noopener"
+              aria-label="Ouvrir le site dans un nouvel onglet">
+              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#link-ext"></use>
+              </svg>
+              <span class="customers__url">Ouvrir le site</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
-    <section id="contact" class="section">
+    <section id="contact" class="section noskills" data-section="contact">
       <h2>Contact</h2>
       <div class="contact__content">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum
-          earum eaque eveniet voluptate illum magni, doloremque temporibus.
-          Assumenda, cumque magnam!
-        </p>
+        <div class="contact__grid">
+          <div class="contact__col">
+            <p class="contact__item">
+              <span itemprop="name">
+                Denis Godec
+              </span>
+              <br>
+              <span itemprop="jobTitle">
+                Intégrateur - Développeur Web - Freelance
+              </span>
+              <br>
+              <span itemprop="url" content="https://weekub.fr/">
+                <svg class="svg">
+                  <use xlink:href="#desktop"></use>
+                </svg>
+                <a href="https://weekub.fr/">www.weekub.fr</a>
+              </span>
+            </p>
+            <p class="contact__item" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+              <span itemprop="streetAddress">
+                99 rue de Billancourt
+              </span>
+              <br>
+              <span itemprop="postalCode">
+                92100
+              </span>
+              <span itemprop="addressLocality">
+                Boulogne-Billancourt
+              </span>
+            </p>
+            <p class="contact__item">
+              <span>
+                N° SIRET : 4444 7770 7000 12
+              </span>
+            </p>
+          </div>
+          <div class="contact__col">
+            <p class="contact__item">
+              <a class="contact__link" href="tel:+33609494040">
+                <span class="contact__item-inner">
+                  <svg class="contact__icon icon-alpha svg">
+                    <use xlink:href="#phone"></use>
+                  </svg>
+                  <span itemprop="telephone" content="+33609494040">06.09.49.40.40</span>
+                </span>
+              </a>
+            </p>
+            <p class="contact__item">
+              <a class="contact__link" href="mailto:denis.godec@weekub.fr">
+                <span class="contact__item-inner">
+                  <svg class="contact__icon icon-alpha svg">
+                    <use xlink:href="#email"></use>
+                  </svg>
+                  <span itemprop="email">denis.godec@weekub.fr</span>
+                </span>
+              </a>
+            </p>
+            <p class="contact__item">
+              <a class="contact__link" href="https://www.linkedin.com/in/denis-godec-web-developper/"
+                title="Voir mon profil LinkedIn" target="_blank" rel="noopener">
+                <span class="contact__item-inner">
+                  <svg class="contact__icon icon-alpha svg">
+                    <use xlink:href="#linkedin-squared"></use>
+                  </svg>
+                  @denis-godec-995909155/
+                </span>
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-
-  <!-- <script type="module" src="./src/main.js"></script> -->
-  <!-- <script type="module" src="./src/cube.js"></script> -->
   <script src="node_modules/magic-grid/dist/magic-grid.cjs.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/magicgrid.js"></script>

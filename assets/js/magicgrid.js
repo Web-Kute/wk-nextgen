@@ -1,11 +1,11 @@
 let magicGrid = new MagicGrid({
   container: ".container",
   animate: true,
-  gutter: 20,
+  gutter: 30,
   static: true,
   useMin: true,
   maxColumns: 5,
-  items: 10,
+  items: 8,
 });
 
 magicGrid.listen();

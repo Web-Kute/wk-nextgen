@@ -1,4 +1,5 @@
 @use "variables";
+@use "mixin";
 
 html {
   scroll-behavior: smooth;
@@ -23,12 +24,11 @@ h1,
 h2 {
   font-family: "Roboto Light";
   color: map-get($map: variables.$colors, $key: "belize-hole");
-  text-align: center;
 }
 h1 {
   text-transform: capitalize;
   font-size: 2.5rem;
-  line-height: 24px;
+  line-height: 35px;
   &:nth-child(1) {
     margin-top: 6px;
   }
@@ -40,28 +40,35 @@ h1 {
 }
 h2 {
   font-size: 2rem;
-  color: currentColor;
 }
 
 header {
   display: flex;
   justify-content: center;
-  column-gap: 2rem;
+  align-items: center;
+  column-gap: 4rem;
   margin: 20px auto 50px;
   h2 {
-    letter-spacing: -1.3px;
+    letter-spacing: -1.2px;
+    color: map-get($map: variables.$colors, $key: "wet-asphalt");
+    font-size: 1.8rem;
   }
   figcaption {
     color: map-get($map: variables.$colors, $key: "logocolor");
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  @include mixin.mobile-only() {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
   }
 }
 
-aside {
-  position: fixed;
-  z-index: 10;
-  top: 220px;
-  left: 50px;
+p {
+  line-height: 25px;
 }
+
 nav {
   display: flex;
   flex-direction: column;
@@ -73,9 +80,6 @@ nav {
     font-family: "Roboto Light";
   }
 }
-figure {
-  text-align: center;
-}
 
 main {
   position: relative;
@@ -86,11 +90,11 @@ main {
   min-width: 280px;
   height: 500px;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 3px 3px 3px map-get($map: variables.$colors, $key: "silver");
+  // box-shadow: 3px 3px 3px map-get($map: variables.$colors, $key: "silver");
 }
 
 .container {
@@ -101,16 +105,16 @@ main {
     height: 150px;
   }
   .item3 {
-    height: 110px;
+    height: 150px;
   }
   .item4 {
-    height: 200px;
+    height: 220px;
   }
   .item5 {
     height: 230px;
   }
   .item6 {
-    height: 260px;
+    height: 400px;
   }
   .item7 {
     height: 100px;
@@ -138,6 +142,9 @@ main {
       width: 5em;
     }
   }
+  li {
+    line-height: 25px;
+  }
 }
 
 .skills {
@@ -157,12 +164,194 @@ main {
   }
 }
 
-.section {
+section {
   display: flex;
   flex-direction: column;
   margin: 2rem auto;
   padding: 20px;
   h2 {
+    font-family: "Roboto Regular", sans-serif;
     margin-bottom: 1rem;
+    font-size: 3rem;
   }
+  .section__skills-title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  svg {
+    width: 2em;
+    height: 2em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    vertical-align: middle;
+    &.opquast {
+      width: 5em;
+    }
+  }
+}
+
+.customers__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: 1fr;
+  gap: 30px;
+  justify-content: center;
+}
+
+.customers {
+  &__item {
+    position: relative;
+    background-color: red;
+    width: 300px;
+    height: 169px;
+    border: 1px solid map-get($map: variables.$colors, $key: "silver");
+    overflow: hidden;
+
+    figure {
+      position: relative;
+      figcaption {
+        position: absolute;
+        width: 100%;
+        top: 140px;
+        padding: 5px 0;
+        opacity: 0.9;
+        text-align: center;
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: map-get($map: variables.$colors, $key: "belize-hole");
+        background-color: map-get($map: variables.$colors, $key: "clouds");
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: 0;
+      }
+    }
+    &:hover .customers__description {
+      transform: translateY(0);
+    }
+  }
+  &__description {
+    position: absolute;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    z-index: 20;
+    top: 0;
+    background-color: map-get($map: variables.$colors, $key: "clouds");
+    transform: translateY(100%);
+    transition: transform 500ms ease;
+    h3 {
+      text-transform: uppercase;
+      font-size: 1.2rem;
+    }
+    p {
+      line-height: 18px;
+    }
+    svg {
+      width: 1.2rem;
+    }
+  }
+}
+.contact__content {
+  padding-bottom: 230px;
+
+  .contact__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: 1fr;
+    column-gap: 7rem;
+    row-gap: 3rem;
+    justify-content: center;
+    .contact__item {
+      > span:first-child {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+      }
+    }
+    .contact__col {
+      &:nth-child(2) {
+        p {
+          line-height: 40px;
+        }
+      }
+    }
+  }
+}
+
+aside {
+  position: fixed;
+  margin-left: 10px;
+  z-index: 99999;
+  top: 30px;
+}
+
+.toggle__menu {
+  cursor: pointer;
+  width: 35px;
+  height: 30px;
+  &.nav-open {
+    position: relative;
+    top: -10px;
+
+    .toggle__menu-bar {
+      &:nth-child(1) {
+        position: absolute;
+        transform: rotate(45deg);
+        top: 15px;
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+      &:nth-child(3) {
+        position: absolute;
+        transform: rotate(-45deg);
+        top: 15px;
+      }
+    }
+  }
+  &-bar {
+    display: block;
+    width: 35px;
+    height: 5px;
+    margin-top: 4px;
+    border-radius: 10px;
+    background-color: map-get($map: variables.$colors, $key: "wet-asphalt");
+    transition: transform 300ms ease;
+  }
+  // &:hover .burger__menu {
+  //   transform: translateY(50%);
+  //   background-color: map-get($map: variables.$colors, $key: "logocolor");
+  // }
+}
+
+.burger__menu {
+  position: relative;
+  top: 30px;
+  background-color: map-get($map: variables.$colors, $key: "white");
+  padding: 5px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 200ms ease;
+  .menu {
+    &.active {
+      color: map-get($map: variables.$colors, $key: "logocolor");
+    }
+  }
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
 }
