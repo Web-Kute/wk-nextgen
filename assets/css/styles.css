@@ -144,9 +144,11 @@ header {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  -moz-column-gap: 4rem;
-       column-gap: 4rem;
-  margin: 20px auto 50px;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  margin: 20px auto;
+  padding-bottom: 20px;
+  border-bottom: 1px solid hsl(204, 8%, 76%);
 }
 header h2 {
   letter-spacing: -1.2px;
@@ -164,7 +166,6 @@ header figcaption {
         flex-direction: column;
     -ms-flex-align: center;
         align-items: center;
-    row-gap: 1rem;
   }
 }
 
@@ -277,7 +278,7 @@ section {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 20px;
 }
 section h2 {
@@ -312,7 +313,7 @@ section svg.opquast {
 
 .customers__item {
   position: relative;
-  background-color: red;
+  background-color: hsl(204, 8%, 76%);
   width: 300px;
   height: 169px;
   border: 1px solid hsl(204, 8%, 76%);
@@ -352,9 +353,9 @@ section svg.opquast {
       flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 100%;
+  width: 280px;
   height: 100%;
-  padding: 0 20px;
+  padding: 10px;
   z-index: 20;
   top: 0;
   background-color: hsl(192, 15%, 94%);
@@ -363,7 +364,7 @@ section svg.opquast {
 }
 .customers__description h3 {
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .customers__description p {
   line-height: 18px;
@@ -373,7 +374,7 @@ section svg.opquast {
 }
 
 .contact__content {
-  padding-bottom: 230px;
+  padding-bottom: 890px;
 }
 .contact__content .contact__grid {
   display: grid;
@@ -385,8 +386,8 @@ section svg.opquast {
   -ms-flex-pack: center;
       justify-content: center;
 }
-.contact__content .contact__grid .contact__item > span:first-child {
-  font-size: 1.1rem;
+.contact__content .contact__grid .contact__name {
+  font-size: 1.3rem;
   text-transform: uppercase;
 }
 .contact__content .contact__grid .contact__col:nth-child(2) p {
@@ -395,15 +396,25 @@ section svg.opquast {
 
 aside {
   position: fixed;
-  margin-left: 10px;
+  top: 20px;
+  margin-left: 20px;
   z-index: 99999;
-  top: 30px;
+}
+@media (max-width: 599px) {
+  aside {
+    margin-left: 5px;
+  }
 }
 
 .toggle__menu {
   cursor: pointer;
   width: 35px;
   height: 30px;
+}
+@media (max-width: 599px) {
+  .toggle__menu {
+    width: 25px;
+  }
 }
 .toggle__menu.nav-open {
   position: relative;
@@ -431,13 +442,18 @@ aside {
   background-color: hsl(210, 29%, 29%);
   transition: transform 300ms ease;
 }
+@media (max-width: 599px) {
+  .toggle__menu-bar {
+    width: 25px;
+  }
+}
 
 .burger__menu {
   position: relative;
-  top: 30px;
+  top: 0;
   background-color: hsl(0, 0%, 100%);
   padding: 5px;
-  border-radius: 5px;
+  border-left: 1px solid hsl(204, 8%, 76%);
   visibility: hidden;
   opacity: 0;
   transition: opacity 200ms ease;

@@ -46,8 +46,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 4rem;
-  margin: 20px auto 50px;
+  column-gap: 2rem;
+  margin: 20px auto;
+  padding-bottom: 20px;
+  border-bottom: 1px solid map-get($map: variables.$colors, $key: "silver");
   h2 {
     letter-spacing: -1.2px;
     color: map-get($map: variables.$colors, $key: "wet-asphalt");
@@ -61,7 +63,6 @@ header {
   @include mixin.mobile-only() {
     flex-direction: column;
     align-items: center;
-    row-gap: 1rem;
   }
 }
 
@@ -167,7 +168,7 @@ main {
 section {
   display: flex;
   flex-direction: column;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 20px;
   h2 {
     font-family: "Roboto Regular", sans-serif;
@@ -202,7 +203,7 @@ section {
 .customers {
   &__item {
     position: relative;
-    background-color: red;
+    background-color: map-get($map: variables.$colors, $key: "silver");
     width: 300px;
     height: 169px;
     border: 1px solid map-get($map: variables.$colors, $key: "silver");
@@ -238,9 +239,9 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 100%;
+    width: 280px;
     height: 100%;
-    padding: 0 20px;
+    padding: 10px;
     z-index: 20;
     top: 0;
     background-color: map-get($map: variables.$colors, $key: "clouds");
@@ -248,7 +249,7 @@ section {
     transition: transform 500ms ease;
     h3 {
       text-transform: uppercase;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
     p {
       line-height: 18px;
@@ -259,7 +260,7 @@ section {
   }
 }
 .contact__content {
-  padding-bottom: 230px;
+  padding-bottom: 890px;
 
   .contact__grid {
     display: grid;
@@ -268,11 +269,9 @@ section {
     column-gap: 7rem;
     row-gap: 3rem;
     justify-content: center;
-    .contact__item {
-      > span:first-child {
-        font-size: 1.1rem;
-        text-transform: uppercase;
-      }
+    .contact__name {
+      font-size: 1.3rem;
+      text-transform: uppercase;
     }
     .contact__col {
       &:nth-child(2) {
@@ -286,15 +285,21 @@ section {
 
 aside {
   position: fixed;
-  margin-left: 10px;
+  top: 20px;
+  margin-left: 20px;
   z-index: 99999;
-  top: 30px;
+  @include mixin.mobile-only() {
+    margin-left: 5px;
+  }
 }
 
 .toggle__menu {
   cursor: pointer;
   width: 35px;
   height: 30px;
+  @include mixin.mobile-only() {
+    width: 25px;
+  }
   &.nav-open {
     position: relative;
     top: -10px;
@@ -323,19 +328,18 @@ aside {
     border-radius: 10px;
     background-color: map-get($map: variables.$colors, $key: "wet-asphalt");
     transition: transform 300ms ease;
+    @include mixin.mobile-only() {
+      width: 25px;
+    }
   }
-  // &:hover .burger__menu {
-  //   transform: translateY(50%);
-  //   background-color: map-get($map: variables.$colors, $key: "logocolor");
-  // }
 }
 
 .burger__menu {
   position: relative;
-  top: 30px;
+  top: 0;
   background-color: map-get($map: variables.$colors, $key: "white");
   padding: 5px;
-  border-radius: 5px;
+  border-left: 1px solid map-get($map: variables.$colors, $key: "silver");
   visibility: hidden;
   opacity: 0;
   transition: opacity 200ms ease;
