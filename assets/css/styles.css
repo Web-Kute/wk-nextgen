@@ -113,6 +113,23 @@ a:hover {
   color: hsl(358, 70%, 52%);
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px dotted hsl(210, 29%, 29%);
+  outline-offset: 3px;
+}
+
+button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  outline: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
 h1,
 h2 {
   font-family: "Roboto Light";
@@ -171,22 +188,6 @@ header figcaption {
 
 p {
   line-height: 25px;
-}
-
-nav {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-align: start;
-      align-items: flex-start;
-  -ms-flex-pack: end;
-      justify-content: end;
-  row-gap: 5px;
-}
-nav a {
-  font-size: 1.6rem;
-  font-family: "Roboto Light";
 }
 
 main {
@@ -313,7 +314,7 @@ section svg.opquast {
 
 .customers__item {
   position: relative;
-  background-color: hsl(204, 8%, 76%);
+  background-color: hsl(192, 15%, 94%);
   width: 300px;
   height: 169px;
   border: 1px solid hsl(204, 8%, 76%);
@@ -354,7 +355,7 @@ section svg.opquast {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 280px;
-  height: 100%;
+  height: 149px;
   padding: 10px;
   z-index: 20;
   top: 0;
@@ -375,6 +376,11 @@ section svg.opquast {
 
 .contact__content {
   padding-bottom: 890px;
+}
+@media (max-width: 599px) {
+  .contact__content {
+    padding-bottom: 50vh;
+  }
 }
 .contact__content .contact__grid {
   display: grid;
@@ -407,34 +413,46 @@ aside {
   }
 }
 
-.toggle__menu {
+nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: end;
+      justify-content: end;
+  row-gap: 5px;
+}
+
+.nav-open {
+  position: relative;
+}
+.nav-open .togglemenu__bar:nth-child(1) {
+  position: absolute;
+  transform: rotate(45deg);
+  top: 15px;
+}
+.nav-open .togglemenu__bar:nth-child(2) {
+  display: none;
+}
+.nav-open .togglemenu__bar:nth-child(3) {
+  position: absolute;
+  transform: rotate(-45deg);
+  top: 15px;
+}
+
+.togglemenu {
   cursor: pointer;
   width: 35px;
   height: 30px;
 }
 @media (max-width: 599px) {
-  .toggle__menu {
+  .togglemenu {
     width: 25px;
   }
 }
-.toggle__menu.nav-open {
-  position: relative;
-  top: -10px;
-}
-.toggle__menu.nav-open .toggle__menu-bar:nth-child(1) {
-  position: absolute;
-  transform: rotate(45deg);
-  top: 15px;
-}
-.toggle__menu.nav-open .toggle__menu-bar:nth-child(2) {
-  display: none;
-}
-.toggle__menu.nav-open .toggle__menu-bar:nth-child(3) {
-  position: absolute;
-  transform: rotate(-45deg);
-  top: 15px;
-}
-.toggle__menu-bar {
+.togglemenu__bar {
   display: block;
   width: 35px;
   height: 5px;
@@ -444,22 +462,26 @@ aside {
   transition: transform 300ms ease;
 }
 @media (max-width: 599px) {
-  .toggle__menu-bar {
+  .togglemenu__bar {
     width: 25px;
   }
 }
 
-.burger__menu {
+.burgermenu {
   position: relative;
-  top: 0;
+  top: 20px;
   background-color: hsl(0, 0%, 100%);
   padding: 5px;
-  border-left: 1px solid hsl(204, 8%, 76%);
+  border-left: 5px solid hsl(204, 8%, 76%);
   visibility: hidden;
   opacity: 0;
   transition: opacity 500ms ease;
 }
-.burger__menu .menu.active {
+.burgermenu__item {
+  font-size: 1.6rem;
+  font-family: "Roboto Light";
+}
+.burgermenu__item.active {
   color: hsl(358, 70%, 52%);
 }
 

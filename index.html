@@ -1,16 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr" itemscope itemtype="http://schema.org/WebPage">
 
 <head>
   <meta charset="utf-8">
-  <link rel="icon" type="image/png" sizes="16x16" href="dist/favicon.ico">
-  <title>Intégrateur / Développeur web</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
+  <title>Intégrateur HTML, CSS, JavaScript / Développeur web</title>
   <meta name="description" content="Denis Godec, Intégrateur HTML / CSS /JS Freelance situé en région parisienne.">
   <meta name="author" content="Denis Godec">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="format-detection" content="telephone=no">
   <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magic-grid/3.2.4/magic-grid.min.js"
+    integrity="sha512-3nXvHrCmVAZqsV3DXj04lk/K1aL1b3mAVj9YPVmJrrYXR9dBEa2Le7klZ8EoAQcj3SnVSeQiXZfs3T4I0lCb7w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -168,35 +171,31 @@
       </g>
     </symbol>
   </svg>
-  <header>
+  <header role="banner">
     <h1>Denis Godec</h1>
-    <figure>
-      <a href="index.html"><img src="assets/images/logo-no-text.png" alt="WeeKub" width="70"></a>
+    <figure role="figure" aria-label="">
+      <a href="index.html"><img src="assets/images/logo-no-text.png" alt="WeeKub" width="70" height="76"></a>
       <figcaption>WeeKub</figcaption>
     </figure>
     <div>
       <h1>Intégrateur</h1>
       <h2>HTML / CSS / JS</h2>
     </div>
-    <!-- <nav>
-      <a href="#about" class="apropos menu" data-id="">À propos</a>
-      <a href="#skills" class="skills menu" data-id="">Compétences</a>
-      <a href="#customers" class="customers menu" data-id="">Références</a>
-      <a href="#contact" class="contact menu" data-id="">Contact</a>
-    </nav> -->
   </header>
-  <main>
+  <main role="main">
     <aside>
-      <div class="toggle__menu">
-        <div class="toggle__menu-bar">&nbsp;</div>
-        <div class="toggle__menu-bar">&nbsp;</div>
-        <div class="toggle__menu-bar">&nbsp;</div>
-      </div>
-      <nav class="burger__menu">
-        <a href="#about" class="apropos menu" data-id="about">À propos</a>
-        <a href="#skills" class="skills menu" data-id="skills">Compétences</a>
-        <a href="#customers" class="customers menu" data-id="customers">Références</a>
-        <a href="#contact" class="contact menu" data-id="contact">Contact</a>
+      <nav role="navigation" aria-label="Menu principal">
+        <button class="togglemenu" aria-expanded="false">
+          <span class="togglemenu__bar">&nbsp;</span>
+          <span class="togglemenu__bar">&nbsp;</span>
+          <span class="togglemenu__bar">&nbsp;</span>
+        </button>
+        <ul class="burgermenu">
+          <li><a href="#about" class="burgermenu__item" data-id="about" aria-current="false">À propos</a></li>
+          <li><a href="#skills" class="burgermenu__item" data-id="skills" aria-current="false">Compétences</a></li>
+          <li><a href="#customers" class="burgermenu__item" data-id="customers" aria-current="false">Références</a></li>
+          <li><a href="#contact" class="burgermenu__item" data-id="contact" aria-current="false">Contact</a></li>
+        </ul>
       </nav>
     </aside>
     <section id="about" class="section noskills" data-section="about">
@@ -207,12 +206,14 @@
         </p>
         <p>Intégrateur ou développeur front-end depuis 15 ans pour des grands comptes.</p>
         <p>Je développe également des projets avec le CMS WordPress.</p>
-        <p>La performance et l'accessibilité sont des aspects auxquels j'apporte une importance lors de la réalisation.
+        <p>La performance et l'accessibilité sont des aspects auxquels j'apporte une importance lors de la
+          réalisation.
         </p>
         <p>J'interviens avec le statut de freelance.</p>
         <p>
-          Certifié <a href="https://www.opquast.com/certification/" target="_blank"><svg
-              class="skills__icon svg opquast" aria-hidden="true" focusable="false">
+          Certifié <a href="https://www.opquast.com/certification/" target="_blank"
+            aria-label="Certifié Opquast: 725 points"><svg class="skills__icon svg opquast" aria-hidden="true"
+              focusable="false">
               <use xlink:href="#opquast"></use>
             </svg></a>
           : 725 points.
@@ -251,7 +252,7 @@
               </svg>
             </a>
             ou
-            <a href="http://lesscss.org/Less" target="_blank" rel="noopener">
+            <a href="http://lesscss.org/" target="_blank" rel="noopener">
               <svg class="svg" role="img" aria-label="Less" focusable="false">
                 <use xlink:href="#less"></use>
               </svg></a>
@@ -382,7 +383,8 @@
       <h2>Références</h2>
       <div class="customers__content">
         <div class="customers__item">
-          <figure><img src="assets/images/antalis.webp" alt="Vignette Antalis" width="300" height="169">
+          <figure role="figure" aria-label="Antalis">
+            <img src="assets/images/antalis.webp" alt="Vignette Antalis" width="300" height="169">
             <figcaption>Antalis</figcaption>
           </figure>
           <div class="customers__description">
@@ -402,7 +404,8 @@
           </div>
         </div>
         <div class="customers__item">
-          <figure><img src="assets/images/francetv.webp" alt="Vignette France TV" width="300" height="169">
+          <figure role="figure" aria-label="France TV, la 1ere">
+            <img src="assets/images/francetv.webp" alt="Vignette France TV" width="300" height="169">
             <figcaption>France TV, la 1ere</figcaption>
           </figure>
           <div class="customers__description">
@@ -423,7 +426,8 @@
           </div>
         </div>
         <div class="customers__item">
-          <figure><img src="assets/images/actioncontrelafaim.webp" alt="Vignette Action contre la faim" width="300"
+          <figure role="figure" aria-label="Action contre la faim">
+            <img src="assets/images/actioncontrelafaim.webp" alt="Vignette Action contre la faim" width="300"
               height="169">
             <figcaption>Action contre la faim</figcaption>
           </figure>
@@ -444,7 +448,8 @@
           </div>
         </div>
         <div class="customers__item">
-          <figure><img src="assets/images/louboutin.webp" alt="Vignette Christian Louboutin" width="300" height="169">
+          <figure role="figure" aria-label="Christian Louboutin">
+            <img src="assets/images/louboutin.webp" alt="Vignette Christian Louboutin" width="300" height="169">
             <figcaption>Christian Louboutin</figcaption>
           </figure>
           <div class="customers__description">
@@ -464,7 +469,8 @@
           </div>
         </div>
         <div class="customers__item">
-          <figure><img src="assets/images/louisvuitton.webp" alt="Vignette Louis Vuitton" width="300" height="169">
+          <figure role="figure" aria-label="Louis Vuitton">
+            <img src="assets/images/louisvuitton.webp" alt="Vignette Louis Vuitton" width="300" height="169">
             <figcaption>Louis Vuitton</figcaption>
           </figure>
           <div class="customers__description">
@@ -484,7 +490,8 @@
           </div>
         </div>
         <div class="customers__item">
-          <figure><img src="assets/images/angelusplongee.webp" alt="Vignette Angelus Plongée" width="300" height="169">
+          <figure role="figure" aria-label="Angelus Plongée">
+            <img src="assets/images/angelusplongee.webp" alt="Vignette Angelus Plongée" width="300" height="169">
             <figcaption>Angelus Plongée</figcaption>
           </figure>
           <div class="customers__description">
@@ -505,7 +512,8 @@
           </div>
         </div>
         <div class="customers__item">
-          <figure><img src="assets/images/bnpparibas.webp" alt="Vignette BNP Paribas" width="300" height="169">
+          <figure role="figure" aria-label="BNP Paribas">
+            <img src="assets/images/bnpparibas.webp" alt="Vignette BNP Paribas" width="300" height="169">
             <figcaption>BNP Paribas</figcaption>
           </figure>
           <div class="customers__description">
@@ -524,7 +532,8 @@
           </div>
         </div>
         <div class="customers__item">
-          <figure><img src="assets/images/dotline.webp" alt="Vignette Dotline" width="300" height="169">
+          <figure role="figure" aria-label="Dotline">
+            <img src="assets/images/dotline.webp" alt="Vignette Dotline" width="300" height="169">
             <figcaption>Dotline</figcaption>
           </figure>
           <div class="customers__description">
@@ -543,7 +552,8 @@
           </div>
         </div>
         <div class="customers__item">
-          <figure><img src="assets/images/sodexo.webp" alt="Vignette Sodexo" width="300" height="169">
+          <figure role="figure" aria-label="Sodexo">
+            <img src="assets/images/sodexo.webp" alt="Vignette Sodexo" width="300" height="169">
             <figcaption>Sodexo</figcaption>
           </figure>
           <div class="customers__description">
@@ -562,7 +572,8 @@
           </div>
         </div>
         <div class="customers__item">
-          <figure><img src="assets/images/canalplus.webp" alt="Vignette Canal +" width="300" height="169">
+          <figure role="figure" aria-label="Canal +">
+            <img src="assets/images/canalplus.webp" alt="Vignette Canal +" width="300" height="169">
             <figcaption>Canal +</figcaption>
           </figure>
           <div class="customers__description">
@@ -581,8 +592,8 @@
           </div>
         </div>
         <div class="customers__item">
-          <figure><img src="assets/images/fondationmallet.webp" alt="Vignette Fondation Mallet" width="300"
-              height="169">
+          <figure role="figure" aria-label="Fondation Mallet">
+            <img src="assets/images/fondationmallet.webp" alt="Vignette Fondation Mallet" width="300" height="169">
             <figcaption>Fondation Mallet</figcaption>
           </figure>
           <div class="customers__description">
@@ -601,7 +612,8 @@
           </div>
         </div>
         <div class="customers__item">
-          <figure><img src="assets/images/lagardere.webp" alt="Vignette Lagardère" width="300" height="169">
+          <figure role="figure" aria-label="Lagardère">
+            <img src="assets/images/lagardere.webp" alt="Vignette Lagardère" width="300" height="169">
             <figcaption>Lagardère</figcaption>
           </figure>
           <div class="customers__description">
@@ -697,7 +709,7 @@
       </div>
     </section>
   </main>
-  <script src="node_modules/magic-grid/dist/magic-grid.cjs.js"></script>
+  <!-- <script src="node_modules/magic-grid/dist/magic-grid.cjs.js"></script> -->
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/magicgrid.js"></script>
 </body>

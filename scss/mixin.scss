@@ -47,3 +47,9 @@
     @content;
   }
 }
+
+@mixin crossBurger($deg) {
+  position: absolute;
+  transform: rotate($deg);
+  top: 15px;
+}
