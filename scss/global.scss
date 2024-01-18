@@ -12,9 +12,9 @@ body {
 }
 
 a {
-  text-decoration: none;
-  color: map-get($map: variables.$colors, $key: "belize-hole");
+  color: map-get($map: variables.$colors, $key: "midnight-blue");
   transition: color 200ms ease;
+  text-decoration: underline;
   &:hover {
     color: map-get($map: variables.$colors, $key: "logocolor");
   }
@@ -42,6 +42,7 @@ h2 {
   font-family: "Roboto Light";
   color: map-get($map: variables.$colors, $key: "belize-hole");
 }
+
 h1 {
   text-transform: capitalize;
   font-size: 2.5rem;
@@ -55,6 +56,7 @@ h1 {
     color: currentColor;
   }
 }
+
 h2 {
   font-size: 2rem;
 }
@@ -69,7 +71,7 @@ header {
   border-bottom: 1px solid map-get($map: variables.$colors, $key: "silver");
   h2 {
     letter-spacing: -1.2px;
-    color: map-get($map: variables.$colors, $key: "wet-asphalt");
+    color: currentColor;
     font-size: 1.8rem;
   }
   figcaption {
@@ -100,7 +102,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // box-shadow: 3px 3px 3px map-get($map: variables.$colors, $key: "silver");
 }
 
 .container {
@@ -120,7 +121,7 @@ main {
     height: 230px;
   }
   .item6 {
-    height: 370px;
+    height: 390px;
   }
   .item7 {
     height: 100px;
@@ -166,7 +167,7 @@ main {
   }
   &__star {
     text-align: right;
-    color: map-get(variables.$colors, $key: "wet-asphalt");
+    color: currentColor;
   }
 }
 
@@ -183,6 +184,11 @@ section {
   .section__skills-title {
     margin-left: auto;
     margin-right: auto;
+  }
+  .about__content {
+    p {
+      font-size: 1.1rem;
+    }
   }
   svg {
     width: 2em;
@@ -255,6 +261,7 @@ section {
     h3 {
       text-transform: uppercase;
       font-size: 1.1rem;
+      margin-bottom: 0.5rem;
     }
     p {
       line-height: 18px;
@@ -264,8 +271,9 @@ section {
     }
   }
 }
+
 .contact__content {
-  padding-bottom: 890px;
+  padding-bottom: 75vh;
   @include mixin.mobile-only() {
     padding-bottom: 50vh;
   }
@@ -338,7 +346,7 @@ nav {
     height: 5px;
     margin-top: 4px;
     border-radius: 10px;
-    background-color: map-get($map: variables.$colors, $key: "wet-asphalt");
+    background-color: currentColor;
     transition: transform 300ms ease;
     @include mixin.mobile-only() {
       width: 25px;
@@ -348,7 +356,7 @@ nav {
 
 .burgermenu {
   position: relative;
-  top: 20px;
+  top: 10px;
   background-color: map-get($map: variables.$colors, $key: "white");
   padding: 5px;
   border-left: 5px solid map-get($map: variables.$colors, $key: "silver");
@@ -356,9 +364,18 @@ nav {
   opacity: 0;
   transition: opacity 500ms ease;
   &__item {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-family: "Roboto Light";
+    line-height: 35px;
     &.active {
+      color: map-get($map: variables.$colors, $key: "logocolor");
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: map-get($map: variables.$colors, $key: "belize-hole");
+    &:hover {
       color: map-get($map: variables.$colors, $key: "logocolor");
     }
   }
@@ -370,6 +387,13 @@ nav {
 }
 
 .hide {
-  opacity: 0;
   visibility: hidden;
+  opacity: 0;
+}
+
+.error404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
 }

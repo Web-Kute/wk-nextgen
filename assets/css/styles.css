@@ -75,7 +75,7 @@ table {
 }
 @font-face {
   font-family: "Roboto Light";
-  src: local("Roboto Light"), url("../fonts/roboto/Roboto-light.woff") format("woff");
+  src: local("Roboto Light"), url("../fonts/roboto/Roboto-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -105,9 +105,9 @@ body {
 }
 
 a {
-  text-decoration: none;
-  color: hsl(204, 64%, 44%);
+  color: hsl(210, 29%, 24%);
   transition: color 200ms ease;
+  text-decoration: underline;
 }
 a:hover {
   color: hsl(358, 70%, 52%);
@@ -115,7 +115,7 @@ a:hover {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px dotted hsl(210, 29%, 29%);
+  outline: 2px dotted currentColor;
   outline-offset: 3px;
 }
 
@@ -169,7 +169,7 @@ header {
 }
 header h2 {
   letter-spacing: -1.2px;
-  color: hsl(210, 29%, 29%);
+  color: currentColor;
   font-size: 1.8rem;
 }
 header figcaption {
@@ -224,7 +224,7 @@ main {
   height: 230px;
 }
 .container .item6 {
-  height: 370px;
+  height: 390px;
 }
 .container .item7 {
   height: 100px;
@@ -271,7 +271,7 @@ main {
 }
 .skills__star {
   text-align: right;
-  color: hsl(210, 29%, 29%);
+  color: currentColor;
 }
 
 section {
@@ -290,6 +290,9 @@ section h2 {
 section .section__skills-title {
   margin-left: auto;
   margin-right: auto;
+}
+section .about__content p {
+  font-size: 1.1rem;
 }
 section svg {
   width: 2em;
@@ -366,6 +369,7 @@ section svg.opquast {
 .customers__description h3 {
   text-transform: uppercase;
   font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 .customers__description p {
   line-height: 18px;
@@ -375,7 +379,7 @@ section svg.opquast {
 }
 
 .contact__content {
-  padding-bottom: 890px;
+  padding-bottom: 75vh;
 }
 @media (max-width: 599px) {
   .contact__content {
@@ -458,7 +462,7 @@ nav {
   height: 5px;
   margin-top: 4px;
   border-radius: 10px;
-  background-color: hsl(210, 29%, 29%);
+  background-color: currentColor;
   transition: transform 300ms ease;
 }
 @media (max-width: 599px) {
@@ -469,7 +473,7 @@ nav {
 
 .burgermenu {
   position: relative;
-  top: 20px;
+  top: 10px;
   background-color: hsl(0, 0%, 100%);
   padding: 5px;
   border-left: 5px solid hsl(204, 8%, 76%);
@@ -478,10 +482,18 @@ nav {
   transition: opacity 500ms ease;
 }
 .burgermenu__item {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-family: "Roboto Light";
+  line-height: 35px;
 }
 .burgermenu__item.active {
+  color: hsl(358, 70%, 52%);
+}
+.burgermenu a {
+  text-decoration: none;
+  color: hsl(204, 64%, 44%);
+}
+.burgermenu a:hover {
   color: hsl(358, 70%, 52%);
 }
 
@@ -491,6 +503,16 @@ nav {
 }
 
 .hide {
-  opacity: 0;
   visibility: hidden;
+  opacity: 0;
+}
+
+.error404 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  row-gap: 2rem;
 }/*# sourceMappingURL=styles.css.map */
