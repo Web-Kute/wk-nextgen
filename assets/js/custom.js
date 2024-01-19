@@ -51,7 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
       e.target !== burgerMenuChildren
     ) {
       burgerMenu.classList.add("hide");
-      burgerMenu.classList.remove("show", "nav-open");
+      burgerMenu.classList.remove("show");
+      toggleMenu.classList.remove("nav-open");
       toggleMenu.setAttribute("aria-expanded", false);
     }
     e.stopPropagation();

@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Droid Sans", "Heveltica", Arial;
   font-size: 16px;
   color: map-get(variables.$colors, $key: "wet-asphalt");
 }
@@ -39,7 +39,7 @@ button {
 
 h1,
 h2 {
-  font-family: "Roboto Light";
+  font-family: "Roboto Light", "Droid Sans", "Heveltica", Arial;
   color: map-get($map: variables.$colors, $key: "belize-hole");
 }
 
@@ -161,7 +161,7 @@ main {
     align-items: center;
   }
   &__title {
-    font-family: "Roboto Medium", sans-serif;
+    font-family: "Roboto Medium", "Droid Sans", "Heveltica", Arial;
     text-transform: uppercase;
     color: map-get(variables.$colors, $key: "midnight-blue");
   }
@@ -176,8 +176,11 @@ section {
   flex-direction: column;
   margin: 0 auto;
   padding: 20px;
+  @include mixin.mobile-only() {
+    padding: 20px 20px 20px 30px;
+  }
   h2 {
-    font-family: "Roboto Regular", sans-serif;
+    font-family: "Roboto Regular", "Droid Sans", "Heveltica", Arial;
     margin-bottom: 1rem;
     font-size: 3rem;
   }
@@ -365,7 +368,7 @@ nav {
   transition: opacity 500ms ease;
   &__item {
     font-size: 2rem;
-    font-family: "Roboto Light";
+    font-family: "Roboto Light", "Droid Sans", "Heveltica", Arial;
     line-height: 35px;
     &.active {
       color: map-get($map: variables.$colors, $key: "logocolor");

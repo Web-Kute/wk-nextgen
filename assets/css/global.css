@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Droid Sans", "Heveltica", Arial;
   font-size: 16px;
   color: hsl(210, 29%, 29%);
 }
@@ -36,7 +36,7 @@ button {
 
 h1,
 h2 {
-  font-family: "Roboto Light";
+  font-family: "Roboto Light", "Droid Sans", "Heveltica", Arial;
   color: hsl(204, 64%, 44%);
 }
 
@@ -169,7 +169,7 @@ main {
       align-items: center;
 }
 .skills__title {
-  font-family: "Roboto Medium", sans-serif;
+  font-family: "Roboto Medium", "Droid Sans", "Heveltica", Arial;
   text-transform: uppercase;
   color: hsl(210, 29%, 24%);
 }
@@ -186,8 +186,13 @@ section {
   margin: 0 auto;
   padding: 20px;
 }
+@media (max-width: 599px) {
+  section {
+    padding: 20px 20px 20px 30px;
+  }
+}
 section h2 {
-  font-family: "Roboto Regular", sans-serif;
+  font-family: "Roboto Regular", "Droid Sans", "Heveltica", Arial;
   margin-bottom: 1rem;
   font-size: 3rem;
 }
@@ -387,7 +392,7 @@ nav {
 }
 .burgermenu__item {
   font-size: 2rem;
-  font-family: "Roboto Light";
+  font-family: "Roboto Light", "Droid Sans", "Heveltica", Arial;
   line-height: 35px;
 }
 .burgermenu__item.active {
