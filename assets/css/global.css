@@ -203,6 +203,15 @@ section .section__skills-title {
 section .about__content p {
   font-size: 1.1rem;
 }
+section .about__content ul > li {
+  line-height: 25px;
+  list-style-type: square;
+  color: hsl(358, 70%, 52%);
+  margin-left: 2rem;
+}
+section .about__content ul > li span {
+  color: hsl(210, 29%, 29%);
+}
 section svg {
   width: 2em;
   height: 2em;
@@ -312,6 +321,13 @@ section svg.opquast {
 .contact__content .contact__grid .contact__col:nth-child(2) p {
   line-height: 40px;
 }
+.contact__content .contact__grid .contact__col svg {
+  margin-right: 0.5rem;
+}
+.contact__content .contact__grid .contact__col .phone-icon {
+  transform: rotate(100deg);
+  fill: hsl(204, 64%, 44%);
+}
 
 aside {
   position: fixed;
@@ -334,7 +350,7 @@ nav {
   -ms-flex-align: start;
       align-items: flex-start;
   -ms-flex-pack: end;
-      justify-content: end;
+      justify-content: flex-end;
   row-gap: 5px;
 }
 
@@ -404,6 +420,51 @@ nav {
 }
 .burgermenu a:hover {
   color: hsl(358, 70%, 52%);
+}
+
+@media (max-width: 599px) {
+  .cta {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+}
+.cta a {
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  margin-left: 1rem;
+  background-color: hsl(6, 63%, 46%);
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 25px;
+  font-family: "Roboto Medium", "Droid Sans", "Heveltica", Arial;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 200ms ease-in-out;
+  text-transform: uppercase;
+}
+@media (max-width: 599px) {
+  .cta a {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    margin-left: 0;
+  }
+}
+.cta a:hover {
+  background: hsl(204, 64%, 44%);
+}
+.cta svg {
+  transform: rotate(100deg) scale(0.7);
+  margin-right: 0.3rem;
+  fill: hsl(0, 0%, 100%);
 }
 
 .show {
