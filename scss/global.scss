@@ -157,6 +157,10 @@ header {
     }
   }
 
+  li {
+    margin-left: 5px;
+  }
+
   a {
     text-decoration: none;
     color: map-get($map: variables.$colors, $key: "belize-hole");
@@ -373,11 +377,9 @@ section {
 
   .contact__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
     grid-template-rows: 1fr;
-    column-gap: 7rem;
-    row-gap: 3rem;
-    justify-content: center;
+    gap: 30px;
     .contact__name {
       font-size: 1.3rem;
       text-transform: uppercase;
@@ -400,21 +402,140 @@ section {
       }
     }
   }
+
+  .contact__form {
+    display: flex;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    fieldset {
+      width: 50%;
+      label {
+        color: map-get($map: variables.$colors, $key: "belize-hole");
+        @include mixin.mobile-only() {
+          font-size: 1.1rem;
+          display: none;
+        }
+      }
+    }
+    input,
+    textarea {
+      font-size: 1.1rem;
+      border: none;
+      border-bottom: 1px solid map-get($map: variables.$colors, $key: "silver");
+      margin-top: 5px;
+      @include mixin.mobile-only() {
+        max-width: 90%;
+      }
+      &:focus {
+        outline: none;
+        background-color: map-get($map: variables.$colors, $key: "clouds");
+      }
+    }
+    textarea {
+      @include mixin.mobile-only() {
+        background-color: map-get($map: variables.$colors, $key: "clouds");
+      }
+    }
+    input[name="username"] {
+      position: absolute;
+      left: -999999999px;
+      height: 1px;
+    }
+
+    input:focus {
+      svg {
+        display: block;
+      }
+    }
+
+    .form__user {
+      margin-bottom: 2rem;
+      div {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+      }
+    }
+    .form__message {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #submit {
+      margin-top: 1rem;
+      @include mixin.mobile-only() {
+        margin-top: 5px;
+      }
+      padding: 0.2rem 1rem;
+      color: map-get($map: variables.$colors, $key: currentColor);
+      border: 1px solid map-get($map: variables.$colors, $key: currentColor);
+      background-color: transparent;
+      text-align: center;
+      font-size: 1.3rem;
+      line-height: 25px;
+      font-family: "Roboto", "Droid Sans", "Heveltica", Arial;
+      text-decoration: none;
+      transition: background-color 200ms ease-in-out;
+      text-transform: capitalize;
+      cursor: pointer;
+      &:hover {
+        color: map-get($map: variables.$colors, $key: "white");
+        background-color: map-get($map: variables.$colors, $key: "pomegranate");
+        border: 1px solid map-get($map: variables.$colors, $key: "pomegranate");
+      }
+    }
+    .user-name,
+    .user-email {
+      position: relative;
+    }
+    .icon-error,
+    .icon-success {
+      position: absolute;
+      top: 27px;
+      right: 10px;
+      width: 24px;
+      height: 24px;
+      @include mixin.mobile-only() {
+        top: 5px;
+        right: 20px;
+      }
+    }
+    .msg-error {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: map-get($map: variables.$colors, $key: "orange");
+      @include mixin.mobile-only() {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.response {
+  text-align: center;
+  padding: 10px;
+  border: 3px solid map-get($map: variables.$colors, $key: "green-sea");
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px map-get($map: variables.$colors, $key: "clouds");
 }
 
 .cta {
+  display: flex;
+  align-items: center;
   @include mixin.mobile-only() {
-    display: flex;
-    align-items: center;
     flex-direction: column;
     margin-top: 1rem;
     margin-left: 0;
   }
   a {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    min-width: 220px;
+    max-width: 220px;
     @include mixin.mobile-only() {
-      display: flex;
-      align-items: center;
       margin-left: 0;
     }
     padding: 0.2rem 1rem;
