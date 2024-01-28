@@ -654,6 +654,12 @@ section svg.opquast {
   height: 32px;
   cursor: pointer;
 }
+@media (max-width: 599px) {
+  .response__close {
+    width: 20px;
+    height: 20px;
+  }
+}
 .response__close::after, .response__close::before {
   content: "";
   position: absolute;

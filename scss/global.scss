@@ -527,6 +527,10 @@ section {
     top: 7px;
     width: 32px;
     height: 32px;
+    @include mixin.mobile-only() {
+      width: 20px;
+      height: 20px;
+    }
     cursor: pointer;
     &::after,
     &::before {

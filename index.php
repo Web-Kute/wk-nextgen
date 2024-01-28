@@ -298,21 +298,20 @@ if (isset($_POST['username']) && $_POST['username'] !== '') {
         </p>
         <p>Intégrateur web ou développeur front-end depuis 15 ans pour des grands comptes ou des P.M.E.</p>
 
-        <p>Toujours attentif :</p>
+        <p>Toujours attentif à :</p>
         <ul>
-          <li><span>à la propreté du code HTML livré</span></li>
-          <li><span>aux respect des standards du web (W3C validator)</span></li>
-          <li><span>à la maintenabilité des fichiers SCSS, CSS et JavaScript</span></li>
-          <li><span>à la compatibilité cross navigateurs</span></li>
-          <li><span>à l’optimisation S.E.O (référencement naturel)</span> </li>
-          <li><span>à l'accessibilité</span></li>
-          <li><span>à la performance</span></li>
+          <li><span>la propreté du code HTML et aux respect des standards du web (W3C validator)</span></li>
+          <li><span>la maintenabilité des fichiers SCSS, CSS et JavaScript</span></li>
+          <li><span>la compatibilité cross navigateurs</span></li>
+          <li><span>l’optimisation S.E.O (référencement naturel)</span> </li>
+          <li><span>l'accessibilité</span></li>
+          <li><span>la performance</span></li>
         </ul>
         <p>Je développe également des projets avec le CMS WordPress.</p>
         <p>Je sais par ailleurs être force de proposition pour décliner des éléments de charte graphique.</p>
         <p>Je peux intervenir en régie, chez le client en région parisienne ou en télétravail dans le cadre des
           missions.</p>
-        <p>J'interviens avec le statut de freelance.</p>
+        <p>Mon statut est celui de freelance.</p>
         <p>Certifié <a href="https://www.opquast.com/certification/" target="_blank" aria-label="Certification Opquast: 725 points, visiter site Opquast">
             <svg class="skills__icon svg opquast" aria-hidden="true" focusable="false">
               <use xlink:href="#opquast"></use>
