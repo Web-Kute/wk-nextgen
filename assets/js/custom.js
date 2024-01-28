@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const burgerMenu = document.querySelector(".burgermenu");
   const burgerMenuChildren = document.querySelector(".burgermenu").childNodes;
   const menu = document.querySelectorAll(".menu");
+  const response = document.querySelector(".response");
+  const responseClose = document.querySelector(".response__close");
 
   let containerProps;
   let itemProps;
@@ -28,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sectionsNoSkills.forEach((section) => {
       section.style.width = containerProps.width - marginContainer * 2 + "px";
     });
+    response.style.width = containerProps.width - marginContainer * 2 + "px";
   }
   sectionSize();
 
@@ -101,7 +104,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  responseClose.addEventListener("click", () => {
+    response.classList.add("hidden");
+  });
+
   document.addEventListener("click", closeMenu);
   window.addEventListener("scroll", navHighlighter);
   window.addEventListener("resize", sectionSize);
+  window.addEventListener("change", sectionSize);
 });

@@ -51,13 +51,13 @@ if ($_POST['submit'] === "Envoyer" && $_POST['token'] === $_SESSION['token']) {
   if (!empty($name) && !empty($email) && !empty($message) && $mailpassword) {
     try {
       //Server settings
-      $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+      $mail->SMTPDebug  = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
       $mail->setLanguage('fr');
       $mail->CharSet    = 'UTF-8';
       $mail->isSMTP();                                            //Send using SMTP
       $mail->Host       = 'smtp.hostinger.com';
       $mail->Port       = 587;
-      $mail->SMTPDebug = 0;                                       //Set the SMTP server to send through
+      $mail->SMTPDebug  = 0;                                       //Set the SMTP server to send through
       $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
       $mail->Username   = $ownermail;
       $mail->Password   = $password;                               //SMTP password email
@@ -82,10 +82,10 @@ if ($_POST['submit'] === "Envoyer" && $_POST['token'] === $_SESSION['token']) {
       if (!$mail->send()) {
         $msg = "Désolé, le message n'a pu être envoyé. Merci d'essayer à nouveau";
       } else {
-        $msg = "Merci " . ucwords(htmlentities($name)) . ", votre message à bien été envoyé. Je vous répondrai dans les meilleurs délais";
+        $msg = "Merci " . ucwords(htmlentities($name)) . ", votre message a bien été envoyé. Je vous répondrai dans les meilleurs délais";
       }
     } catch (Exception $e) {
-      echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+      echo $msg = "Le message n'a pas pu être envoyé. Mailer Error: {$mail->ErrorInfo}";
     }
   }
 }
@@ -284,9 +284,10 @@ if (isset($_POST['username']) && $_POST['username'] !== '') {
     <?php
     if (isset($_POST['submit']) && isset($name)) {
       $_SESSION['fullname'] = $name;
-      echo '<p class="response">';
-      echo htmlentities($msg);
-      echo '</p>';
+      echo '<div class="response">';
+      echo '<p>' .htmlentities($msg). '</p>';
+      echo '<div class=response__close></div>';
+      echo '</div>';
     }
     ?>
     <section id="about" class="section noskills" data-section="about">

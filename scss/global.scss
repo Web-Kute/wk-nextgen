@@ -512,14 +512,44 @@ section {
 }
 
 .response {
+  position: relative;
   text-align: center;
-  padding: 10px;
+  padding: 10px 55px 10px 10px;
   border: 3px solid map-get($map: variables.$colors, $key: "green-sea");
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   border-radius: 3px;
   box-shadow: 3px 3px 3px map-get($map: variables.$colors, $key: "clouds");
+  &__close {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 32px;
+      background-color: map-get($map: variables.$colors, $key: "belize-hole");
+      transition: background-color 200ms ease-in-out;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+    &:hover {
+      &::after,
+      &::before {
+        background-color: map-get($map: variables.$colors, $key: "pomegranate");
+      }
+    }
+  }
 }
 
 .cta {
@@ -571,9 +601,17 @@ section {
   opacity: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 .error404 {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 2rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
