@@ -264,6 +264,7 @@ if (isset($_POST['username']) && $_POST['username'] !== '') {
         <li><a href="#skills" class="burgermenu__item" data-id="skills" aria-current="false">Compétences</a></li>
         <li><a href="#customers" class="burgermenu__item" data-id="customers" aria-current="false">Réalisations</a>
         </li>
+        <li><a href="#trainer" class="burgermenu__item" data-id="trainer" aria-current="false">Formateur</a></li>
         <li><a href="#contact" class="burgermenu__item" data-id="contact" aria-current="false">Contact</a></li>
       </ul>
     </nav>
@@ -286,7 +287,7 @@ if (isset($_POST['username']) && $_POST['username'] !== '') {
       $_SESSION['fullname'] = $name;
       echo '<div class="response">';
       echo '<p>' .htmlentities($msg). '</p>';
-      echo '<div class=response__close></div>';
+      // echo '<div class=response__close onclick="closeResponse()"></div>';
       echo '</div>';
     }
     ?>
@@ -298,7 +299,7 @@ if (isset($_POST['username']) && $_POST['username'] !== '') {
         </p>
         <p>Intégrateur web ou développeur front-end depuis 15 ans pour des grands comptes ou des P.M.E.</p>
 
-        <p>Toujours attentif à :</p>
+        <h3>Toujours attentif à :</h3>
         <ul>
           <li><span>la propreté du code HTML et aux respect des standards du web (W3C validator)</span></li>
           <li><span>la maintenabilité des fichiers SCSS, CSS et JavaScript</span></li>
@@ -322,7 +323,7 @@ if (isset($_POST['username']) && $_POST['username'] !== '') {
             <svg class="contact__icon icon-alpha svg">
               <use xlink:href="#phone"></use>
             </svg>Contactez-moi</a></p>
-        </div>
+      </article>
     </section>
     <section id="skills" class="section" data-section="skills">
       <h2 class="section__skills-title">Compétences</h2>
@@ -785,6 +786,9 @@ if (isset($_POST['username']) && $_POST['username'] !== '') {
 
       </div>
     </section>
+<section id="trainer" class="section noskills" data-section="trainer">
+<h2>Formateur - Consultant</h2>
+</section>
     <section id="contact" class="section noskills" data-section="contact">
       <h2>Contact</h2>
       <div class="contact__content">
@@ -890,9 +894,9 @@ if (isset($_POST['username']) && $_POST['username'] !== '') {
                   <label for="message">Message</label>
                   <textarea name="message" id="message" cols="30" rows="10" required minlength="60" maxlength="350"></textarea>
                 </div>
-                <input type="hidden" name="token" value="<?php echo $token; ?>" />
+                <input type="hidden" name="token" value="<?php echo $token; ?>">
                 <div class="msg-error hide">Error</div>
-                <input type="submit" name="submit" id="submit" value="Envoyer" />
+                <input type="submit" name="submit" id="submit" value="Envoyer">
               </fieldset>
             </form>
           </div>

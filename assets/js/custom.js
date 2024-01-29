@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
     sectionsNoSkills.forEach((section) => {
       section.style.width = containerProps.width - marginContainer * 2 + "px";
     });
-    response.style.width = containerProps.width - marginContainer * 2 + "px";
+    // if (response.length) {
+    //   response.style.width = containerProps.width - marginContainer * 2 + "px";
+    // }
   }
   sectionSize();
 
@@ -105,9 +107,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  responseClose.addEventListener("click", () => {
+  // responseClose.addEventListener("click", () => {
+  //   response.classList.add("hidden");
+  // });
+
+  function closeResponse() {
     response.classList.add("hidden");
-  });
+  }
 
   document.addEventListener("click", closeMenu);
   window.addEventListener("scroll", navHighlighter);
