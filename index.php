@@ -63,9 +63,6 @@ if ($_POST['submit'] === "Envoyer" && $_POST['token'] === $_SESSION['token']) {
       $mail->Password   = $password;                               //SMTP password email
       $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable implicit TLS encryption
 
-      //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-      // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; 
-
       //Recipients
       $mail->setFrom($ownermail, $name);
       $mail->addAddress($ownermail, 'Denis Godec');     //Add a recipient    
@@ -104,8 +101,6 @@ if (isset($_POST['username']) && $_POST['username'] !== '') {
 ?>
 <!DOCTYPE html>
 <html lang="fr" itemscope itemtype="http://schema.org/WebPage">
-
-<!-- // sudo brew services start httpd -->
 
 <head>
   <meta charset="utf-8">
