@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const burgerMenu = document.querySelector(".burgermenu");
   const burgerMenuChildren = document.querySelector(".burgermenu").childNodes;
   const menu = document.querySelectorAll(".menu");
-  const response = document.querySelector(".response");
-  const responseClose = document.querySelector(".response__close");
+  const arrowUp = document.querySelector(".arrow-up");
 
   let containerProps;
   let itemProps;
@@ -17,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let valTranslate;
   let marginContainer;
 
-  function sectionSize() {
+  function sectionWidthSize() {
     itemValues = item.getAttribute("style");
     valTranslate = itemValues.split("translate").pop();
     marginContainer = Number(valTranslate.match(/\d+/)[0]);
@@ -30,11 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     sectionsNoSkills.forEach((section) => {
       section.style.width = containerProps.width - marginContainer * 2 + "px";
     });
-    // if (response.length) {
-    //   response.style.width = containerProps.width - marginContainer * 2 + "px";
-    // }
   }
-  sectionSize();
+  sectionWidthSize();
 
   function menuShowHide(e) {
     e.stopPropagation();
@@ -107,16 +103,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // responseClose.addEventListener("click", () => {
-  //   response.classList.add("hidden");
-  // });
-
-  function closeResponse() {
-    response.classList.add("hidden");
-  }
-
   document.addEventListener("click", closeMenu);
   window.addEventListener("scroll", navHighlighter);
-  window.addEventListener("resize", sectionSize);
-  window.addEventListener("change", sectionSize);
+  window.addEventListener("resize", sectionWidthSize);
+  window.addEventListener("change", sectionWidthSize);
+
+  arrowUp.addEventListener("click", () => {
+    window.scroll({ top: 0, left: 0, behavior: "smooth" });
+  });
+
+  let portrait = window.matchMedia("(orientation: portrait)");
+  portrait.addEventListener("change", function (e) {
+    if (e.matches) {
+      location.reload();
+    } else {
+      location.reload();
+    }
+  });
 });

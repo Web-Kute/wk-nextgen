@@ -15,7 +15,8 @@
   "dependencies": {
     "magic-grid": "^3.2.4",
     "node": "^21.2.0",
-    "three": "^0.159.0"
+    "three": "^0.159.0",
+    "tiny-slider": "^2.9.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

@@ -1,5 +1,6 @@
 <?php
 session_start();
+header("Content-Type: text/html; charset=UTF-8");
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -79,7 +80,7 @@ if ($_POST['submit'] === "Envoyer" && $_POST['token'] === $_SESSION['token']) {
       if (!$mail->send()) {
         $msg = "Désolé, le message n'a pu être envoyé. Merci d'essayer à nouveau";
       } else {
-        $msg = "Merci " . ucwords(htmlentities($name)) . ", votre message a bien été envoyé. Je vous répondrai dans les meilleurs délais";
+        $msg = "Merci " . ucwords($name) . ", votre message a bien été envoyé. Je vous répondrai dans les meilleurs délais";
       }
     } catch (Exception $e) {
       echo $msg = "Le message n'a pas pu être envoyé. Mailer Error: {$mail->ErrorInfo}";
@@ -103,7 +104,7 @@ if (isset($_POST['username']) && $_POST['username'] !== '') {
 <html lang="fr" itemscope itemtype="http://schema.org/WebPage">
 
 <head>
-  <meta charset="utf-8">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
   <title>Intégrateur HTML, CSS, JavaScript / WordPress - Développeur front-end</title>
   <meta name="description" content="Denis Godec, Intégrateur HTML / CSS / JavaScript / WordPress Freelance, situé en région parisienne.">
@@ -112,7 +113,11 @@ if (isset($_POST['username']) && $_POST['username'] !== '') {
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="format-detection" content="telephone=no">
   <link rel="stylesheet" href="assets/css/styles.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+  <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magic-grid/3.2.4/magic-grid.min.js" integrity="sha512-3nXvHrCmVAZqsV3DXj04lk/K1aL1b3mAVj9YPVmJrrYXR9dBEa2Le7klZ8EoAQcj3SnVSeQiXZfs3T4I0lCb7w==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+  <!-- NOTE: prior to v2.2.1 tiny-slider.js need to be in <body> -->
 </head>
 
 <body>
@@ -277,15 +282,29 @@ if (isset($_POST['username']) && $_POST['username'] !== '') {
   </header>
 
   <main role="main">
-    <?php
-    if (isset($_POST['submit']) && isset($name)) {
+    <div class="response<?php echo (isset($_POST['submit']) && isset($name)) ?  null : ' hidden' ?>">
+      <?php
       $_SESSION['fullname'] = $name;
-      echo '<div class="response">';
-      echo '<p>' .htmlentities($msg). '</p>';
-      // echo '<div class=response__close onclick="closeResponse()"></div>';
-      echo '</div>';
-    }
-    ?>
+      echo '<p>' . $msg . '</p>';
+      ?>
+      <div class=response__close onclick="closeResponse()"></div>
+    </div>
+    <section>
+      <ul class="slider-about">
+        <li>
+          <p>propreté du code HTML</p>
+          <figure><img src="assets/images/slide1.jpg" data-src="assets/images/slide1.jpg" alt="" width="1960"></figure>
+        </li>
+        <li>
+          <p>maintenabilité des fichiers SCSS, CSS et JavaScript</p>
+          <figure><img src="assets/images/slide2.jpg" data-src="assets/images/slide2.jpg" alt="" width="1960"></figure>
+        </li>
+        <li>
+          <p>la compatibilité cross navigateurs</p>
+          <figure><img src="assets/images/slide3.jpg" data-src="assets/images/slide3.jpg" alt="" width="1960"></figure>
+        </li>
+      </ul>
+    </section>
     <section id="about" class="section noskills" data-section="about">
       <h2>À propos</h2>
       <article class="about__content">
@@ -781,9 +800,13 @@ if (isset($_POST['username']) && $_POST['username'] !== '') {
 
       </div>
     </section>
-<section id="trainer" class="section noskills" data-section="trainer">
-<h2>Formateur - Consultant</h2>
-</section>
+    <section id="trainer" class="section noskills" data-section="trainer">
+      <h2>Formateur web</h2>
+      <h3>Consultant HTML / CSS / JavaScript</h3>
+      <p>Apprenez à coder proprement</p>
+      <p>De l'idée à la mise en ligne, construisez votre projet en apprenant les bases du développement.</p>
+
+    </section>
     <section id="contact" class="section noskills" data-section="contact">
       <h2>Contact</h2>
       <div class="contact__content">

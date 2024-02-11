@@ -65,7 +65,7 @@ header {
   position: relative;
   display: grid;
   grid-template-columns: 5% 95%;
-  margin: 20px auto;
+  margin: 20px auto 0;
   padding-bottom: 20px;
   border-bottom: 1px solid map-get($map: variables.$colors, $key: "silver");
   nav {
@@ -178,50 +178,18 @@ p {
   line-height: 25px;
 }
 
-.container > div {
-  width: 280px;
-  min-width: 280px;
-  height: 500px;
-  padding: 10px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .container {
-  .item1 {
-    height: 170px;
-  }
-  .item2 {
-    height: 150px;
-  }
-  .item3 {
-    height: 150px;
-  }
-  .item4 {
-    height: 220px;
-  }
-  .item5 {
-    height: 230px;
-  }
-  .item6 {
-    height: 390px;
-  }
-  .item7 {
-    height: 100px;
-  }
-  .item8 {
-    height: 100px;
-  }
-  .item9 {
-    height: 300px;
-  }
-  .item10 {
-    height: 400px;
-  }
-  .item {
+  .skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 280px;
+    min-width: 280px;
+    height: 500px;
+    padding: 10px 10px 20px;
+    border-radius: 5px;
     background-color: map-get($map: variables.$colors, $key: "clouds");
+    height: auto;
   }
   svg {
     width: 2em;
@@ -273,6 +241,20 @@ section {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .slider-about {
+    position: relative;
+
+    p {
+      position: absolute;
+      font-size: 3rem;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
   .about__content {
     h3 {
       margin-top: 0.5rem;
@@ -333,7 +315,7 @@ section {
         font-size: 1rem;
         text-transform: uppercase;
         color: map-get($map: variables.$colors, $key: "belize-hole");
-        background-color: map-get($map: variables.$colors, $key: "clouds");
+        background-color: map-get($map: variables.$colors, $key: "white");
       }
       img {
         width: 100%;
@@ -356,7 +338,7 @@ section {
     padding: 10px;
     z-index: 20;
     top: 0;
-    background-color: map-get($map: variables.$colors, $key: "clouds");
+    background-color: map-get($map: variables.$colors, $key: "white");
     transform: translateY(100%);
     transition: transform 500ms ease;
     h3 {
@@ -374,7 +356,7 @@ section {
 }
 
 .contact__content {
-  padding-bottom: 75vh;
+  padding-bottom: 60vh;
   @include mixin.mobile-only() {
     padding-bottom: 50vh;
   }
@@ -406,158 +388,6 @@ section {
       }
     }
   }
-
-  .contact__form {
-    display: flex;
-    font-size: 1.4rem;
-    margin-top: 2rem;
-    fieldset {
-      width: 50%;
-      label {
-        color: map-get($map: variables.$colors, $key: "belize-hole");
-        @include mixin.mobile-only() {
-          font-size: 1.1rem;
-          display: none;
-        }
-      }
-    }
-    input,
-    textarea {
-      font-size: 1.1rem;
-      border: none;
-      border-bottom: 1px solid map-get($map: variables.$colors, $key: "silver");
-      margin-top: 5px;
-      @include mixin.mobile-only() {
-        max-width: 90%;
-      }
-      &:focus {
-        outline: none;
-        background-color: map-get($map: variables.$colors, $key: "clouds");
-      }
-    }
-    textarea {
-      @include mixin.mobile-only() {
-        background-color: map-get($map: variables.$colors, $key: "clouds");
-      }
-    }
-    input[name="username"] {
-      position: absolute;
-      left: -999999999px;
-      height: 1px;
-    }
-
-    input:focus {
-      svg {
-        display: block;
-      }
-    }
-
-    .form__user {
-      margin-bottom: 2rem;
-      div {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 1rem;
-      }
-    }
-    .form__message {
-      display: flex;
-      flex-direction: column;
-    }
-
-    #submit {
-      margin-top: 1rem;
-      @include mixin.mobile-only() {
-        margin-top: 5px;
-      }
-      padding: 0.2rem 1rem;
-      color: map-get($map: variables.$colors, $key: currentColor);
-      border: 1px solid map-get($map: variables.$colors, $key: currentColor);
-      background-color: transparent;
-      text-align: center;
-      font-size: 1.3rem;
-      line-height: 25px;
-      font-family: "Roboto", "Droid Sans", "Heveltica", Arial;
-      text-decoration: none;
-      transition: background-color 200ms ease-in-out;
-      text-transform: capitalize;
-      cursor: pointer;
-      &:hover {
-        color: map-get($map: variables.$colors, $key: "white");
-        background-color: map-get($map: variables.$colors, $key: "pomegranate");
-        border: 1px solid map-get($map: variables.$colors, $key: "pomegranate");
-      }
-    }
-    .user-name,
-    .user-email {
-      position: relative;
-    }
-    .icon-error,
-    .icon-success {
-      position: absolute;
-      top: 27px;
-      right: 10px;
-      width: 24px;
-      height: 24px;
-      @include mixin.mobile-only() {
-        top: 5px;
-        right: 20px;
-      }
-    }
-    .msg-error {
-      margin-top: 0.5rem;
-      font-size: 1rem;
-      color: map-get($map: variables.$colors, $key: "orange");
-      @include mixin.mobile-only() {
-        font-size: 0.8rem;
-      }
-    }
-  }
-}
-
-.response {
-  position: relative;
-  text-align: center;
-  padding: 10px 55px 10px 10px;
-  border: 3px solid map-get($map: variables.$colors, $key: "green-sea");
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 3px;
-  box-shadow: 3px 3px 3px map-get($map: variables.$colors, $key: "clouds");
-  &__close {
-    position: absolute;
-    right: 10px;
-    top: 7px;
-    width: 32px;
-    height: 32px;
-    @include mixin.mobile-only() {
-      width: 20px;
-      height: 20px;
-    }
-    cursor: pointer;
-    &::after,
-    &::before {
-      content: "";
-      position: absolute;
-      width: 2px;
-      height: 32px;
-      background-color: map-get($map: variables.$colors, $key: "belize-hole");
-      transition: background-color 200ms ease-in-out;
-    }
-    &::before {
-      transform: rotate(45deg);
-    }
-    &::after {
-      transform: rotate(-45deg);
-    }
-    &:hover {
-      &::after,
-      &::before {
-        background-color: map-get($map: variables.$colors, $key: "pomegranate");
-      }
-    }
-  }
 }
 
 .cta {
@@ -578,7 +408,7 @@ section {
     }
     padding: 0.2rem 1rem;
     margin-left: 1rem;
-    background-color: map-get($map: variables.$colors, $key: "pomegranate");
+    background-color: map-get($map: variables.$colors, $key: "logocolor");
     color: map-get($map: variables.$colors, $key: "white");
     text-align: center;
     font-size: 1.3rem;
@@ -596,6 +426,33 @@ section {
     transform: rotate(100deg) scale(0.7);
     margin-right: 0.3rem;
     fill: map-get($map: variables.$colors, $key: "white");
+  }
+}
+
+footer {
+  height: 10rem;
+  .arrow-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    span {
+      margin-right: 0.5rem;
+    }
+    &:hover {
+      color: map-get($map: variables.$colors, $key: "belize-hole");
+    }
+    &:hover svg {
+      fill: map-get($map: variables.$colors, $key: "belize-hole");
+    }
+  }
+  svg {
+    width: 2em;
+    height: 1.5em;
+    transform: scale(1.5);
+    &:hover {
+      fill: map-get($map: variables.$colors, $key: "belize-hole");
+    }
   }
 }
 
