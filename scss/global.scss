@@ -11,12 +11,19 @@ body {
   color: map-get(variables.$colors, $key: "wet-asphalt");
 }
 
+* {
+  box-sizing: content-box;
+}
+
 a {
   color: map-get($map: variables.$colors, $key: "midnight-blue");
   transition: color 200ms ease;
-  text-decoration: underline;
+  text-decoration: none;
   &:hover {
     color: map-get($map: variables.$colors, $key: "logocolor");
+  }
+  &:active {
+    color: map-get($map: variables.$colors, $key: "carrot");
   }
 }
 
@@ -100,6 +107,11 @@ header {
     color: currentColor;
     font-size: 1.8rem;
   }
+  figure {
+    &:hover {
+      animation: pulse 1000ms;
+    }
+  }
   figcaption {
     color: map-get($map: variables.$colors, $key: "logocolor");
     text-align: center;
@@ -112,6 +124,11 @@ header {
   }
 }
 
+main {
+  @include mixin.mobile-only() {
+    margin-left: 0.8rem;
+  }
+}
 .togglemenu {
   position: fixed;
   cursor: pointer;
@@ -190,6 +207,10 @@ p {
     border-radius: 5px;
     background-color: map-get($map: variables.$colors, $key: "clouds");
     height: auto;
+    a {
+      border-bottom: 1px dashed
+        map-get($map: variables.$colors, $key: "belize-hole");
+    }
   }
   svg {
     width: 2em;
@@ -256,6 +277,10 @@ section {
   }
 
   .about__content {
+    a {
+      border-bottom: 1px dashed
+        map-get($map: variables.$colors, $key: "belize-hole");
+    }
     h3 {
       margin-top: 0.5rem;
       font-weight: 700;
@@ -292,6 +317,10 @@ section {
   grid-template-rows: 1fr;
   gap: 30px;
   justify-content: center;
+  a span {
+    border-bottom: 1px dashed
+      map-get($map: variables.$colors, $key: "belize-hole");
+  }
 }
 
 .customers {
@@ -355,12 +384,28 @@ section {
   }
 }
 
+#contact {
+  background-image: url(../images/slide3.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 3rem;
+  @include mixin.tablet-landscape-down() {
+    background-image: url(../images/slide3x1200.webp);
+    background-position: center;
+  }
+}
 .contact__content {
   padding-bottom: 60vh;
   @include mixin.mobile-only() {
     padding-bottom: 50vh;
   }
-
+  svg {
+    margin-right: 0.5rem;
+  }
+  span a {
+    border-bottom: 1px dashed
+      map-get($map: variables.$colors, $key: "belize-hole");
+  }
   .contact__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
@@ -379,13 +424,17 @@ section {
           line-height: 40px;
         }
       }
-      svg {
-        margin-right: 0.5rem;
-      }
       .phone-icon {
         transform: rotate(100deg);
         fill: map-get($map: variables.$colors, $key: "belize-hole");
       }
+    }
+  }
+  a.contact__link {
+    text-decoration: none;
+    span span {
+      border-bottom: 1px dashed
+        map-get($map: variables.$colors, $key: "belize-hole");
     }
   }
 }
@@ -425,6 +474,39 @@ section {
   svg {
     transform: rotate(100deg) scale(0.7);
     margin-right: 0.3rem;
+    fill: map-get($map: variables.$colors, $key: "white");
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  @include mixin.mobile-only() {
+    margin-left: 0;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    @include mixin.mobile-only() {
+      margin-left: 0;
+    }
+    padding: 0.2rem 0.8rem 0.2rem 0.2rem;
+    background-color: map-get($map: variables.$colors, $key: "logocolor");
+    color: map-get($map: variables.$colors, $key: "white");
+    text-align: center;
+    line-height: 25px;
+    font-family: "Roboto Medium", "Droid Sans", "Heveltica", Arial;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 200ms ease-in-out;
+    &:hover {
+      background: map-get($map: variables.$colors, $key: "belize-hole");
+    }
+  }
+  svg {
+    transform: scale(0.7);
+    margin-right: 0;
     fill: map-get($map: variables.$colors, $key: "white");
   }
 }
@@ -479,4 +561,18 @@ footer {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
 }

@@ -104,13 +104,20 @@ body {
   color: hsl(210, 29%, 29%);
 }
 
+* {
+  box-sizing: content-box;
+}
+
 a {
   color: hsl(210, 29%, 24%);
   transition: color 200ms ease;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   color: hsl(358, 70%, 52%);
+}
+a:active {
+  color: hsl(28, 80%, 52%);
 }
 
 a:focus-visible,
@@ -202,6 +209,9 @@ header h2 {
   color: currentColor;
   font-size: 1.8rem;
 }
+header figure:hover {
+  animation: pulse 1000ms;
+}
 header figcaption {
   color: hsl(358, 70%, 52%);
   text-align: center;
@@ -214,6 +224,12 @@ header figcaption {
     -ms-flex-align: start;
         align-items: flex-start;
     margin-top: 10px;
+  }
+}
+
+@media (max-width: 599px) {
+  main {
+    margin-left: 0.8rem;
   }
 }
 
@@ -302,6 +318,9 @@ p {
   background-color: hsl(192, 15%, 94%);
   height: auto;
 }
+.container .skills a {
+  border-bottom: 1px dashed hsl(204, 64%, 44%);
+}
 .container svg {
   width: 2em;
   height: 2em;
@@ -369,6 +388,9 @@ section .slider-about img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+section .about__content a {
+  border-bottom: 1px dashed hsl(204, 64%, 44%);
+}
 section .about__content h3 {
   margin-top: 0.5rem;
   font-weight: 700;
@@ -404,6 +426,9 @@ section svg.opquast {
   gap: 30px;
   -ms-flex-pack: center;
       justify-content: center;
+}
+.customers__content a span {
+  border-bottom: 1px dashed hsl(204, 64%, 44%);
 }
 
 .customers__item {
@@ -469,6 +494,19 @@ section svg.opquast {
   width: 1.2rem;
 }
 
+#contact {
+  background-image: url(../images/slide3.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 3rem;
+}
+@media (max-width: 1199px) {
+  #contact {
+    background-image: url(../images/slide3x1200.webp);
+    background-position: center;
+  }
+}
+
 .contact__content {
   padding-bottom: 60vh;
 }
@@ -476,6 +514,12 @@ section svg.opquast {
   .contact__content {
     padding-bottom: 50vh;
   }
+}
+.contact__content svg {
+  margin-right: 0.5rem;
+}
+.contact__content span a {
+  border-bottom: 1px dashed hsl(204, 64%, 44%);
 }
 .contact__content .contact__grid {
   display: grid;
@@ -493,12 +537,15 @@ section svg.opquast {
 .contact__content .contact__grid .contact__col:nth-child(2) p {
   line-height: 40px;
 }
-.contact__content .contact__grid .contact__col svg {
-  margin-right: 0.5rem;
-}
 .contact__content .contact__grid .contact__col .phone-icon {
   transform: rotate(100deg);
   fill: hsl(204, 64%, 44%);
+}
+.contact__content a.contact__link {
+  text-decoration: none;
+}
+.contact__content a.contact__link span span {
+  border-bottom: 1px dashed hsl(204, 64%, 44%);
 }
 
 .cta {
@@ -546,6 +593,47 @@ section svg.opquast {
 .cta svg {
   transform: rotate(100deg) scale(0.7);
   margin-right: 0.3rem;
+  fill: hsl(0, 0%, 100%);
+}
+
+.btn {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  margin-top: 0.5rem;
+}
+@media (max-width: 599px) {
+  .btn {
+    margin-left: 0;
+  }
+}
+.btn a {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 0.2rem 0.8rem 0.2rem 0.2rem;
+  background-color: hsl(358, 70%, 52%);
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  line-height: 25px;
+  font-family: "Roboto Medium", "Droid Sans", "Heveltica", Arial;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 200ms ease-in-out;
+}
+@media (max-width: 599px) {
+  .btn a {
+    margin-left: 0;
+  }
+}
+.btn a:hover {
+  background: hsl(204, 64%, 44%);
+}
+.btn svg {
+  transform: scale(0.7);
+  margin-right: 0;
   fill: hsl(0, 0%, 100%);
 }
 
@@ -605,4 +693,16 @@ footer svg:hover {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
 }/*# sourceMappingURL=styles.css.map */
