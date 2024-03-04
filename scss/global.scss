@@ -1,14 +1,14 @@
-@use "variables";
-@use "mixin";
+@use 'colors';
+@use 'mixin';
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Roboto", "Droid Sans", "Heveltica", Arial;
+  font-family: 'Roboto', 'Droid Sans', 'Heveltica', Arial;
   font-size: 16px;
-  color: map-get(variables.$colors, $key: "wet-asphalt");
+  color: map-get(colors.$colors, $key: 'wet-asphalt');
 }
 
 * {
@@ -16,14 +16,14 @@ body {
 }
 
 a {
-  color: map-get($map: variables.$colors, $key: "midnight-blue");
+  color: map-get($map: colors.$colors, $key: 'midnight-blue');
   transition: color 200ms ease;
   text-decoration: none;
   &:hover {
-    color: map-get($map: variables.$colors, $key: "logocolor");
+    color: map-get($map: colors.$colors, $key: 'logocolor');
   }
   &:active {
-    color: map-get($map: variables.$colors, $key: "carrot");
+    color: map-get($map: colors.$colors, $key: 'carrot');
   }
 }
 
@@ -31,6 +31,10 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px dotted currentColor;
   outline-offset: 3px;
+}
+
+p {
+  line-height: 25px;
 }
 
 button {
@@ -46,13 +50,13 @@ button {
 
 h1,
 h2 {
-  font-family: "Roboto Light", "Droid Sans", "Heveltica", Arial;
-  color: map-get($map: variables.$colors, $key: "belize-hole");
+  font-family: 'Roboto Light', 'Droid Sans', 'Heveltica', Arial;
+  color: map-get($map: colors.$colors, $key: 'belize-hole');
 }
 
 h1 {
-  text-transform: capitalize;
-  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-size: 1.9rem;
   line-height: 35px;
   &:nth-child(1) {
     margin-top: 6px;
@@ -74,7 +78,7 @@ header {
   grid-template-columns: 5% 95%;
   margin: 20px auto 0;
   padding-bottom: 20px;
-  border-bottom: 1px solid map-get($map: variables.$colors, $key: "silver");
+  border-bottom: 1px solid map-get($map: colors.$colors, $key: 'silver');
   nav {
     justify-self: start;
     margin-left: 20px;
@@ -113,7 +117,7 @@ header {
     }
   }
   figcaption {
-    color: map-get($map: variables.$colors, $key: "logocolor");
+    color: map-get($map: colors.$colors, $key: 'logocolor');
     text-align: center;
     letter-spacing: 1px;
   }
@@ -159,18 +163,19 @@ main {
   top: 65px;
   width: 360px;
   z-index: 99999;
-  background-color: map-get($map: variables.$colors, $key: "white");
-  padding: 5px;
-  border-left: 5px solid map-get($map: variables.$colors, $key: "silver");
+  background-color: map-get($map: colors.$colors, $key: 'white');
+  padding: 12px 5px;
+  border-left: 5px solid map-get($map: colors.$colors, $key: 'silver');
   visibility: hidden;
   opacity: 0;
   transition: opacity 500ms ease;
   &__item {
-    font-size: 2rem;
-    font-family: "Roboto Light", "Droid Sans", "Heveltica", Arial;
+    font-family: 'Roboto Light', 'Droid Sans', 'Heveltica', Arial;
+    font-size: 1.6rem;
+    text-transform: uppercase;
     line-height: 35px;
     &.active {
-      color: map-get($map: variables.$colors, $key: "logocolor");
+      color: map-get($map: colors.$colors, $key: 'logocolor');
     }
   }
 
@@ -180,19 +185,15 @@ main {
 
   a {
     text-decoration: none;
-    color: map-get($map: variables.$colors, $key: "belize-hole");
+    color: map-get($map: colors.$colors, $key: 'belize-hole');
     &:hover {
-      color: map-get($map: variables.$colors, $key: "logocolor");
+      color: map-get($map: colors.$colors, $key: 'logocolor');
     }
   }
   @include mixin.mobile-only() {
     left: 10px;
     top: 50px;
   }
-}
-
-p {
-  line-height: 25px;
 }
 
 .container {
@@ -205,11 +206,14 @@ p {
     height: 500px;
     padding: 10px 10px 20px;
     border-radius: 5px;
-    background-color: map-get($map: variables.$colors, $key: "clouds");
+    background-color: rgba(
+      map-get($map: colors.$colors, $key: 'belize-hole'),
+      0.1
+    );
     height: auto;
     a {
       border-bottom: 1px dashed
-        map-get($map: variables.$colors, $key: "belize-hole");
+        map-get($map: colors.$colors, $key: 'belize-hole');
     }
   }
   svg {
@@ -235,9 +239,9 @@ p {
     align-items: center;
   }
   &__title {
-    font-family: "Roboto Medium", "Droid Sans", "Heveltica", Arial;
+    font-family: 'Roboto Medium', 'Droid Sans', 'Heveltica', Arial;
     text-transform: uppercase;
-    color: map-get(variables.$colors, $key: "midnight-blue");
+    color: map-get(colors.$colors, $key: 'midnight-blue');
   }
   &__star {
     text-align: right;
@@ -254,32 +258,19 @@ section {
     padding: 20px 20px 20px 30px;
   }
   h2 {
-    font-family: "Roboto Regular", "Droid Sans", "Heveltica", Arial;
+    font-family: 'Roboto Regular', 'Droid Sans', 'Heveltica', Arial;
     margin-bottom: 1rem;
-    font-size: 3rem;
+    font-size: clamp(2.2rem, 1.9605rem + 0.6397vw, 3rem);
   }
   .section__skills-title {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .slider-about {
-    position: relative;
-
-    p {
-      position: absolute;
-      font-size: 3rem;
-    }
-    img {
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-
   .about__content {
     a {
       border-bottom: 1px dashed
-        map-get($map: variables.$colors, $key: "belize-hole");
+        map-get($map: colors.$colors, $key: 'belize-hole');
     }
     h3 {
       margin-top: 0.5rem;
@@ -291,10 +282,10 @@ section {
     ul > li {
       line-height: 25px;
       list-style-type: square;
-      color: map-get(variables.$colors, $key: "logocolor");
+      color: map-get(colors.$colors, $key: 'logocolor');
       margin-left: 2rem;
       span {
-        color: map-get(variables.$colors, $key: "wet-asphalt");
+        color: map-get(colors.$colors, $key: 'wet-asphalt');
       }
     }
   }
@@ -318,18 +309,16 @@ section {
   gap: 30px;
   justify-content: center;
   a span {
-    border-bottom: 1px dashed
-      map-get($map: variables.$colors, $key: "belize-hole");
+    border-bottom: 1px dashed map-get($map: colors.$colors, $key: 'belize-hole');
   }
 }
 
 .customers {
   &__item {
     position: relative;
-    background-color: map-get($map: variables.$colors, $key: "clouds");
     width: 300px;
     height: 169px;
-    border: 1px solid map-get($map: variables.$colors, $key: "silver");
+    border: 1px solid map-get($map: colors.$colors, $key: 'silver');
     overflow: hidden;
 
     figure {
@@ -343,8 +332,8 @@ section {
         text-align: center;
         font-size: 1rem;
         text-transform: uppercase;
-        color: map-get($map: variables.$colors, $key: "belize-hole");
-        background-color: map-get($map: variables.$colors, $key: "white");
+        color: map-get($map: colors.$colors, $key: 'belize-hole');
+        background-color: map-get($map: colors.$colors, $key: 'white');
       }
       img {
         width: 100%;
@@ -367,7 +356,7 @@ section {
     padding: 10px;
     z-index: 20;
     top: 0;
-    background-color: map-get($map: variables.$colors, $key: "white");
+    background-color: map-get($map: colors.$colors, $key: 'white');
     transform: translateY(100%);
     transition: transform 500ms ease;
     h3 {
@@ -403,8 +392,7 @@ section {
     margin-right: 0.5rem;
   }
   span a {
-    border-bottom: 1px dashed
-      map-get($map: variables.$colors, $key: "belize-hole");
+    border-bottom: 1px dashed map-get($map: colors.$colors, $key: 'belize-hole');
   }
   .contact__grid {
     display: grid;
@@ -426,7 +414,7 @@ section {
       }
       .phone-icon {
         transform: rotate(100deg);
-        fill: map-get($map: variables.$colors, $key: "belize-hole");
+        fill: map-get($map: colors.$colors, $key: 'belize-hole');
       }
     }
   }
@@ -434,7 +422,7 @@ section {
     text-decoration: none;
     span span {
       border-bottom: 1px dashed
-        map-get($map: variables.$colors, $key: "belize-hole");
+        map-get($map: colors.$colors, $key: 'belize-hole');
     }
   }
 }
@@ -449,32 +437,33 @@ section {
   }
   a {
     display: flex;
+    justify-content: center;
     align-items: center;
-    min-width: 220px;
-    max-width: 220px;
+    min-width: 185px;
+    max-width: 200px;
     @include mixin.mobile-only() {
       margin-left: 0;
     }
     padding: 0.2rem 1rem;
     margin-left: 1rem;
-    background-color: map-get($map: variables.$colors, $key: "logocolor");
-    color: map-get($map: variables.$colors, $key: "white");
+    background-color: map-get($map: colors.$colors, $key: 'logocolor');
+    color: map-get($map: colors.$colors, $key: 'white');
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     line-height: 25px;
-    font-family: "Roboto Medium", "Droid Sans", "Heveltica", Arial;
+    font-family: 'Roboto Medium', 'Droid Sans', 'Heveltica', Arial;
     border-radius: 6px;
     text-decoration: none;
     transition: background-color 200ms ease-in-out;
     text-transform: uppercase;
     &:hover {
-      background: map-get($map: variables.$colors, $key: "belize-hole");
+      background: map-get($map: colors.$colors, $key: 'belize-hole');
     }
   }
   svg {
     transform: rotate(100deg) scale(0.7);
     margin-right: 0.3rem;
-    fill: map-get($map: variables.$colors, $key: "white");
+    fill: map-get($map: colors.$colors, $key: 'white');
   }
 }
 
@@ -492,22 +481,22 @@ section {
       margin-left: 0;
     }
     padding: 0.2rem 0.8rem 0.2rem 0.2rem;
-    background-color: map-get($map: variables.$colors, $key: "logocolor");
-    color: map-get($map: variables.$colors, $key: "white");
+    background-color: map-get($map: colors.$colors, $key: 'logocolor');
+    color: map-get($map: colors.$colors, $key: 'white');
     text-align: center;
     line-height: 25px;
-    font-family: "Roboto Medium", "Droid Sans", "Heveltica", Arial;
+    font-family: 'Roboto Medium', 'Droid Sans', 'Heveltica', Arial;
     border-radius: 6px;
     text-decoration: none;
     transition: background-color 200ms ease-in-out;
     &:hover {
-      background: map-get($map: variables.$colors, $key: "belize-hole");
+      background: map-get($map: colors.$colors, $key: 'belize-hole');
     }
   }
   svg {
     transform: scale(0.7);
     margin-right: 0;
-    fill: map-get($map: variables.$colors, $key: "white");
+    fill: map-get($map: colors.$colors, $key: 'white');
   }
 }
 
@@ -517,15 +506,16 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-transform: uppercase;
     cursor: pointer;
     span {
       margin-right: 0.5rem;
     }
     &:hover {
-      color: map-get($map: variables.$colors, $key: "belize-hole");
+      color: map-get($map: colors.$colors, $key: 'belize-hole');
     }
     &:hover svg {
-      fill: map-get($map: variables.$colors, $key: "belize-hole");
+      fill: map-get($map: colors.$colors, $key: 'belize-hole');
     }
   }
   svg {
@@ -533,7 +523,7 @@ footer {
     height: 1.5em;
     transform: scale(1.5);
     &:hover {
-      fill: map-get($map: variables.$colors, $key: "belize-hole");
+      fill: map-get($map: colors.$colors, $key: 'belize-hole');
     }
   }
 }

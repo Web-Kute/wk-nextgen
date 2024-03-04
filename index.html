@@ -13,9 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="format-detection" content="telephone=no">
   <link rel="stylesheet" href="assets/css/styles.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/magic-grid/3.2.4/magic-grid.min.js"
-    integrity="sha512-3nXvHrCmVAZqsV3DXj04lk/K1aL1b3mAVj9YPVmJrrYXR9dBEa2Le7klZ8EoAQcj3SnVSeQiXZfs3T4I0lCb7w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="assets/js/magic-grid/dist/magic-grid.min.js"></script>
 </head>
 
 <body>
@@ -197,7 +195,8 @@
     <div class="logo">
       <h1>Denis Godec</h1>
       <figure aria-label="weekub">
-        <a href="index.html"><img src="assets/images/logo-no-text.png" alt="Logo WeeKub" width="70" height="76"></a>
+        <a href="https://weekub.fr/"><img src="assets/images/logo-no-text.png" alt="Logo WeeKub" width="70"
+            height="76"></a>
         <figcaption>WeeKub</figcaption>
       </figure>
       <div>
@@ -206,7 +205,6 @@
       </div>
     </div>
   </header>
-
   <main role="main">
     <section id="about" class="section noskills" data-section="about">
       <h2>À propos</h2>
@@ -246,7 +244,7 @@
     <section id="skills" class="section" data-section="skills">
       <h2 class="section__skills-title">Compétences</h2>
       <div class="container">
-        <div class="skills item1">
+        <div class="skills first-skill-item">
           <div class="skills__header">
             <h3 class="skills__title">Intégration HTML5</h3>
             <svg class="skills__icon svg" aria-hidden="true" focusable="false">
@@ -349,11 +347,23 @@
 
           <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
         </div>
+
+        <div class="skills">
+          <div class="skills__header">
+            <h3 class="skills__title">Bootstrap 5</h3>
+            <span>
+              <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#bootstrap"></use>
+              </svg>
+            </span>
+          </div>
+          <p>Framework responsive</p>
+          <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
+        </div>
         <div class="skills">
           <div class="skills__header">
             <h3 class="skills__title">
-              Outils +<br>
-              environnement de travail
+              Environnement de travail
             </h3>
             <span>
               <svg class="skills__icon svg" aria-hidden="true" focusable="false">
@@ -376,18 +386,6 @@
             <li>Anglais (niveau A1)</li>
           </ul>
           <div class="skills__star"></div>
-        </div>
-        <div class="skills">
-          <div class="skills__header">
-            <h3 class="skills__title">Bootstrap 5</h3>
-            <span>
-              <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#bootstrap"></use>
-              </svg>
-            </span>
-          </div>
-          <p>Framework responsive</p>
-          <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
         </div>
         <div class="skills">
           <div class="skills__header">
@@ -760,9 +758,7 @@
               </span>
             </address>
             <p class="contact__item">
-              <span>
-                <strong>N° SIRET : 4444 7770 7000 12</strong>
-              </span>
+              <strong>N° SIRET : 4444 7770 7000 12</strong>
             </p>
           </div>
           <div class="contact__col col-phone">
@@ -793,20 +789,22 @@
               <a href="assets/docs/CV_2024-02-08_Denis_Godec.pdf" download="CV_Denis-Godec" type="application/pdf">
                 <svg class="contact__icon icon-alpha svg">
                   <use xlink:href="#pdf-icon"></use>
-                </svg>Télécharger CV (100ko)&nbsp;<abbr title="Adobe Portable Document Format">pdf</abbr></a>
+                </svg>Télécharger CV (100ko)&nbsp;<abbr title="Adobe Portable Document Format">pdf</abbr>
+              </a>
             </p>
           </div>
         </div>
       </div>
     </section>
-    <footer>
-      <div class="arrow-up"><span>Retour en haut</span>
-        <svg class="svg" aria-hidden="false" focusable="true">
-          <use xlink:href="#arrow-up"></use>
-        </svg>
-      </div>
-    </footer>
   </main>
+  <footer>
+    <a href="#" class="arrow-up">
+      <span>Retour en haut</span>
+      <svg class="svg" aria-hidden="true" focusable="false">
+        <use xlink:href="#arrow-up"></use>
+      </svg>
+    </a>
+  </footer>
   <script src="assets/js/bundle.js" defer></script>
 </body>
 

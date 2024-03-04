@@ -1,123 +1,117 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".container");
-  const sections = document.querySelectorAll(".section");
-  const sectionsNoSkills = document.querySelectorAll(".noskills");
-  const item = document.querySelector(".item1");
-  const sectionSkillTitle = document.querySelector(".section__skills-title");
-  const toggleMenu = document.querySelector(".togglemenu");
-  const burgerMenu = document.querySelector(".burgermenu");
-  const burgerMenuChildren = document.querySelector(".burgermenu").childNodes;
-  const menu = document.querySelectorAll(".menu");
-  const arrowUp = document.querySelector(".arrow-up");
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = {
+    container: document.querySelector('.container'),
+    sections: document.querySelectorAll('.section'),
+    sectionsNoSkills: document.querySelectorAll('.noskills'),
+    firstSkillItem: document.querySelector('.first-skill-item'),
+    sectionSkillTitle: document.querySelector('.section__skills-title'),
+    toggleMenu: document.querySelector('.togglemenu'),
+    burgerMenu: document.querySelector('.burgermenu'),
+    burgerMenuChildren: document.querySelector('.burgermenu').childNodes,
+    menu: document.querySelectorAll('.menu'),
+    arrowUp: document.querySelector('.arrow-up'),
+  };
 
   let containerProps;
-  let itemProps;
   let itemValues;
   let valTranslate;
   let marginContainer;
 
   function sectionWidthSize() {
-    itemValues = item.getAttribute("style");
-    valTranslate = itemValues.split("translate").pop();
+    itemValues = elements.firstSkillItem.getAttribute('style');
+    valTranslate = itemValues.split('translate').pop();
     marginContainer = Number(valTranslate.match(/\d+/)[0]);
 
-    containerProps = container.getBoundingClientRect();
-    itemProps = item.getBoundingClientRect();
+    containerProps = elements.container.getBoundingClientRect();
+    elements.firstSkillItem.getBoundingClientRect();
 
-    sectionSkillTitle.style.width =
-      containerProps.width - marginContainer * 2 + "px";
-    sectionsNoSkills.forEach((section) => {
-      section.style.width = containerProps.width - marginContainer * 2 + "px";
+    elements.sectionSkillTitle.style.width =
+      containerProps.width - marginContainer * 2 + 'px';
+    elements.sectionsNoSkills.forEach((section) => {
+      section.style.width = containerProps.width - marginContainer * 2 + 'px';
     });
   }
   sectionWidthSize();
 
   function menuShowHide(e) {
     e.stopPropagation();
-    if (burgerMenu.classList.contains("show")) {
-      burgerMenu.classList.remove("show");
-      burgerMenu.classList.add("hide");
-      toggleMenu.setAttribute("aria-expanded", false);
+    if (elements.burgerMenu.classList.contains('show')) {
+      elements.burgerMenu.classList.remove('show');
+      elements.burgerMenu.classList.add('hide');
+      elements.toggleMenu.setAttribute('aria-expanded', false);
     } else {
-      burgerMenu.classList.remove("hide");
-      burgerMenu.classList.add("show");
-      toggleMenu.setAttribute("aria-expanded", true);
+      elements.burgerMenu.classList.add('show');
+      elements.burgerMenu.classList.remove('hide');
+      elements.toggleMenu.setAttribute('aria-expanded', true);
     }
   }
 
   function closeMenu(e) {
-    if (
-      e.target !== burgerMenu &&
-      e.target !== toggleMenu &&
-      e.target !== burgerMenuChildren
-    ) {
-      burgerMenu.classList.add("hide");
-      burgerMenu.classList.remove("show");
-      toggleMenu.classList.remove("nav-open");
-      toggleMenu.setAttribute("aria-expanded", false);
-    }
     e.stopPropagation();
+    if (
+      e.target !== elements.burgerMenu &&
+      e.target !== elements.toggleMenu &&
+      e.target !== elements.burgerMenuChildren
+    ) {
+      elements.burgerMenu.classList.add('hide');
+      elements.burgerMenu.classList.remove('show');
+      elements.burgerMenu.setAttribute('aria-expanded', false);
+      elements.toggleMenu.classList.remove('nav-open');
+    }
   }
 
-  toggleMenu.addEventListener("click", menuShowHide);
+  elements.toggleMenu.addEventListener('click', menuShowHide);
 
-  toggleMenu.addEventListener("click", () => {
-    toggleMenu.classList.toggle("nav-open");
+  elements.toggleMenu.addEventListener('click', () => {
+    elements.toggleMenu.classList.toggle('nav-open');
   });
 
   function highLightItem(e) {
-    menu.forEach((item) => {
-      item.setAttribute("aria-current", true);
-      item.classList.remove("active");
-      e.target.classList.add("active");
+    elements.menu.forEach((itemMenu) => {
+      elements.firstSkillItemMenu.setAttribute('aria-current', true);
+      e.target.classList.add('active');
+      itemMenu.classList.classList.remove('active');
     });
   }
-
-  burgerMenu.addEventListener("click", highLightItem);
 
   function navHighlighter() {
     // Get current scroll position
     let scrollY = window.scrollY;
 
-    sections.forEach((current) => {
+    elements.sections.forEach((current) => {
       const sectionHeight = current.offsetHeight;
-
       const sectionTop =
         current.getBoundingClientRect().top + window.scrollY - 150;
-
       let sectionId = current.dataset.section;
-      const navItem = document.querySelector(
-        '.burgermenu [data-id="' + sectionId + '"]'
+      const itemBurgergMenu = document.querySelector(
+        '.burgermenu [data-id="' + sectionId + '"]',
       );
-      const linkNav = document.querySelector(".burgermenu__item");
+
       /*
     - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
     */
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        navItem.classList.add("active");
-        navItem.setAttribute("aria-current", true);
+        itemBurgergMenu.classList.add('active');
+        itemBurgergMenu.setAttribute('aria-current', true);
       } else {
-        navItem.classList.remove("active");
-        navItem.setAttribute("aria-current", false);
+        itemBurgergMenu.classList.remove('active');
+        itemBurgergMenu.setAttribute('aria-current', false);
       }
     });
   }
 
-  document.addEventListener("click", closeMenu);
-  window.addEventListener("scroll", navHighlighter);
-  window.addEventListener("resize", sectionWidthSize);
-  window.addEventListener("change", sectionWidthSize);
+  elements.burgerMenu.addEventListener('click', highLightItem);
+  document.addEventListener('click', closeMenu);
+  window.addEventListener('scroll', navHighlighter);
+  window.addEventListener('resize', sectionWidthSize);
+  window.addEventListener('change', sectionWidthSize);
 
-  arrowUp.addEventListener("click", () => {
-    window.scroll({ top: 0, left: 0, behavior: "smooth" });
+  elements.arrowUp.addEventListener('click', () => {
+    window.scroll({ top: 0, left: 0, behavior: 'smooth' });
   });
 
-  let portrait = window.matchMedia("(orientation: portrait)");
-  portrait.addEventListener("change", function (e) {
-    if (e.matches) {
-      location.reload();
-    } else {
-      location.reload();
-    }
-  });
+  let portrait = window.matchMedia('(orientation: portrait)');
+  portrait.addEventListener('change', (e) =>
+    e.matches ? location.reload() : location.reload(),
+  );
 });
