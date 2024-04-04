@@ -1,5 +1,16 @@
-import { Custom } from "../assets/js/custom.js";
-// import { Form } from "../assets/js/form.js";
-import { MagicGrid } from "../assets/js/magicgrid.js";
-// import { tns } from "./node_modules/tiny-slider/src/tiny-slider";
-// import { slider } from "../assets/js/tinyslider.js";
+import { Weekub } from './Weekub';
+// import { customersItem } from './Customers.js';
+
+const Masonry = require('masonry-layout');
+// https://masonry.desandro.com/
+
+document.addEventListener('DOMContentLoaded', function () {
+  const weekub = new Weekub();
+  const masonry = new Masonry('#container', {
+    itemSelector: '.skills',
+    columnWidth: 300,
+    gutter: 20,
+    fitWidth: true,
+  });
+  weekub.events();
+});

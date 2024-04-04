@@ -13,10 +13,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="format-detection" content="telephone=no">
   <link rel="stylesheet" href="assets/css/styles.min.css">
-  <script src="assets/js/magic-grid/dist/magic-grid.min.js"></script>
 </head>
 
-<body>
+<body class="theme-light">
   <svg width="0" height="0" style="position: absolute">
     <symbol xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="arrow-up" fill="none"
       stroke="#2980b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -184,12 +183,17 @@
         <span class="togglemenu__bar">&nbsp;</span>
         <span class="togglemenu__bar">&nbsp;</span>
       </button>
-      <ul class="burgermenu">
-        <li><a href="#about" class="burgermenu__item" data-id="about" aria-current="false">À propos</a></li>
-        <li><a href="#skills" class="burgermenu__item" data-id="skills" aria-current="false">Compétences</a></li>
-        <li><a href="#customers" class="burgermenu__item" data-id="customers" aria-current="false">Réalisations</a>
+      <!-- <div class="mask"></div> -->
+      <ul class="burgermenu hide" aria-expanded="false">
+        <li class="burgermenu__list"><a href="#about" class="burgermenu__item" data-id="about"
+            aria-current="false">À&nbsp;propos</a></li>
+        <li class="burgermenu__list"><a href="#skills" class="burgermenu__item" data-id="skills"
+            aria-current="false">Compétences</a></li>
+        <li class="burgermenu__list"><a href="#customers" class="burgermenu__item" data-id="customers"
+            aria-current="false">Réalisations</a>
         </li>
-        <li><a href="#contact" class="burgermenu__item" data-id="contact" aria-current="false">Contact</a></li>
+        <li class="burgermenu__list"><a href="#contact" class="burgermenu__item" data-id="contact"
+            aria-current="false">Contact</a></li>
       </ul>
     </nav>
     <div class="logo">
@@ -213,16 +217,17 @@
           Vous cherchez une ressource pour vos travaux d'intégration HTML&nbsp;/&nbsp;CSS&nbsp;/&nbsp;JS ?
         </p>
         <p>Intégrateur web ou développeur front-end depuis 15 ans pour des grands comptes ou des P.M.E.</p>
-
-        <h3>Toujours attentif à :</h3>
-        <ul>
-          <li><span>la propreté du code et aux respect des standards du web (W3C)</span></li>
-          <li><span>la maintenabilité des fichiers SCSS, CSS et JavaScript</span></li>
-          <li><span>la compatibilité cross navigateurs et au Responsive Web Design</span></li>
-          <li><span>l’optimisation S.E.O (référencement naturel)</span> </li>
-          <li><span>l'accessibilité</span></li>
-          <li><span>la performance</span></li>
-        </ul>
+        <blockquote>
+          <h3>Toujours attentif à :</h3>
+          <ul>
+            <li><span>la propreté du code et aux respect des standards du web (W3C)</span></li>
+            <li><span>la maintenabilité des fichiers SCSS, CSS et JavaScript</span></li>
+            <li><span>la compatibilité cross navigateurs et au Responsive Web Design</span></li>
+            <li><span>l’optimisation S.E.O (référencement naturel)</span> </li>
+            <li><span>l'accessibilité</span></li>
+            <li><span>la performance</span></li>
+          </ul>
+        </blockquote>
         <p>Je développe également des projets avec le CMS WordPress.</p>
         <p>Je sais par ailleurs être force de proposition pour décliner des éléments de charte graphique.</p>
         <p>Je peux intervenir en régie, chez le client en région parisienne ou en télétravail dans le cadre des
@@ -243,7 +248,7 @@
     </section>
     <section id="skills" class="section" data-section="skills">
       <h2 class="section__skills-title">Compétences</h2>
-      <div class="container">
+      <div id="container">
         <div class="skills first-skill-item">
           <div class="skills__header">
             <h3 class="skills__title">Intégration HTML5</h3>
@@ -281,7 +286,7 @@
                 </svg></a>
             </li>
             <li>Gulp</li>
-            <li>Application de la méthodologie
+            <li>Méthodologie
               <a href="http://getbem.com/" target="_blank" rel="noopener">BEM</a>
             </li>
           </ul>
@@ -308,7 +313,7 @@
         <div class="skills">
           <div class="skills__header">
             <h3 class="skills__title">Responsive</h3>
-            <span>
+            <span class="icons">
               <svg class="skills__icon svg desktop" aria-hidden="true" focusable="false">
                 <use xlink:href="#desktop"></use>
               </svg>
@@ -376,7 +381,7 @@
             <li>Jira</li>
             <li>Confluence</li>
             <li>Méthode Agile - Scrum</li>
-            <li>Git / GitLab - process CI/CD (Jenkins)</li>
+            <li>Git / GitLab - CI/CD - Jenkins</li>
             <li>Bundle via webpack</li>
             <li>Docker</li>
             <li>Photoshop</li>
@@ -500,7 +505,7 @@
           <div class="customers__description">
             <h3 class="customers__title">Louis Vuitton - Luxe | 2018 - 2019</h3>
             <p class="customers__summary">
-              Dev from scratch du site carrière LVMH<br>
+              Site carrière LVMH from scratch<br>
               Mise en place de l'accessibilité<br>
               HTML | CSS / Less | jQuery
             </p>
@@ -522,7 +527,7 @@
           <div class="customers__description">
             <h3 class="customers__title">Angelus Plongée | 2020</h3>
             <p class="customers__summary">
-              CMS WordPress <br>
+              WordPress, template vierge <br>
               Optimisation de la performance <br>
               Aspect UI / UX<br>
               S.E.O naturel<br>
@@ -546,7 +551,7 @@
           <div class="customers__description">
             <h3 class="customers__title">J'Irai marcher sur les Toits | 2020</h3>
             <p class="customers__summary">
-              Dev CMS WordPress<br>
+              WordPress, template vierge<br>
               S.E.O naturel + Accessibilité<br>
               HTML | CSS | jQuery
             </p>
@@ -567,7 +572,7 @@
           <div class="customers__description">
             <h3 class="customers__title">OTAA Architecture | 2017</h3>
             <p class="customers__summary">
-              Dev WordPress<br>
+              WordPress, template vierge<br>
               HTML | CSS | jQuery<br>
             </p>
             <a class="customers__link" href="https://www.otaa.fr/" target="_blank" rel="noopener"
@@ -588,7 +593,7 @@
           <div class="customers__description">
             <h3 class="customers__title">Crédey & Associés | 2016</h3>
             <p class="customers__summary">
-              Dev WordPress from scratch<br>
+              WordPress, template vierge<br>
               HTML | CSS | jQuery<br>
             </p>
             <a class="customers__link" href="https://credey.com/fr/accueil/" target="_blank" rel="noopener"
@@ -608,7 +613,7 @@
           <div class="customers__description">
             <h3 class="customers__title">Dotline - Informatique | 2016</h3>
             <p class="customers__summary">
-              Dev WordPress from scratch<br>
+              WordPress, template vierge<br>
               HTML | CSS | jQuery<br>
             </p>
             <a class="customers__link" href="https://www.dotline.fr/" target="_blank" rel="noopener"
@@ -726,30 +731,30 @@
     </section>
     <section id="contact" class="section noskills" data-section="contact">
       <h2>Contact</h2>
-      <div class="contact__content">
+      <div class="contact">
         <div class="contact__grid">
           <div class="contact__col col-address">
-            <p class="contact__item">
-              <span itemprop="name" class="contact__name">
+            <div class="contact__item">
+              <h3 itemprop="name" class="contact__name">
                 Denis Godec
-              </span>
+              </h3>
+              <div itemprop="jobTitle" class="contact__subtitle">
+                <p>Intégrateur web</p>
+                <p>Développeur Front-end</p>
+                <p>Freelance</p>
+              </div>
               <br>
-              <span itemprop="jobTitle">
-                Intégrateur - Développeur Web - Freelance
-              </span>
-              <br>
-              <span itemprop="url" content="https://weekub.fr/">
+              <div itemprop="url" content="https://weekub.fr/">
                 <svg class="svg">
                   <use xlink:href="#desktop"></use>
                 </svg>
                 <a href="https://weekub.fr/">www.weekub.fr</a>
-              </span>
-            </p>
+              </div>
+            </div>
             <address class="contact__item" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-              <span itemprop="streetAddress">
+              <div itemprop="streetAddress">
                 99 rue de Billancourt
-              </span>
-              <br>
+              </div>
               <span itemprop="postalCode">
                 92100
               </span>
@@ -758,11 +763,11 @@
               </span>
             </address>
             <p class="contact__item">
-              <strong>N° SIRET : 4444 7770 7000 12</strong>
+              <strong>N° SIRET : **** **** 7000 12</strong>
             </p>
           </div>
           <div class="contact__col col-phone">
-            <p class="contact__item">
+            <div class="contact__item">
               <a class="contact__link" href="mailto:denis.godec@weekub.fr">
                 <span class="contact__item-inner">
                   <svg class="contact__icon icon-alpha svg">
@@ -773,8 +778,8 @@
                   </span>
                 </span>
               </a>
-            </p>
-            <p class="contact__item">
+            </div>
+            <div class="contact__item">
               <a class="contact__link" href="https://www.linkedin.com/in/denis-godec-web-developper/"
                 title="Voir mon profil LinkedIn" target="_blank" rel="noopener">
                 <span class="contact__item-inner">
@@ -784,14 +789,14 @@
                   <span itemprop="linkedin">@denis-godec-995909155/</span>
                 </span>
               </a>
-            </p>
-            <p class="contact__item btn">
+            </div>
+            <div class="contact__item btn">
               <a href="assets/docs/CV_2024-02-08_Denis_Godec.pdf" download="CV_Denis-Godec" type="application/pdf">
                 <svg class="contact__icon icon-alpha svg">
                   <use xlink:href="#pdf-icon"></use>
                 </svg>Télécharger CV (100ko)&nbsp;<abbr title="Adobe Portable Document Format">pdf</abbr>
               </a>
-            </p>
+            </div>
           </div>
         </div>
       </div>

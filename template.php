@@ -11,18 +11,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="format-detection" content="telephone=no">
   <link rel="stylesheet" href="assets/css/styles.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/magic-grid/3.2.4/magic-grid.min.js" integrity="sha512-3nXvHrCmVAZqsV3DXj04lk/K1aL1b3mAVj9YPVmJrrYXR9dBEa2Le7klZ8EoAQcj3SnVSeQiXZfs3T4I0lCb7w==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 </head>
 
 <body>
   <svg width="0" height="0" style="position: absolute">
-    <symbol viewBox="0 0 357.1 1000" id="angle-left" xmlns="http://www.w3.org/2000/svg">
-      <path d="M349.9 303.6q0 7.2-5.6 12.8L125 535.7 344.3 755q5.6 5.6 5.6 12.9t-5.6 12.8l-27.9 27.9q-5.6 5.6-12.8 5.6t-12.9-5.6l-260-260.1q-5.6-5.5-5.6-12.8t5.6-12.8l260-260.1q5.6-5.5 12.9-5.5t12.8 5.5l27.9 27.9q5.6 5.6 5.6 12.9z">
-      </path>
-    </symbol>
-    <symbol viewBox="0 0 357.1 1000" id="angle-right" xmlns="http://www.w3.org/2000/svg">
-      <path d="M332 535.7q0 7.3-5.5 12.8L66.4 808.6q-5.6 5.6-12.8 5.6t-12.9-5.6l-27.9-27.9q-5.5-5.6-5.5-12.8t5.5-12.9l219.3-219.3L12.8 316.4q-5.5-5.6-5.5-12.8t5.5-12.9l27.9-27.9q5.6-5.5 12.9-5.5t12.8 5.5l260.1 260.1q5.5 5.6 5.5 12.8z">
-      </path>
+    <symbol xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="arrow-up" fill="none" stroke="#2980b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V6M5 12l7-7 7 7" />
     </symbol>
     <symbol viewBox="0 0 448 512" id="bootstrap" xmlns="http://www.w3.org/2000/svg" fill="#8d43ad">
       <path d="M292.3 311.93c0 42.41-39.72 41.43-43.92 41.43h-80.89v-81.69h80.89c42.56 0 43.92 31.9 43.92 40.26zm-50.15-73.13c.67 0 38.44 1 38.44-36.31 0-15.52-3.51-35.87-38.44-35.87h-74.66v72.18h74.66zM448 106.67v298.66A74.89 74.89 0 01373.33 480H74.67A74.89 74.89 0 010 405.33V106.67A74.89 74.89 0 0174.67 32h298.66A74.89 74.89 0 01448 106.67zM338.05 317.86c0-21.57-6.65-58.29-49.05-67.35v-.73c22.91-9.78 37.34-28.25 37.34-55.64 0-7 2-64.78-77.6-64.78h-127v261.33c128.23 0 139.87 1.68 163.6-5.71 14.21-4.42 52.71-17.98 52.71-67.12z">
@@ -145,26 +139,18 @@
       <line x1="12" y1="8" x2="12" y2="12"></line>
       <line x1="12" y1="16" x2="12.01" y2="16"></line>
     </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="pdf-icon">
+      <path d="M54.2375 12.2375L43.75 1.75C42.625 0.625003 41.1 -0.0124969 39.5125 -0.0124969H14C10.6875 3.05194e-06 8 2.6875 8 6V58C8 61.3125 10.6875 64 14 64H50C53.3125 64 56 61.3125 56 58V16.4875C56 14.9 55.3625 13.3625 54.2375 12.2375ZM51.4125 15.075C51.675 15.3375 51.85 15.65 51.9375 16H40V4.0625C40.35 4.15 40.6625 4.325 40.925 4.5875L51.4125 15.075ZM50 60H14C12.9 60 12 59.1 12 58V6C12 4.9 12.9 4 14 4H36V17C36 18.6625 37.3375 20 39 20H52V58C52 59.1 51.1 60 50 60ZM47.25 38.6C45.5625 36.9375 40.375 37.45 38.0375 37.7625C35.3875 36.1625 33.6375 33.9625 32.4 30.6875C32.9375 28.4375 33.9 24.7875 33.2 22.575C32.65 19.0625 28.2375 19.4875 27.625 21.725C27 24.0125 27.5875 27.275 28.675 31.45C27.1875 35 24.9625 39.8125 23.4125 42.525C20.8125 43.8625 16.65 46.1875 16.0625 49.075C15.625 51.175 18.925 54 22.7 49.875C23.8375 48.6375 25.1125 46.775 26.6125 44.1875C29.95 43.0875 33.625 41.7125 36.8625 41.1875C39.6 42.6875 42.8125 43.675 44.9375 43.675C48.4 43.6875 48.55 39.9 47.25 38.6ZM18.6 49.725C19.3375 47.7375 22.175 45.425 23.0375 44.625C20.275 49.0375 18.6 49.8125 18.6 49.725ZM30.5 21.9375C31.5875 21.9375 31.475 26.625 30.7625 27.8875C30.1125 25.85 30.1375 21.9375 30.5 21.9375ZM26.95 41.85C28.3625 39.375 29.575 36.45 30.55 33.8875C31.7625 36.1 33.3125 37.85 34.9375 39.075C31.9 39.6625 29.2625 40.9625 26.95 41.85ZM46.125 41.1125C46.125 41.1125 45.4 41.9875 40.6875 39.975C45.8125 39.6 46.65 40.775 46.125 41.1125Z" />
+    </symbol>
   </svg>
   <header role="banner">
-    <nav role="navigation" aria-label="Menu principal">
-      <button class="togglemenu" aria-label="Burger menu principal" aria-expanded="false">
-        <span class="togglemenu__bar">&nbsp;</span>
-        <span class="togglemenu__bar">&nbsp;</span>
-        <span class="togglemenu__bar">&nbsp;</span>
-      </button>
-      <ul class="burgermenu">
-        <li><a href="#about" class="burgermenu__item" data-id="about" aria-current="false">À propos</a></li>
-        <li><a href="#skills" class="burgermenu__item" data-id="skills" aria-current="false">Compétences</a></li>
-        <li><a href="#customers" class="burgermenu__item" data-id="customers" aria-current="false">Réalisations</a>
-        </li>
-        <li><a href="#contact" class="burgermenu__item" data-id="contact" aria-current="false">Contact</a></li>
-      </ul>
-    </nav>
+    <?php
+    include('./src/organisms/burger-menu/index.php');
+    ?>
     <div class="logo">
       <h1>Denis Godec</h1>
       <figure aria-label="weekub">
-        <a href="index.html"><img src="assets/images/logo-no-text.png" alt="Logo WeeKub" width="70" height="76"></a>
+        <a href="https://weekub.fr/"><img src="assets/images/logo-no-text.png" alt="Logo WeeKub" width="70" height="76"></a>
         <figcaption>WeeKub</figcaption>
       </figure>
       <div>
@@ -173,7 +159,6 @@
       </div>
     </div>
   </header>
-
   <main role="main">
     <section id="about" class="section noskills" data-section="about">
       <h2>À propos</h2>
@@ -182,16 +167,17 @@
           Vous cherchez une ressource pour vos travaux d'intégration HTML&nbsp;/&nbsp;CSS&nbsp;/&nbsp;JS ?
         </p>
         <p>Intégrateur web ou développeur front-end depuis 15 ans pour des grands comptes ou des P.M.E.</p>
-
-        <h3>Toujours attentif à :</h3>
-        <ul>
-          <li><span>la propreté du code HTML et aux respect des standards du web (W3C validator)</span></li>
-          <li><span>la maintenabilité des fichiers SCSS, CSS et JavaScript</span></li>
-          <li><span>la compatibilité cross navigateurs</span></li>
-          <li><span>l’optimisation S.E.O (référencement naturel)</span> </li>
-          <li><span>l'accessibilité</span></li>
-          <li><span>la performance</span></li>
-        </ul>
+        <blockquote>
+          <h3>Toujours attentif à :</h3>
+          <ul>
+            <li><span>la propreté du code et aux respect des standards du web (W3C)</span></li>
+            <li><span>la maintenabilité des fichiers SCSS, CSS et JavaScript</span></li>
+            <li><span>la compatibilité cross navigateurs et au Responsive Web Design</span></li>
+            <li><span>l’optimisation S.E.O (référencement naturel)</span> </li>
+            <li><span>l'accessibilité</span></li>
+            <li><span>la performance</span></li>
+          </ul>
+        </blockquote>
         <p>Je développe également des projets avec le CMS WordPress.</p>
         <p>Je sais par ailleurs être force de proposition pour décliner des éléments de charte graphique.</p>
         <p>Je peux intervenir en régie, chez le client en région parisienne ou en télétravail dans le cadre des
@@ -201,7 +187,7 @@
             <svg class="skills__icon svg opquast" aria-hidden="true" focusable="false">
               <use xlink:href="#opquast"></use>
             </svg></a>
-          : 725 points.
+          <span>: 725 points.</span>
         </p>
         <p class="cta"><strong>Pour connaître mes disponibilités :</strong> <a href="#contact">
             <svg class="contact__icon icon-alpha svg">
@@ -211,8 +197,8 @@
     </section>
     <section id="skills" class="section" data-section="skills">
       <h2 class="section__skills-title">Compétences</h2>
-      <div class="container">
-        <div class="skills item item1 html">
+      <div id="container">
+        <div class="skills first-skill-item">
           <div class="skills__header">
             <h3 class="skills__title">Intégration HTML5</h3>
             <svg class="skills__icon svg" aria-hidden="true" focusable="false">
@@ -228,7 +214,7 @@
           <div class="skills__star">&starf;&starf;&starf;&starf;&starf;</div>
         </div>
 
-        <div class="skills item item2 css">
+        <div class="skills">
           <div class="skills__header">
             <h3 class="skills__title">Feuille de style CSS3</h3>
             <svg class="skills__icon svg" aria-hidden="true" focusable="false">
@@ -249,14 +235,14 @@
                 </svg></a>
             </li>
             <li>Gulp</li>
-            <li>Application de la méthodologie
+            <li>Méthodologie
               <a href="http://getbem.com/" target="_blank" rel="noopener">BEM</a>
             </li>
           </ul>
           <div class="skills__star">&starf;&starf;&starf;&starf;&star;</div>
         </div>
 
-        <div class="skills item item3 js">
+        <div class="skills">
           <div class="skills__header">
             <h3 class="skills__title">JavaScript</h3>
             <svg class="skills__icon svg" aria-hidden="true" focusable="false">
@@ -273,10 +259,10 @@
           <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
         </div>
 
-        <div class="skills item item4 responsive">
+        <div class="skills">
           <div class="skills__header">
             <h3 class="skills__title">Responsive</h3>
-            <span>
+            <span class="icons">
               <svg class="skills__icon svg desktop" aria-hidden="true" focusable="false">
                 <use xlink:href="#desktop"></use>
               </svg>
@@ -297,7 +283,7 @@
 
           <div class="skills__star">&starf;&starf;&starf;&starf;&starf;</div>
         </div>
-        <div class="skills item item5 a11y">
+        <div class="skills">
           <div class="skills__header">
             <h3 class="skills__title">Accessibilité RGAA</h3>
             <span>
@@ -315,11 +301,23 @@
 
           <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
         </div>
-        <div class="skills item item6 tools">
+
+        <div class="skills">
+          <div class="skills__header">
+            <h3 class="skills__title">Bootstrap 5</h3>
+            <span>
+              <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+                <use xlink:href="#bootstrap"></use>
+              </svg>
+            </span>
+          </div>
+          <p>Framework responsive</p>
+          <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
+        </div>
+        <div class="skills">
           <div class="skills__header">
             <h3 class="skills__title">
-              Outils +<br>
-              environnement de travail
+              Environnement de travail
             </h3>
             <span>
               <svg class="skills__icon svg" aria-hidden="true" focusable="false">
@@ -332,7 +330,7 @@
             <li>Jira</li>
             <li>Confluence</li>
             <li>Méthode Agile - Scrum</li>
-            <li>Git / GitLab - process CI/CD (Jenkins)</li>
+            <li>Git / GitLab - CI/CD - Jenkins</li>
             <li>Bundle via webpack</li>
             <li>Docker</li>
             <li>Photoshop</li>
@@ -343,19 +341,7 @@
           </ul>
           <div class="skills__star"></div>
         </div>
-        <div class="skills item item7 bootstrap">
-          <div class="skills__header">
-            <h3 class="skills__title">Bootstrap 5</h3>
-            <span>
-              <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#bootstrap"></use>
-              </svg>
-            </span>
-          </div>
-          <p>Framework responsive</p>
-          <div class="skills__star">&starf;&starf;&starf;&star;&star;</div>
-        </div>
-        <div class="skills item item8 wordpress">
+        <div class="skills">
           <div class="skills__header">
             <h3 class="skills__title">WordPress</h3>
             <span>
@@ -461,7 +447,7 @@
           <div class="customers__description">
             <h3 class="customers__title">Louis Vuitton - Luxe | 2018 - 2019</h3>
             <p class="customers__summary">
-              Dev from scratch du site carrière LVMH<br>
+              Site carrière LVMH from scratch<br>
               Mise en place de l'accessibilité<br>
               HTML | CSS / Less | jQuery
             </p>
@@ -481,7 +467,7 @@
           <div class="customers__description">
             <h3 class="customers__title">Angelus Plongée | 2020</h3>
             <p class="customers__summary">
-              CMS WordPress <br>
+              WordPress, template vierge <br>
               Optimisation de la performance <br>
               Aspect UI / UX<br>
               S.E.O naturel<br>
@@ -503,7 +489,7 @@
           <div class="customers__description">
             <h3 class="customers__title">J'Irai marcher sur les Toits | 2020</h3>
             <p class="customers__summary">
-              Dev CMS WordPress<br>
+              WordPress, template vierge<br>
               S.E.O naturel + Accessibilité<br>
               HTML | CSS | jQuery
             </p>
@@ -523,7 +509,7 @@
           <div class="customers__description">
             <h3 class="customers__title">OTAA Architecture | 2017</h3>
             <p class="customers__summary">
-              Dev WordPress<br>
+              WordPress, template vierge<br>
               HTML | CSS | jQuery<br>
             </p>
             <a class="customers__link" href="https://www.otaa.fr/" target="_blank" rel="noopener" aria-label="Ouvrir le site dans un nouvel onglet">
@@ -542,7 +528,7 @@
           <div class="customers__description">
             <h3 class="customers__title">Crédey & Associés | 2016</h3>
             <p class="customers__summary">
-              Dev WordPress from scratch<br>
+              WordPress, template vierge<br>
               HTML | CSS | jQuery<br>
             </p>
             <a class="customers__link" href="https://credey.com/fr/accueil/" target="_blank" rel="noopener" aria-label="Ouvrir le site dans un nouvel onglet">
@@ -561,7 +547,7 @@
           <div class="customers__description">
             <h3 class="customers__title">Dotline - Informatique | 2016</h3>
             <p class="customers__summary">
-              Dev WordPress from scratch<br>
+              WordPress, template vierge<br>
               HTML | CSS | jQuery<br>
             </p>
             <a class="customers__link" href="https://www.dotline.fr/" target="_blank" rel="noopener" aria-label="Ouvrir le site dans un nouvel onglet">
@@ -672,30 +658,30 @@
     </section>
     <section id="contact" class="section noskills" data-section="contact">
       <h2>Contact</h2>
-      <div class="contact__content">
+      <div class="contact">
         <div class="contact__grid">
           <div class="contact__col col-address">
-            <p class="contact__item">
-              <span itemprop="name" class="contact__name">
+            <div class="contact__item">
+              <h3 itemprop="name" class="contact__name">
                 Denis Godec
-              </span>
+              </h3>
+              <div itemprop="jobTitle" class="contact__subtitle">
+                <p>Intégrateur web</p>
+                <p>Développeur Front-end</p>
+                <p>Freelance</p>
+              </div>
               <br>
-              <span itemprop="jobTitle">
-                Intégrateur - Développeur Web - Freelance
-              </span>
-              <br>
-              <span itemprop="url" content="https://weekub.fr/">
+              <div itemprop="url" content="https://weekub.fr/">
                 <svg class="svg">
                   <use xlink:href="#desktop"></use>
                 </svg>
                 <a href="https://weekub.fr/">www.weekub.fr</a>
-              </span>
-            </p>
+              </div>
+            </div>
             <address class="contact__item" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-              <span itemprop="streetAddress">
+              <div itemprop="streetAddress">
                 99 rue de Billancourt
-              </span>
-              <br>
+              </div>
               <span itemprop="postalCode">
                 92100
               </span>
@@ -704,23 +690,11 @@
               </span>
             </address>
             <p class="contact__item">
-              <span>
-                <strong>N° SIRET : 4444 7770 7000 12</strong>
-              </span>
+              <strong>N° SIRET : **** **** 7000 12</strong>
             </p>
           </div>
           <div class="contact__col col-phone">
-            <p class="contact__item">
-              <a class="contact__link" href="tel:+33609494040">
-                <span class="contact__item-inner">
-                  <svg class="contact__icon icon-alpha svg phone-icon">
-                    <use xlink:href="#phone"></use>
-                  </svg>
-                  <span itemprop="telephone" content="+33609494040">06.09.49.40.40</span>
-                </span>
-              </a>
-            </p>
-            <p class="contact__item">
+            <div class="contact__item">
               <a class="contact__link" href="mailto:denis.godec@weekub.fr">
                 <span class="contact__item-inner">
                   <svg class="contact__icon icon-alpha svg">
@@ -731,8 +705,8 @@
                   </span>
                 </span>
               </a>
-            </p>
-            <p class="contact__item">
+            </div>
+            <div class="contact__item">
               <a class="contact__link" href="https://www.linkedin.com/in/denis-godec-web-developper/" title="Voir mon profil LinkedIn" target="_blank" rel="noopener">
                 <span class="contact__item-inner">
                   <svg class="contact__icon icon-alpha svg">
@@ -741,13 +715,28 @@
                   <span itemprop="linkedin">@denis-godec-995909155/</span>
                 </span>
               </a>
-            </p>
-          </div>          
+            </div>
+            <div class="contact__item btn">
+              <a href="assets/docs/CV_2024-02-08_Denis_Godec.pdf" download="CV_Denis-Godec" type="application/pdf">
+                <svg class="contact__icon icon-alpha svg">
+                  <use xlink:href="#pdf-icon"></use>
+                </svg>Télécharger CV (100ko)&nbsp;<abbr title="Adobe Portable Document Format">pdf</abbr>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
-  <script src="dist/bundle.js" defer></script>
+  <footer>
+    <a href="#" class="arrow-up">
+      <span>Retour en haut</span>
+      <svg class="svg" aria-hidden="true" focusable="false">
+        <use xlink:href="#arrow-up"></use>
+      </svg>
+    </a>
+  </footer>
+  <script src="./assets/js/bundle.js" defer></script>
 </body>
 
 </html>

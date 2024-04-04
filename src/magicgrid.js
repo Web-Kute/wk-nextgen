@@ -1,5 +1,5 @@
 let magicGrid = new MagicGrid({
-  container: ".container",
+  container: "#container",
   animate: false,
   gutter: 30,
   static: true,

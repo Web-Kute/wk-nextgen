@@ -1,0 +1,9 @@
+.theme-light {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(210, 29%, 29%);
+}
+
+.theme-dark {
+  background-color: hsl(206, 21%, 15%);
+  color: hsl(0, 0%, 100%);
+}/*# sourceMappingURL=functions.css.map */

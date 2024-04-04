@@ -1,15 +1,25 @@
+.theme-light {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(210, 29%, 29%);
+}
+
+.theme-dark {
+  background-color: hsl(206, 21%, 15%);
+  color: hsl(0, 0%, 100%);
+}
+
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   font-family: "Roboto", "Droid Sans", "Heveltica", Arial;
-  font-size: 16px;
   color: hsl(210, 29%, 29%);
 }
 
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 a {
@@ -45,6 +55,10 @@ button {
   cursor: pointer;
 }
 
+blockquote {
+  margin: 0.5rem 0;
+}
+
 h1,
 h2 {
   font-family: "Roboto Light", "Droid Sans", "Heveltica", Arial;
@@ -52,9 +66,9 @@ h2 {
 }
 
 h1 {
-  text-transform: uppercase;
   font-size: 1.9rem;
   line-height: 35px;
+  text-transform: uppercase;
 }
 h1:nth-child(1) {
   margin-top: 6px;
@@ -69,6 +83,14 @@ h2 {
   font-size: 2rem;
 }
 
+h3 {
+  font-size: 1.05rem;
+  font-family: "Roboto Medium", "Droid Sans", "Heveltica", Arial;
+  text-transform: uppercase;
+  color: hsl(204, 64%, 44%);
+  margin-bottom: 0.5rem;
+}
+
 header {
   position: relative;
   display: grid;
@@ -80,9 +102,6 @@ header {
 header nav {
   justify-self: start;
   margin-left: 20px;
-}
-header .nav-open {
-  margin-top: -5px;
 }
 header .nav-open .togglemenu__bar:nth-child(1) {
   position: absolute;
@@ -113,9 +132,9 @@ header .logo {
   }
 }
 header h2 {
+  font-size: 1.8rem;
   letter-spacing: -1.2px;
   color: currentColor;
-  font-size: 1.8rem;
 }
 header figure:hover {
   animation: pulse 1000ms;
@@ -135,18 +154,16 @@ header figcaption {
   }
 }
 
-@media (max-width: 599px) {
-  main {
-    margin-left: 0.8rem;
-  }
+.theme-dark .togglemenu__bar {
+  background-color: hsl(0, 0%, 100%);
 }
 
 .togglemenu {
   position: fixed;
-  cursor: pointer;
   z-index: 99999;
   width: 35px;
   height: 30px;
+  cursor: pointer;
 }
 @media (max-width: 599px) {
   .togglemenu {
@@ -161,8 +178,8 @@ header figcaption {
   height: 5px;
   margin-top: 4px;
   border-radius: 10px;
-  background-color: currentColor;
-  transition: transform 300ms ease;
+  background-color: red;
+  @inclu transition: transform 300ms ease;
 }
 @media (max-width: 599px) {
   .togglemenu__bar {
@@ -170,16 +187,36 @@ header figcaption {
   }
 }
 
+main {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 599px) {
+  main {
+    width: 90%;
+    margin-left: 0.8rem;
+  }
+}
+
+.mask {
+  width: 360px;
+  height: 165px;
+  position: relative;
+  z-index: 999999;
+  background-color: aliceblue;
+  top: 57px;
+  animation: mask 4000ms ease-out;
+}
+
 .burgermenu {
   position: fixed;
   top: 65px;
   width: 360px;
   z-index: 99999;
-  background-color: hsl(0, 0%, 100%);
   padding: 12px 5px;
   border-left: 5px solid hsl(204, 8%, 76%);
-  visibility: hidden;
-  opacity: 0;
+  background-color: hsl(0, 0%, 100%);
   transition: opacity 500ms ease;
 }
 .burgermenu__item {
@@ -208,40 +245,34 @@ header figcaption {
   }
 }
 
-.container .skills {
+#container .skills {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
   -ms-flex-pack: justify;
       justify-content: space-between;
-  width: 280px;
+  width: 300px;
   min-width: 280px;
-  height: 500px;
+  height: auto;
   padding: 10px 10px 20px;
+  margin-bottom: 10px;
   border-radius: 5px;
   background-color: rgba(40, 127, 184, 0.1);
-  height: auto;
 }
-.container .skills a {
+#container .skills a {
   border-bottom: 1px dashed hsl(204, 64%, 44%);
 }
-.container svg {
-  width: 2em;
-  height: 2em;
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
-  vertical-align: middle;
-}
-.container svg.opquast {
-  width: 5em;
-}
-.container li {
+#container li {
+  width: 245px;
   line-height: 25px;
+}
+#container p {
+  width: 245px;
 }
 
 .skills__header {
+  position: relative;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
@@ -249,14 +280,19 @@ header figcaption {
   -ms-flex-align: center;
       align-items: center;
 }
-.skills__title {
-  font-family: "Roboto Medium", "Droid Sans", "Heveltica", Arial;
-  text-transform: uppercase;
-  color: hsl(210, 29%, 24%);
+.skills .icons {
+  position: absolute;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  row-gap: 1px;
+  right: 10px;
+  top: 10px;
 }
 .skills__star {
   text-align: right;
-  color: currentColor;
+  margin-top: 10px;
 }
 
 section {
@@ -277,16 +313,12 @@ section h2 {
   margin-bottom: 1rem;
   font-size: clamp(2.2rem, 1.9605rem + 0.6397vw, 3rem);
 }
-section .section__skills-title {
-  margin-left: auto;
-  margin-right: auto;
+section .about__content h3 {
+  margin-bottom: 0;
+  text-transform: inherit;
 }
 section .about__content a {
   border-bottom: 1px dashed hsl(204, 64%, 44%);
-}
-section .about__content h3 {
-  margin-top: 0.5rem;
-  font-weight: 700;
 }
 section .about__content p {
   font-size: 1.1rem;
@@ -303,7 +335,6 @@ section .about__content ul > li span {
 section svg {
   width: 2em;
   height: 2em;
-  vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
   vertical-align: middle;
@@ -314,11 +345,15 @@ section svg.opquast {
 
 .customers__content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-template-rows: 1fr;
-  gap: 30px;
-  -ms-flex-pack: center;
-      justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+@media (max-width: 899px) {
+  .customers__content {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    -ms-flex-pack: start;
+        justify-content: start;
+  }
 }
 .customers__content a span {
   border-bottom: 1px dashed hsl(204, 64%, 44%);
@@ -356,28 +391,26 @@ section svg.opquast {
 .customers__item:hover .customers__description {
   transform: translateY(0);
 }
+.customers__item:nth-child(7) h3 {
+  letter-spacing: -0.5px;
+}
 .customers__description {
   position: absolute;
-  font-size: 1rem;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 280px;
-  height: 149px;
+  font-size: 1rem;
+  width: 300px;
+  height: 169px;
   padding: 10px;
   z-index: 20;
   top: 0;
   background-color: hsl(0, 0%, 100%);
   transform: translateY(100%);
   transition: transform 500ms ease;
-}
-.customers__description h3 {
-  text-transform: uppercase;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
 }
 .customers__description p {
   line-height: 18px;
@@ -399,44 +432,51 @@ section svg.opquast {
   }
 }
 
-.contact__content {
+.contact {
   padding-bottom: 60vh;
 }
 @media (max-width: 599px) {
-  .contact__content {
+  .contact {
     padding-bottom: 50vh;
   }
 }
-.contact__content svg {
+.contact svg {
   margin-right: 0.5rem;
 }
-.contact__content span a {
+.contact span a {
   border-bottom: 1px dashed hsl(204, 64%, 44%);
 }
-.contact__content .contact__grid {
+.contact__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
   grid-template-rows: 1fr;
   gap: 30px;
 }
-.contact__content .contact__grid .contact__name {
+.contact__grid .contact__name {
   font-size: 1.3rem;
-  text-transform: uppercase;
+  margin-bottom: 0;
+  text-transform: capitalize;
 }
-.contact__content .contact__grid address {
+.contact__grid address {
   margin: 20px 0;
 }
-.contact__content .contact__grid .contact__col:nth-child(2) p {
+.contact__grid__col:nth-child(2) p {
   line-height: 40px;
 }
-.contact__content .contact__grid .contact__col .phone-icon {
+.contact__grid__col .phone-icon {
   transform: rotate(100deg);
   fill: hsl(204, 64%, 44%);
 }
-.contact__content a.contact__link {
+.contact__item p {
+  line-height: 1;
+}
+.contact__subtitle {
+  font-weight: 100;
+}
+.contact a.contact__link {
   text-decoration: none;
 }
-.contact__content a.contact__link span span {
+.contact a.contact__link span span {
   border-bottom: 1px dashed hsl(204, 64%, 44%);
 }
 
@@ -461,12 +501,12 @@ section svg.opquast {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  min-width: 185px;
-  max-width: 200px;
+  min-width: 210px;
+  max-width: 220px;
   padding: 0.2rem 1rem;
   margin-left: 1rem;
-  background-color: hsl(358, 70%, 52%);
   color: hsl(0, 0%, 100%);
+  background-color: hsl(358, 70%, 52%);
   text-align: center;
   font-size: 1.1rem;
   line-height: 25px;
@@ -507,14 +547,14 @@ section svg.opquast {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-  padding: 0.2rem 0.8rem 0.2rem 0.2rem;
-  background-color: hsl(358, 70%, 52%);
+  font-family: "Roboto Medium", "Droid Sans", "Heveltica", Arial;
   color: hsl(0, 0%, 100%);
+  padding: 0.2rem 0.8rem 0.2rem 0.2rem;
   text-align: center;
   line-height: 25px;
-  font-family: "Roboto Medium", "Droid Sans", "Heveltica", Arial;
   border-radius: 6px;
   text-decoration: none;
+  background-color: hsl(358, 70%, 52%);
   transition: background-color 200ms ease-in-out;
 }
 @media (max-width: 599px) {
@@ -562,6 +602,10 @@ footer svg:hover {
   fill: hsl(204, 64%, 44%);
 }
 
+.anime {
+  animation: flag 5000ms ease-out;
+}
+
 .show {
   visibility: visible;
   opacity: 1;
@@ -599,5 +643,26 @@ footer svg:hover {
   }
   to {
     transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes flag {
+  from {
+    width: 10px;
+    opacity: 0.1;
+  }
+  50% {
+    width: 120px;
+    opacity: 1;
+  }
+  to {
+    width: 360px;
+  }
+}
+@keyframes mask {
+  from {
+    width: 360px;
+  }
+  to {
+    width: 0;
   }
 }/*# sourceMappingURL=global.css.map */

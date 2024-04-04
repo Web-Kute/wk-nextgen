@@ -1,31 +1,32 @@
-@use "breakpoints";
+@use 'breakpoints';
+@use 'functions';
 
 @mixin mobile-only {
-  @media (max-width: map-get(breakpoints.$breakpoints, "mobile-only")) {
+  @media (max-width: map-get(breakpoints.$breakpoints, 'mobile-only')) {
     @content;
   }
 }
 
 @mixin tablet-portrait-down {
-  @media (max-width: map-get(breakpoints.$breakpoints, "tablet-portrait-down")) {
+  @media (max-width: map-get(breakpoints.$breakpoints, 'tablet-portrait-down')) {
     @content;
   }
 }
 
 @mixin tablet-portrait-up {
-  @media (min-width: map-get(breakpoints.$breakpoints, "tablet-portrait-up")) {
+  @media (min-width: map-get(breakpoints.$breakpoints, 'tablet-portrait-up')) {
     @content;
   }
 }
 
 @mixin tablet-portrait-only {
-  @media (min-width: map-get(breakpoints.$breakpoints, "tablet-portrait-up")) and (max-width: map-get(breakpoints.$breakpoints, "tablet-portrait-down")) {
+  @media (min-width: map-get(breakpoints.$breakpoints, 'tablet-portrait-up')) and (max-width: map-get(breakpoints.$breakpoints, 'tablet-portrait-down')) {
     @content;
   }
 }
 
 @mixin desktop-up {
-  @media (min-width: map-get(breakpoints.$breakpoints, "desktop-up")) {
+  @media (min-width: map-get(breakpoints.$breakpoints, 'desktop-up')) {
     @content;
   }
 }
@@ -37,13 +38,13 @@
 }
 
 @mixin tablet-landscape-down {
-  @media (max-width: map-get(breakpoints.$breakpoints, "tablet-landscape-down")) {
+  @media (max-width: map-get(breakpoints.$breakpoints, 'tablet-landscape-down')) {
     @content;
   }
 }
 
 @mixin tablet-landscape-only {
-  @media (min-width: map-get(breakpoints.$breakpoints, "tablet-landscape-up")) and (max-width: map-get(breakpoints.$breakpoints, "tablet-landscape-down")) {
+  @media (min-width: map-get(breakpoints.$breakpoints, 'tablet-landscape-up')) and (max-width: map-get(breakpoints.$breakpoints, 'tablet-landscape-down')) {
     @content;
   }
 }
@@ -59,3 +60,31 @@
   transform: rotate($deg);
   top: 15px;
 }
+
+@mixin margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin theme-light {
+  @each $key, $value in $themes {
+    @if (map-has-key($config, $key)) {
+      .#{$value} {
+        @content;
+      }
+    }
+    @warn 'No config found for theme: #{$value}' if not map-has-key($config, $key);
+  }
+}
+
+@mixin theme-dark {
+  @each $key, $value in $themes {
+    @if (map-has-key($config, $key)) {
+      .#{$value} {
+        @content;
+      }
+    }
+    @warn 'No config found for theme: #{$value}' if not map-has-key($config, $key);
+  }
+}
+

@@ -7,28 +7,23 @@ document.addEventListener('DOMContentLoaded', () => {
     sectionSkillTitle: document.querySelector('.section__skills-title'),
     toggleMenu: document.querySelector('.togglemenu'),
     burgerMenu: document.querySelector('.burgermenu'),
-    burgerMenuChildren: document.querySelector('.burgermenu').childNodes,
-    menu: document.querySelectorAll('.menu'),
     arrowUp: document.querySelector('.arrow-up'),
   };
 
   let containerProps;
   let itemValues;
-  let valTranslate;
+  let valuesTranslate;
   let marginContainer;
 
   function sectionWidthSize() {
     itemValues = elements.firstSkillItem.getAttribute('style');
-    valTranslate = itemValues.split('translate').pop();
-    marginContainer = Number(valTranslate.match(/\d+/)[0]);
-
+    valuesTranslate = itemValues.split('translate').pop();
+    marginContainer = Number(valuesTranslate.match(/\d+/)[0]);
     containerProps = elements.container.getBoundingClientRect();
-    elements.firstSkillItem.getBoundingClientRect();
-
-    elements.sectionSkillTitle.style.width =
-      containerProps.width - marginContainer * 2 + 'px';
+    const sectionWidth = containerProps.width - marginContainer * 2 + 'px';
+    elements.sectionSkillTitle.style.width = sectionWidth;
     elements.sectionsNoSkills.forEach((section) => {
-      section.style.width = containerProps.width - marginContainer * 2 + 'px';
+      section.style.width = sectionWidth;
     });
   }
   sectionWidthSize();
@@ -48,30 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function closeMenu(e) {
     e.stopPropagation();
-    if (
-      e.target !== elements.burgerMenu &&
-      e.target !== elements.toggleMenu &&
-      e.target !== elements.burgerMenuChildren
-    ) {
+    if (e.target !== elements.burgerMenu && e.target !== elements.toggleMenu) {
       elements.burgerMenu.classList.add('hide');
       elements.burgerMenu.classList.remove('show');
       elements.burgerMenu.setAttribute('aria-expanded', false);
       elements.toggleMenu.classList.remove('nav-open');
     }
-  }
-
-  elements.toggleMenu.addEventListener('click', menuShowHide);
-
-  elements.toggleMenu.addEventListener('click', () => {
-    elements.toggleMenu.classList.toggle('nav-open');
-  });
-
-  function highLightItem(e) {
-    elements.menu.forEach((itemMenu) => {
-      elements.firstSkillItemMenu.setAttribute('aria-current', true);
-      e.target.classList.add('active');
-      itemMenu.classList.classList.remove('active');
-    });
   }
 
   function navHighlighter() {
@@ -80,16 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     elements.sections.forEach((current) => {
       const sectionHeight = current.offsetHeight;
-      const sectionTop =
-        current.getBoundingClientRect().top + window.scrollY - 150;
+      const sectionTop = current.getBoundingClientRect().top + scrollY - 150;
       let sectionId = current.dataset.section;
       const itemBurgergMenu = document.querySelector(
         '.burgermenu [data-id="' + sectionId + '"]',
       );
 
-      /*
-    - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
-    */
+      /* If current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it */
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
         itemBurgergMenu.classList.add('active');
         itemBurgergMenu.setAttribute('aria-current', true);
@@ -100,12 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  elements.burgerMenu.addEventListener('click', highLightItem);
   document.addEventListener('click', closeMenu);
   window.addEventListener('scroll', navHighlighter);
   window.addEventListener('resize', sectionWidthSize);
   window.addEventListener('change', sectionWidthSize);
-
+  elements.toggleMenu.addEventListener('click', menuShowHide);
+  elements.toggleMenu.addEventListener('click', () =>
+    elements.toggleMenu.classList.toggle('nav-open'),
+  );
   elements.arrowUp.addEventListener('click', () => {
     window.scroll({ top: 0, left: 0, behavior: 'smooth' });
   });

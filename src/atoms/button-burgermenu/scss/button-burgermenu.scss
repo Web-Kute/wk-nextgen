@@ -1,0 +1,35 @@
+@use '../../../../scss/mixin.scss';
+
+.togglemenu {
+  position: fixed;
+  z-index: 99999;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  @include mixin.mobile-only() {
+    width: 25px;
+    left: 10px;
+    top: 15px;
+  }
+  &__bar {
+    display: block;
+    width: 35px;
+    height: 5px;
+    margin-top: 4px;
+    border-radius: 10px;
+    background-color: currentColor;
+    @each $key, $value in $themes {
+      @if (map-has-key($config, $key)) {
+        .#{$value} {
+          background-color: function.setStyle($config, $key, backgroundColor);
+          color: function.setStyle($config, $key, colorText);
+        }
+      }
+      @warn 'No config found for theme: #{$value}' if not map-has-key($config, $key);
+    }
+    transition: transform 300ms ease;
+    @include mixin.mobile-only() {
+      width: 25px;
+    }
+  }
+}
