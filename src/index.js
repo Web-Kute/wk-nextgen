@@ -6,7 +6,7 @@ const Masonry = require('masonry-layout');
 
 document.addEventListener('DOMContentLoaded', function () {
   const weekub = new Weekub();
-  const masonry = new Masonry('#container', {
+  const masonry = new Masonry('#skills-container', {
     itemSelector: '.skills',
     columnWidth: 300,
     gutter: 20,

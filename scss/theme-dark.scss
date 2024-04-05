@@ -55,7 +55,7 @@
     }
   }
 
-  #container .skills {
+  #skills-container .skills {
     background-color: map-get($map: colors.$colors, $key: 'clouds');
     &__star {
       color: map-get($map: colors.$colors, $key: 'belize-hole');
@@ -73,8 +73,5 @@
   #contact {
     background-image: url(../images/slide2.jpg);
     background-image: none;
-  }
-
-  .arrow-up {
   }
 }

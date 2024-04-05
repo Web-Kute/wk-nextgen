@@ -1,14 +1,16 @@
-import { customersItem } from './Customers.js';
+import { customersItem } from './Customers';
+import { skillItems } from './Skills';
 export function Weekub() {
   this.registerElements();
   this.navHighlighter();
   this.screenOrientation();
   this.addCustomers();
+  this.addSkills();
 }
 
 Weekub.prototype.registerElements = function () {
   this.elements = {
-    container: document.getElementById('container'),
+    skillsContainer: document.getElementById('skills-container'),
     sections: document.querySelectorAll('.section'),
     toggleMenu: document.querySelector('.togglemenu'),
     burgerMenu: document.querySelector('.burgermenu'),
@@ -95,18 +97,18 @@ Weekub.prototype.animFlag = function () {
 };
 
 Weekub.prototype.addCustomers = function () {
-  customersItem.forEach((item) => {
+  customersItem.forEach((customer) => {
     this.elements.customerContent.innerHTML += `<div class="customers__item">
       <figure aria-label="Antalis">
-            <img src="${item.imageURL}" alt="Vignette Antalis" width="300" height="169" loading="lazy">
-            <figcaption>${item.caption}</figcaption>
+            <img src="${customer.imageURL}" alt="Vignette Antalis" width="300" height="169" loading="lazy">
+            <figcaption>${customer.caption}</figcaption>
           </figure>
           <div class="customers__description">
-            <h3 class="customers__title">${item.title}</h3>
+            <h3 class="customers__title">${customer.title}</h3>
             <ul class="customers__summary">
-              ${item.description}
+              ${customer.description}
             </ul>
-            <a class="customers__link" href="${item.url}" target="_blank" rel="noopener"
+            <a class="customers__link" href="${customer.url}" target="_blank" rel="noopener"
               aria-label="Ouvrir le site dans un nouvel onglet">
               <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
                 <use xlink:href="#link-ext"></use>
@@ -115,6 +117,24 @@ Weekub.prototype.addCustomers = function () {
             </a>
           </div>
       </div>`;
+  });
+};
+
+Weekub.prototype.addSkills = function () {
+  skillItems.forEach((skill) => {
+    this.elements.skillsContainer.innerHTML += `<div class="skills first-skill-item">
+          <div class="skills__header">
+            <h3 class="skills__title">${skill.title}</h3>
+            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+              <use xlink:href="${skill.icon}"></use>
+            </svg>
+          </div>
+          <ul>
+            ${skill.description}
+          </ul>
+
+          <div class="skills__star">${skill.star}</div>
+        </div>`;
   });
 };
 

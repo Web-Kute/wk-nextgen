@@ -38,14 +38,14 @@
 .theme-dark h3.contact__name {
   color: hsl(0, 0%, 100%);
 }
-.theme-dark #container .skills {
+.theme-dark #skills-container .skills {
   background-color: hsl(192, 15%, 94%);
 }
-.theme-dark #container .skills__star {
+.theme-dark #skills-container .skills__star {
   color: hsl(204, 64%, 44%);
 }
-.theme-dark #container .skills ul,
-.theme-dark #container .skills p {
+.theme-dark #skills-container .skills ul,
+.theme-dark #skills-container .skills p {
   color: hsl(206, 21%, 15%);
 }
 .theme-dark .customers__summary {

@@ -328,7 +328,7 @@ main {
   color: hsl(358, 70%, 52%);
 }
 
-#container .skills {
+#skills-container .skills {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -343,14 +343,14 @@ main {
   border-radius: 5px;
   background-color: rgba(40, 127, 184, 0.1);
 }
-#container .skills a {
+#skills-container .skills a {
   border-bottom: 1px dashed hsl(204, 64%, 44%);
 }
-#container li {
+#skills-container li {
   width: 245px;
   line-height: 25px;
 }
-#container p {
+#skills-container p {
   width: 245px;
 }
 
@@ -867,14 +867,14 @@ input:checked + .switch__slider:before {
 .theme-dark h3.contact__name {
   color: hsl(0, 0%, 100%);
 }
-.theme-dark #container .skills {
+.theme-dark #skills-container .skills {
   background-color: hsl(192, 15%, 94%);
 }
-.theme-dark #container .skills__star {
+.theme-dark #skills-container .skills__star {
   color: hsl(204, 64%, 44%);
 }
-.theme-dark #container .skills ul,
-.theme-dark #container .skills p {
+.theme-dark #skills-container .skills ul,
+.theme-dark #skills-container .skills p {
   color: hsl(206, 21%, 15%);
 }
 .theme-dark .customers__summary {
