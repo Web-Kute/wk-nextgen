@@ -66,25 +66,4 @@
   margin-right: auto;
 }
 
-@mixin theme-light {
-  @each $key, $value in $themes {
-    @if (map-has-key($config, $key)) {
-      .#{$value} {
-        @content;
-      }
-    }
-    @warn 'No config found for theme: #{$value}' if not map-has-key($config, $key);
-  }
-}
-
-@mixin theme-dark {
-  @each $key, $value in $themes {
-    @if (map-has-key($config, $key)) {
-      .#{$value} {
-        @content;
-      }
-    }
-    @warn 'No config found for theme: #{$value}' if not map-has-key($config, $key);
-  }
-}
 

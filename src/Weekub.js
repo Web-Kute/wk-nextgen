@@ -13,18 +13,23 @@ Weekub.prototype.registerElements = function () {
     toggleMenu: document.querySelector('.togglemenu'),
     burgerMenu: document.querySelector('.burgermenu'),
     arrowUp: document.querySelector('.arrow-up'),
-    mask: document.querySelector('.mask'),
     customerContent: document.querySelector('.customers__content'),
+    btnSwitchTheme: document.getElementById('theme-switcher'),
   };
 };
 
 Weekub.prototype.events = function () {
+  this.elements.btnSwitchTheme.addEventListener(
+    'change',
+    this.theming.bind(this),
+  );
   document.addEventListener('click', this.closeMenuOutSide.bind(this));
   window.addEventListener('scroll', this.navHighlighter.bind(this));
   this.elements.toggleMenu.addEventListener(
     'click',
     this.showHideMenu.bind(this),
   );
+
   this.elements.arrowUp.addEventListener('click', () =>
     window.scroll({ top: 0, left: 0, behavior: 'smooth' }),
   );
@@ -34,13 +39,13 @@ Weekub.prototype.showHideMenu = function (event) {
   event.stopPropagation();
   this.elements.toggleMenu.classList.toggle('nav-open');
   if (this.elements.burgerMenu.classList.contains('show')) {
-    this.elements.burgerMenu.classList.remove('show');
-    this.elements.burgerMenu.classList.add('hide');
+    this.elements.burgerMenu.classList.remove('show', 'in');
+    this.elements.burgerMenu.classList.add('out');
     this.elements.burgerMenu.setAttribute('aria-expanded', false);
     this.elements.toggleMenu.setAttribute('aria-expanded', false);
   } else {
-    this.elements.burgerMenu.classList.add('show');
-    this.elements.burgerMenu.classList.remove('hide');
+    this.elements.burgerMenu.classList.add('show', 'in');
+    this.elements.burgerMenu.classList.remove('hide', 'out');
     this.elements.burgerMenu.setAttribute('aria-expanded', true);
     this.elements.toggleMenu.setAttribute('aria-expanded', true);
   }
@@ -52,8 +57,8 @@ Weekub.prototype.closeMenuOutSide = function (event) {
     event.target !== this.elements.burgerMenu &&
     !event.target.classList.contains('burgermenu__list')
   ) {
-    this.elements.burgerMenu.classList.add('hide');
-    this.elements.burgerMenu.classList.remove('show');
+    this.elements.burgerMenu.classList.add('out');
+    this.elements.burgerMenu.classList.remove('show', 'in');
     this.elements.burgerMenu.setAttribute('aria-expanded', false);
     this.elements.toggleMenu.classList.remove('nav-open');
   }
@@ -86,12 +91,12 @@ Weekub.prototype.screenOrientation = function () {
 };
 
 Weekub.prototype.animFlag = function () {
-  requestAnimationFrame;
+  requestAnimationFrame(() => {});
 };
 
 Weekub.prototype.addCustomers = function () {
-  const book = customersItem.forEach((item) => {
-   this.elements.customerContent.innerHTML += `<div class="customers__item">
+  customersItem.forEach((item) => {
+    this.elements.customerContent.innerHTML += `<div class="customers__item">
       <figure aria-label="Antalis">
             <img src="${item.imageURL}" alt="Vignette Antalis" width="300" height="169" loading="lazy">
             <figcaption>${item.caption}</figcaption>
@@ -111,4 +116,9 @@ Weekub.prototype.addCustomers = function () {
           </div>
       </div>`;
   });
+};
+
+Weekub.prototype.theming = function () {
+  document.body.classList.toggle('theme-light') !=
+    document.body.classList.toggle('theme-dark');
 };

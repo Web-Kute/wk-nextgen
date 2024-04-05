@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="assets/css/styles.min.css">
 </head>
 
-<body class="theme-light">
+<body class="theme-dark">
   <svg width="0" height="0" style="position: absolute">
     <symbol xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="arrow-up" fill="none"
       stroke="#2980b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -183,7 +183,6 @@
         <span class="togglemenu__bar">&nbsp;</span>
         <span class="togglemenu__bar">&nbsp;</span>
       </button>
-      <!-- <div class="mask"></div> -->
       <ul class="burgermenu hide" aria-expanded="false">
         <li class="burgermenu__list"><a href="#about" class="burgermenu__item" data-id="about"
             aria-current="false">À&nbsp;propos</a></li>
@@ -207,6 +206,15 @@
         <h1>Intégrateur</h1>
         <h2>HTML / CSS / JS</h2>
       </div>
+    </div>
+    <div id="theme-toggle">
+      <fieldset>
+        <label class="switch" aria-label="Changer de thème" for="theme-switcher">
+          <input type="checkbox" id="theme-switcher" role="switch" aria-disabled="true">
+          <span class="switch__slider round"></span>
+          <span class="switch__title">Changer de thème</span>
+        </label>
+      </fieldset>
     </div>
   </header>
   <main role="main">
@@ -408,326 +416,7 @@
     </section>
     <section id="customers" class="section noskills" data-section="customers">
       <h2>Réalisations</h2>
-      <div class="customers__content">
-        <div class="customers__item">
-          <figure aria-label="Antalis">
-            <img src="assets/images/antalis.webp" alt="Vignette Antalis" width="300" height="169" loading="lazy">
-            <figcaption>Antalis</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">Antalis - E-commerce | 2023</h3>
-            <p class="customers__summary">
-              Développement des sliders produits,<br>
-              Système atomic design<br>
-              HTML | CSS | JavaScript / jQuery | Bootstrap
-            </p>
-            <a class="customers__link" href="https://www.antalis.fr/" target="_blank" rel="noopener"
-              aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-        <div class="customers__item">
-          <figure aria-label="France TV, la 1ere">
-            <img src="assets/images/francetv.webp" alt="Vignette France TV" width="300" height="169" loading="lazy">
-            <figcaption>France TV, la 1ere</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">France TV - Audiovisuel | 2022</h3>
-            <p class="customers__summary">
-              Développement du player direct-radio<br>
-              Mise en place de l'accessibilité<br>
-              Optimisation de la performance<br>
-              Twig | CSS / Sass | JavaScript
-            </p>
-            <a class="customers__link" href="https://la1ere.francetvinfo.fr/direct-radio/" target="_blank"
-              rel="noopener" aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-        <div class="customers__item">
-          <figure aria-label="Action contre la faim">
-            <img src="assets/images/actioncontrelafaim.webp" alt="Vignette Action contre la faim" width="300"
-              height="169" loading="lazy">
-            <figcaption>Action contre la faim</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">Action contre la faim | 2021</h3>
-            <p class="customers__summary">
-              Développement de la modale cookies<br>
-              Responsive<br>
-              HTML | CSS / Sass | JavaScript
-            </p>
-            <a class="customers__link" href="https://www.actioncontrelafaim.org/" target="_blank" rel="noopener"
-              aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-        <div class="customers__item">
-          <figure aria-label="Christian Louboutin">
-            <img src="assets/images/louboutin.webp" alt="Vignette Christian Louboutin" width="300" height="169"
-              loading="lazy">
-            <figcaption>Christian Louboutin</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">Christian Louboutin | 2019</h3>
-            <p class="customers__summary">
-              Développement de la FAQ<br>
-              Intégration de templates pour Emails transactionnels<br>
-              HTML | CSS | jQuery
-            </p>
-            <a class="customers__link" href="https://eu.christianlouboutin.com/fr_fr/" target="_blank" rel="noopener"
-              aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-        <div class="customers__item">
-          <figure aria-label="Louis Vuitton">
-            <img src="assets/images/louisvuitton.webp" alt="Vignette Louis Vuitton" width="300" height="169"
-              loading="lazy">
-            <figcaption>Louis Vuitton</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">Louis Vuitton - Luxe | 2018 - 2019</h3>
-            <p class="customers__summary">
-              Site carrière LVMH from scratch<br>
-              Mise en place de l'accessibilité<br>
-              HTML | CSS / Less | jQuery
-            </p>
-            <a class="customers__link" href="https://fr.louisvuitton.com/fra-fr/homepage" target="_blank" rel="noopener"
-              aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-        <div class="customers__item">
-          <figure aria-label="Angelus Plongée">
-            <img src="assets/images/angelusplongee.webp" alt="Vignette Angelus Plongée" width="300" height="169"
-              loading="lazy">
-            <figcaption>Angelus Plongée</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">Angelus Plongée | 2020</h3>
-            <p class="customers__summary">
-              WordPress, template vierge <br>
-              Optimisation de la performance <br>
-              Aspect UI / UX<br>
-              S.E.O naturel<br>
-              HTML | CSS | jQuery | Bootstrap
-            </p>
-            <a class="customers__link" href="https://angelus-plongee.com/" target="_blank" rel="noopener"
-              aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-        <div class="customers__item">
-          <figure aria-label="J'Irai marcher sur les Toits">
-            <img src="assets/images/jirai.webp" alt="Vignette J'Irai marcher sur les Toits" width="300" height="169"
-              loading="lazy">
-            <figcaption>J'Irai marcher sur les Toits</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">J'Irai marcher sur les Toits | 2020</h3>
-            <p class="customers__summary">
-              WordPress, template vierge<br>
-              S.E.O naturel + Accessibilité<br>
-              HTML | CSS | jQuery
-            </p>
-            <a class="customers__link" href="https://jirai.fr/" target="_blank" rel="noopener"
-              aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-        <div class="customers__item">
-          <figure aria-label="OTAA architecture">
-            <img src="assets/images/otaa.webp" alt="Vignette OTAA architecture" width="300" height="169" loading="lazy">
-            <figcaption>OTAA architecture</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">OTAA Architecture | 2017</h3>
-            <p class="customers__summary">
-              WordPress, template vierge<br>
-              HTML | CSS | jQuery<br>
-            </p>
-            <a class="customers__link" href="https://www.otaa.fr/" target="_blank" rel="noopener"
-              aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-        <div class="customers__item">
-          <figure aria-label="Crédey & Associés">
-            <img src="assets/images/credey.webp" alt="Vignette Crédey & Associés" width="300" height="169"
-              loading="lazy">
-            <figcaption>Crédey & Associés</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">Crédey & Associés | 2016</h3>
-            <p class="customers__summary">
-              WordPress, template vierge<br>
-              HTML | CSS | jQuery<br>
-            </p>
-            <a class="customers__link" href="https://credey.com/fr/accueil/" target="_blank" rel="noopener"
-              aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-        <div class="customers__item">
-          <figure aria-label="Dotline">
-            <img src="assets/images/dotline.webp" alt="Vignette Dotline" width="300" height="169" loading="lazy">
-            <figcaption>Dotline</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">Dotline - Informatique | 2016</h3>
-            <p class="customers__summary">
-              WordPress, template vierge<br>
-              HTML | CSS | jQuery<br>
-            </p>
-            <a class="customers__link" href="https://www.dotline.fr/" target="_blank" rel="noopener"
-              aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-        <div class="customers__item">
-          <figure aria-label="Sodexo">
-            <img src="assets/images/sodexo.webp" alt="Vignette Sodexo" width="300" height="169" loading="lazy">
-            <figcaption>Sodexo</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">Sodexo - Restauration | 2016</h3>
-            <p class="customers__summary">
-              Migration du site vers le CMS Jahia<br>
-              Intégration du contenu<br>
-            </p>
-            <a class="customers__link" href="https://fr.sodexo.com/home.html" target="_blank" rel="noopener"
-              aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-        <div class="customers__item">
-          <figure aria-label="Fondation Mallet">
-            <img src="assets/images/fondationmallet.webp" alt="Vignette Fondation Mallet" width="300" height="169"
-              loading="lazy">
-            <figcaption>Fondation Mallet</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">Fondation Mallet | 2010</h3>
-            <p class="customers__summary">
-              Développement WordPress<br>
-              HTML | CSS | Php<br>
-            </p>
-            <a class="customers__link" href="https://www.fondationmallet.fr/" target="_blank" rel="noopener"
-              aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-        <div class="customers__item">
-          <figure aria-label="Lagardère">
-            <img src="assets/images/lagardere.webp" alt="Vignette Lagardère" width="300" height="169" loading="lazy">
-            <figcaption>Lagardère</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">Lagardère - Presse | 2009</h3>
-            <p class="customers__summary">
-              Développement Intranet du livre blanc<br>
-              HTML | CSS | Php<br>
-            </p>
-            <a class="customers__link" href="https://www.lagardere.com/" target="_blank" rel="noopener"
-              aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-        <div class="customers__item">
-          <figure aria-label="BNP Paribas">
-            <img src="assets/images/bnpparibas.webp" alt="Vignette BNP Paribas" width="300" height="169" loading="lazy">
-            <figcaption>BNP Paribas</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">BNP Paribas - Banque | 2008</h3>
-            <p class="customers__summary">
-              Intégration landing page<br>
-              HTML | CSS
-            </p>
-            <a class="customers__link" href="https://mabanque.bnpparibas/" target="_blank" rel="noopener"
-              aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-        <div class="customers__item">
-          <figure aria-label="Canal +">
-            <img src="assets/images/canalplus.webp" alt="Vignette Canal +" width="300" height="169" loading="lazy">
-            <figcaption>Canal +</figcaption>
-          </figure>
-          <div class="customers__description">
-            <h3 class="customers__title">Canal + - Audiovisuel | 2007</h3>
-            <p class="customers__summary">
-              Intégration landing page<br>
-              HTML | CSS
-            </p>
-            <a class="customers__link" href="https://www.canalplus.com/" target="_blank" rel="noopener"
-              aria-label="Ouvrir le site dans un nouvel onglet">
-              <svg class="customers__icon icon-alpha svg" aria-hidden="true" focusable="false">
-                <use xlink:href="#link-ext"></use>
-              </svg>
-              <span class="customers__url">Ouvrir le site</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
+      <div class="customers__content"></div>
     </section>
     <section id="contact" class="section noskills" data-section="contact">
       <h2>Contact</h2>
@@ -739,16 +428,16 @@
                 Denis Godec
               </h3>
               <div itemprop="jobTitle" class="contact__subtitle">
-                <p>Intégrateur web</p>
-                <p>Développeur Front-end</p>
-                <p>Freelance</p>
+                <p><em>Intégrateur web</em></p>
+                <p><em>Développeur Front-end</em></p>
+                <p><em>Freelance</em></p>
               </div>
               <br>
               <div itemprop="url" content="https://weekub.fr/">
                 <svg class="svg">
                   <use xlink:href="#desktop"></use>
                 </svg>
-                <a href="https://weekub.fr/">www.weekub.fr</a>
+                <a class="contact__link" href="https://weekub.fr/">www.weekub.fr</a>
               </div>
             </div>
             <address class="contact__item" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">

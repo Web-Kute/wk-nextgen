@@ -1,0 +1,57 @@
+.theme-dark a.contact__link {
+  color: hsl(0, 0%, 100%);
+  transition: color 200ms ease;
+}
+.theme-dark a.contact__link:hover {
+  color: hsl(358, 70%, 52%);
+}
+.theme-dark a.arrow-up {
+  color: hsl(0, 0%, 100%);
+}
+.theme-dark a.arrow-up:hover {
+  color: hsl(358, 70%, 52%);
+}
+.theme-dark .nav-open .togglemenu__bar {
+  background-color: hsl(206, 21%, 15%);
+}
+.theme-dark .togglemenu__bar {
+  background-color: hsl(0, 0%, 100%);
+}
+.theme-dark .about__content ul > li span {
+  color: hsl(0, 0%, 100%);
+}
+.theme-dark .about__content svg {
+  color: hsl(0, 0%, 100%);
+}
+.theme-dark h1 {
+  color: hsl(0, 0%, 100%);
+}
+.theme-dark h2 {
+  color: hsl(0, 0%, 100%);
+}
+.theme-dark header h2 {
+  color: hsl(28, 80%, 52%);
+}
+.theme-dark h3 {
+  color: hsl(28, 80%, 52%);
+}
+.theme-dark h3.contact__name {
+  color: hsl(0, 0%, 100%);
+}
+.theme-dark #container .skills {
+  background-color: hsl(192, 15%, 94%);
+}
+.theme-dark #container .skills__star {
+  color: hsl(204, 64%, 44%);
+}
+.theme-dark #container .skills ul,
+.theme-dark #container .skills p {
+  color: hsl(206, 21%, 15%);
+}
+.theme-dark .customers__summary {
+  color: hsl(206, 21%, 15%);
+}
+.theme-dark #contact {
+  background-image: url(../images/slide2.jpg);
+  background-image: none;
+}/*# sourceMappingURL=theme-dark.css.map */

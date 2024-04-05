@@ -16,6 +16,7 @@ html {
 body {
   font-family: "Roboto", "Droid Sans", "Heveltica", Arial;
   color: hsl(210, 29%, 29%);
+  transition: background-color 600ms ease-out;
 }
 
 * {
@@ -94,7 +95,7 @@ h3 {
 header {
   position: relative;
   display: grid;
-  grid-template-columns: 5% 95%;
+  grid-template-columns: 5% 90% 5%;
   margin: 20px auto 0;
   padding-bottom: 20px;
   border-bottom: 1px solid hsl(204, 8%, 76%);
@@ -154,10 +155,6 @@ header figcaption {
   }
 }
 
-.theme-dark .togglemenu__bar {
-  background-color: hsl(0, 0%, 100%);
-}
-
 .togglemenu {
   position: fixed;
   z-index: 99999;
@@ -178,8 +175,11 @@ header figcaption {
   height: 5px;
   margin-top: 4px;
   border-radius: 10px;
-  background-color: red;
-  @inclu transition: transform 300ms ease;
+  background-color: currentColor;
+  transition: transform 300ms ease;
+}
+.togglemenu__bar:nth-child(2) {
+  height: 3px;
 }
 @media (max-width: 599px) {
   .togglemenu__bar {
@@ -199,24 +199,17 @@ main {
   }
 }
 
-.mask {
-  width: 360px;
-  height: 165px;
-  position: relative;
-  z-index: 999999;
-  background-color: aliceblue;
-  top: 57px;
-  animation: mask 4000ms ease-out;
-}
-
 .burgermenu {
   position: fixed;
-  top: 65px;
-  width: 360px;
-  z-index: 99999;
-  padding: 12px 5px;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  z-index: 9999;
+  padding: 5rem 10px;
   border-left: 5px solid hsl(204, 8%, 76%);
   background-color: hsl(0, 0%, 100%);
+  transform: translateX(-300px);
   transition: opacity 500ms ease;
 }
 .burgermenu__item {
@@ -237,12 +230,6 @@ main {
 }
 .burgermenu a:hover {
   color: hsl(358, 70%, 52%);
-}
-@media (max-width: 599px) {
-  .burgermenu {
-    left: 10px;
-    top: 50px;
-  }
 }
 
 #container .skills {
@@ -472,6 +459,7 @@ section svg.opquast {
 }
 .contact__subtitle {
   font-weight: 100;
+  font-style: italic;
 }
 .contact a.contact__link {
   text-decoration: none;
@@ -522,7 +510,7 @@ section svg.opquast {
   }
 }
 .cta a:hover {
-  background: hsl(204, 64%, 44%);
+  background-color: hsl(204, 64%, 44%);
 }
 .cta svg {
   transform: rotate(100deg) scale(0.7);
@@ -563,7 +551,7 @@ section svg.opquast {
   }
 }
 .btn a:hover {
-  background: hsl(204, 64%, 44%);
+  background-color: hsl(204, 64%, 44%);
 }
 .btn svg {
   transform: scale(0.7);
@@ -602,6 +590,78 @@ footer svg:hover {
   fill: hsl(204, 64%, 44%);
 }
 
+#theme-toggle {
+  position: relative;
+  height: 24px;
+  right: 20px;
+  top: 20px;
+}
+@media (max-width: 599px) {
+  #theme-toggle {
+    right: 35px;
+    top: 10px;
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 20px;
+  /* Hide default HTML checkbox */
+}
+.switch__title {
+  display: inline-block;
+  position: relative;
+  top: 8px;
+  font-size: 11px;
+  text-align: center;
+  line-height: 10px;
+}
+.switch__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(204, 64%, 44%);
+  transition: 400ms;
+}
+.switch__slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 0;
+  bottom: 0;
+  background-color: hsl(0, 0%, 100%);
+  transition: 400ms;
+}
+.switch__slider.round {
+  border-radius: 34px;
+}
+.switch__slider.round:before {
+  border-radius: 50%;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+input:checked + .switch__slider {
+  background-color: hsl(204, 70%, 53%);
+}
+
+input:focus + .switch__slider {
+  box-shadow: 0 0 1px hsl(204, 70%, 53%);
+}
+
+input:checked + .switch__slider:before {
+  transform: translateX(26px);
+}
+
 .anime {
   animation: flag 5000ms ease-out;
 }
@@ -618,6 +678,16 @@ footer svg:hover {
 
 .hidden {
   display: none;
+}
+
+.in {
+  animation: slide-in 500ms ease-out;
+  transform: translateX(0);
+}
+
+.out {
+  animation: slide-out 300ms ease-in;
+  transform: translateX(-300px);
 }
 
 .error404 {
@@ -645,24 +715,19 @@ footer svg:hover {
     transform: scale3d(1, 1, 1);
   }
 }
-@keyframes flag {
+@keyframes slide-in {
   from {
-    width: 10px;
-    opacity: 0.1;
-  }
-  50% {
-    width: 120px;
-    opacity: 1;
+    transform: translateX(-300px);
   }
   to {
-    width: 360px;
+    transform: translateX(0);
   }
 }
-@keyframes mask {
+@keyframes slide-out {
   from {
-    width: 360px;
+    transform: translateX(0);
   }
   to {
-    width: 0;
+    transform: translateX(-300px);
   }
 }/*# sourceMappingURL=global.css.map */
