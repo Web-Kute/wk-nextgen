@@ -246,7 +246,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     height: auto;
-    padding: 10px 10px 20px;
+    padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     background-color: rgba(
@@ -296,7 +296,7 @@ section {
   margin: 0 auto;
   padding: 20px;
   @include mixin.mobile-only() {
-    padding: 8px 20px 20px 30px;
+    padding: 12px 30px 20px 30px;
   }
   h2 {
     font-family: 'Roboto Regular', 'Droid Sans', 'Heveltica', Arial;
