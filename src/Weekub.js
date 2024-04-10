@@ -37,17 +37,6 @@ Weekub.prototype.events = function () {
     window.scroll({ top: 0, left: 0, behavior: 'smooth' }),
   );
 
-  // this.elements.customerContent.addEventListener('resize', () => {
-  //   let imgWidth;
-  //   let imgHeigth;
-  //   if (window.outerWidth > 899) {
-  //     imgWidth = 300;
-  //     imgHeigth = 169;
-  //   } else if (window.outerWidth < 899) {
-  //     imgWidth = 280;
-  //     imgHeigth = 157;
-  //   }
-  // }).bind(this);
 };
 
 Weekub.prototype.showHideMenu = function (event) {
@@ -131,9 +120,9 @@ Weekub.prototype.addSkills = function () {
 Weekub.prototype.addCustomers = function () {
   customersItem.forEach((customer) => {
     this.elements.customerContent.innerHTML += `<div class="customers__item">
-      <figure aria-label="${customer.ariaLabel}">
-            <img src="${customer.imageURL}" alt="${customer.alt}" width="300" height="169" loading="lazy">
-            <figcaption>${customer.caption}</figcaption>
+      <figure aria-label="${customer.label}">
+            <img src="${customer.imageURL}" alt="Vignette ${customer.label}" width="300" height="169" loading="lazy">
+            <figcaption>${customer.label}</figcaption>
           </figure>
           <div class="customers__description">
             <h3 class="customers__title">${customer.title}</h3>

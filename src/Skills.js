@@ -1,3 +1,10 @@
+/**
+ * @param {number} id - The customer ID
+ * @param {string} title - The customer title
+ * @param {string} description - The customer description
+ * @param {string} icon - The icon name
+ * @param {string} star - The rating
+ */
 export const skillItems = [
   {
     id: 1,
