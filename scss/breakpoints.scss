@@ -1,10 +1,17 @@
 $breakpoints: (
   mobile-only: 599px,
   tablet-portrait-up: 600px,
+  mobile-landscape-down: 767px,
   tablet-portrait-down: 899px,
   tablet-landscape-up: 900px,
   tablet-landscape-down: 1199px,
   desktop-up: 1200px,
   desktop-down: 1799px,
   big-desktop-up: 1800px,
+
+  // Mobile First
+  mobile-landscape: 640px,
+  tablet-portrait: 768px,
+  tablet-landscape: 1024px,
+  laptop: 1280px,
 );

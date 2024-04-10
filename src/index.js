@@ -8,9 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const weekub = new Weekub();
   const masonry = new Masonry('#skills-container', {
     itemSelector: '.skills',
-    columnWidth: 300,
+    columnWidth: '.grid-sizer',
     gutter: 20,
-    fitWidth: true,
+    // fitWidth: true,
+    percentPosition: true,
   });
   weekub.events();
 });

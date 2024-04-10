@@ -2,7 +2,7 @@ export const customersItem = [
   {
     id: 1,
     title: 'Antalis - E-commerce | 2023',
-    description: `<li>Développement des sliders produits,</li><li>Système atomic design</li><li>HTML | CSS | JavaScript / jQuery | Bootstrap </li>`,
+    description: `<li>Développement des sliders produits,</li><li>Système atomic design</li><li>HTML | CSS | JavaScript / jQuery</li>Bootstrap<li></li>`,
     imageURL: '../assets/images/antalis.webp',
     url: 'https://www.antalis.fr',
     caption: 'Antalis',
@@ -41,7 +41,7 @@ export const customersItem = [
   },
   {
     id: 5,
-    title: 'Louis Vuitton - Luxe | 2018 - 2019',
+    title: 'Louis Vuitton | 2018 - 2019',
     description: `<li>Site carrière LVMH from scratch</li><li>Mise en place de l'accessibilité</li><li>HTML | CSS / Less | jQuery</li>`,
     imageURL: '../assets/images/louisvuitton.webp',
     url: 'https://fr.louisvuitton.com/fra-fr/homepage',

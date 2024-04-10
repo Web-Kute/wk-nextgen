@@ -7,6 +7,18 @@
   }
 }
 
+@mixin mobile-landscape-down {
+  @media (max-width: map-get(breakpoints.$breakpoints, 'mobile-landscape-down')) {
+    @content;
+  }
+}
+
+@mixin mobile-landscape {
+  @media (min-width: map-get(breakpoints.$breakpoints, 'tablet-portrait-up')) and (max-width: map-get(breakpoints.$breakpoints, 'tablet-portrait-down')) {
+    @content;
+  }
+}
+
 @mixin tablet-portrait-down {
   @media (max-width: map-get(breakpoints.$breakpoints, 'tablet-portrait-down')) {
     @content;
@@ -25,14 +37,8 @@
   }
 }
 
-@mixin desktop-up {
-  @media (min-width: map-get(breakpoints.$breakpoints, 'desktop-up')) {
-    @content;
-  }
-}
-
-@mixin orientation-landscape {
-  @media screen and (orientation: landscape) {
+@mixin tablet-landscape-up {
+  @media (max-width: map-get(breakpoints.$breakpoints, 'tablet-landscape-up')) {
     @content;
   }
 }
@@ -45,6 +51,36 @@
 
 @mixin tablet-landscape-only {
   @media (min-width: map-get(breakpoints.$breakpoints, 'tablet-landscape-up')) and (max-width: map-get(breakpoints.$breakpoints, 'tablet-landscape-down')) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: map-get(breakpoints.$breakpoints, 'desktop-up')) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @media (max-width: map-get(breakpoints.$breakpoints, 'desktop-down')) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media (min-width: map-get(breakpoints.$breakpoints, 'desktop-up')) and (max-width: map-get(breakpoints.$breakpoints, 'desktop-down')) {
+    @content;
+  }
+}
+
+@mixin orientation-landscape {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin big-desktop-up {
+  @media (min-width: map-get(breakpoints.$breakpoints, 'big-desktop-up')) {
     @content;
   }
 }
@@ -65,5 +101,3 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-

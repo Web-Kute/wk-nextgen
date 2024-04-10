@@ -12,6 +12,7 @@ Weekub.prototype.registerElements = function () {
   this.elements = {
     skillsContainer: document.getElementById('skills-container'),
     sections: document.querySelectorAll('.section'),
+    header: document.getElementById('header'),
     toggleMenu: document.querySelector('.togglemenu'),
     burgerMenu: document.querySelector('.burgermenu'),
     arrowUp: document.querySelector('.arrow-up'),
@@ -35,6 +36,18 @@ Weekub.prototype.events = function () {
   this.elements.arrowUp.addEventListener('click', () =>
     window.scroll({ top: 0, left: 0, behavior: 'smooth' }),
   );
+
+  // this.elements.customerContent.addEventListener('resize', () => {
+  //   let imgWidth;
+  //   let imgHeigth;
+  //   if (window.outerWidth > 899) {
+  //     imgWidth = 300;
+  //     imgHeigth = 169;
+  //   } else if (window.outerWidth < 899) {
+  //     imgWidth = 280;
+  //     imgHeigth = 157;
+  //   }
+  // }).bind(this);
 };
 
 Weekub.prototype.showHideMenu = function (event) {
@@ -96,11 +109,30 @@ Weekub.prototype.animFlag = function () {
   requestAnimationFrame(() => {});
 };
 
+Weekub.prototype.addSkills = function () {
+  skillItems.forEach((skill) => {
+    this.elements.skillsContainer.innerHTML += `<div class="skills">
+          <div class="skills__header">
+            <h3 class="skills__title">${skill.title}</h3>
+            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+              <use xlink:href="${skill.icon}"></use>
+            </svg>
+          </div>
+          <ul>
+            ${skill.description}
+          </ul>
+
+          <div class="skills__star">${skill.star}</div>
+        </div>`;
+  });
+};
+
+
 Weekub.prototype.addCustomers = function () {
   customersItem.forEach((customer) => {
     this.elements.customerContent.innerHTML += `<div class="customers__item">
-      <figure aria-label="Antalis">
-            <img src="${customer.imageURL}" alt="Vignette Antalis" width="300" height="169" loading="lazy">
+      <figure aria-label="${customer.ariaLabel}">
+            <img src="${customer.imageURL}" alt="${customer.alt}" width="300" height="169" loading="lazy">
             <figcaption>${customer.caption}</figcaption>
           </figure>
           <div class="customers__description">
@@ -117,24 +149,6 @@ Weekub.prototype.addCustomers = function () {
             </a>
           </div>
       </div>`;
-  });
-};
-
-Weekub.prototype.addSkills = function () {
-  skillItems.forEach((skill) => {
-    this.elements.skillsContainer.innerHTML += `<div class="skills first-skill-item">
-          <div class="skills__header">
-            <h3 class="skills__title">${skill.title}</h3>
-            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-              <use xlink:href="${skill.icon}"></use>
-            </svg>
-          </div>
-          <ul>
-            ${skill.description}
-          </ul>
-
-          <div class="skills__star">${skill.star}</div>
-        </div>`;
   });
 };
 

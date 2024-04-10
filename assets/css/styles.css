@@ -290,8 +290,29 @@ main {
 }
 @media (max-width: 599px) {
   main {
-    width: 90%;
-    margin-left: 0.8rem;
+    width: 97%;
+    margin-left: 1rem;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  main {
+    width: 95%;
+    margin-left: 3rem;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  main {
+    width: 88%;
+  }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  main {
+    width: 88%;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1799px) {
+  main {
+    width: 88%;
   }
 }
 
@@ -328,6 +349,34 @@ main {
   color: hsl(358, 70%, 52%);
 }
 
+#skills-container .grid-sizer,
+#skills-container .skills {
+  width: 18%;
+}
+@media (max-width: 599px) {
+  #skills-container .grid-sizer,
+  #skills-container .skills {
+    width: 100%;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  #skills-container .grid-sizer,
+  #skills-container .skills {
+    width: 45%;
+  }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  #skills-container .grid-sizer,
+  #skills-container .skills {
+    width: 31%;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1799px) {
+  #skills-container .grid-sizer,
+  #skills-container .skills {
+    width: 23%;
+  }
+}
 #skills-container .skills {
   display: -ms-flexbox;
   display: flex;
@@ -335,8 +384,6 @@ main {
       flex-direction: column;
   -ms-flex-pack: justify;
       justify-content: space-between;
-  width: 300px;
-  min-width: 280px;
   height: auto;
   padding: 10px 10px 20px;
   margin-bottom: 10px;
@@ -347,11 +394,8 @@ main {
   border-bottom: 1px dashed hsl(204, 64%, 44%);
 }
 #skills-container li {
-  width: 245px;
-  line-height: 25px;
-}
-#skills-container p {
-  width: 245px;
+  width: 85%;
+  line-height: 20px;
 }
 
 .skills__header {
@@ -373,6 +417,11 @@ main {
   right: 10px;
   top: 10px;
 }
+@media (max-width: 599px) {
+  .skills ul {
+    font-size: 14px;
+  }
+}
 .skills__star {
   text-align: right;
   margin-top: 10px;
@@ -388,7 +437,7 @@ section {
 }
 @media (max-width: 599px) {
   section {
-    padding: 20px 20px 20px 30px;
+    padding: 8px 20px 20px 30px;
   }
 }
 section h2 {
@@ -428,14 +477,33 @@ section svg.opquast {
 
 .customers__content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   .customers__content {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    -ms-flex-pack: start;
-        justify-content: start;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .customers__content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .customers__content {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1799px) {
+  .customers__content {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
   }
 }
 .customers__content a span {
@@ -444,7 +512,8 @@ section svg.opquast {
 
 .customers__item {
   position: relative;
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   height: 169px;
   border: 1px solid hsl(204, 8%, 76%);
   overflow: hidden;
@@ -475,6 +544,7 @@ section svg.opquast {
   transform: translateY(0);
 }
 .customers__item:nth-child(7) h3 {
+  font-size: 15px;
   letter-spacing: -0.5px;
 }
 .customers__description {
@@ -494,6 +564,11 @@ section svg.opquast {
   background-color: hsl(0, 0%, 100%);
   transform: translateY(100%);
   transition: transform 500ms ease;
+}
+@media (max-width: 767px) {
+  .customers__description ul {
+    font-size: 14px;
+  }
 }
 .customers__description p {
   line-height: 18px;
@@ -704,6 +779,7 @@ footer svg:hover {
   display: inline-block;
   width: 46px;
   height: 20px;
+  cursor: pointer;
   /* Hide default HTML checkbox */
 }
 .switch__title {
