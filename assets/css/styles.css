@@ -808,7 +808,7 @@ footer svg:hover {
   left: 0;
   bottom: 0;
   background-color: hsl(0, 0%, 100%);
-  transition: 400ms;
+  transition: 200ms;
 }
 .switch__slider.round {
   border-radius: 34px;
@@ -834,10 +834,6 @@ input:checked + .switch__slider:before {
   transform: translateX(26px);
 }
 
-.anime {
-  animation: flag 5000ms ease-out;
-}
-
 .show {
   visibility: visible;
   opacity: 1;
@@ -853,12 +849,12 @@ input:checked + .switch__slider:before {
 }
 
 .in {
-  animation: slide-in 500ms ease-out;
+  animation: slide-in 400ms ease-out;
   transform: translateX(0);
 }
 
 .out {
-  animation: slide-out 300ms ease-in;
+  animation: slide-out 200ms ease-in;
   transform: translateX(-300px);
 }
 

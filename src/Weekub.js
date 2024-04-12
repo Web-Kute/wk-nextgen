@@ -36,7 +36,6 @@ Weekub.prototype.events = function () {
   this.elements.arrowUp.addEventListener('click', () =>
     window.scroll({ top: 0, left: 0, behavior: 'smooth' }),
   );
-
 };
 
 Weekub.prototype.showHideMenu = function (event) {
@@ -104,18 +103,16 @@ Weekub.prototype.addSkills = function () {
           <div class="skills__header">
             <h3 class="skills__title">${skill.title}</h3>
             <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-              <use xlink:href="${skill.icon}"></use>
+              ${skill.icon.map((icon) => `<use xlink:href="${icon}"></use>`)}
             </svg>
           </div>
           <ul>
             ${skill.description}
           </ul>
-
           <div class="skills__star">${skill.star}</div>
         </div>`;
   });
 };
-
 
 Weekub.prototype.addCustomers = function () {
   customersItem.forEach((customer) => {

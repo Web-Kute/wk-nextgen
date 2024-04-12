@@ -14,6 +14,7 @@
   "author": "WeeKub",
   "license": "ISC",
   "dependencies": {
+    "@cloudinary/url-gen": "^1.19.0",
     "magic-grid": "^3.2.4",
     "masonry-layout": "^4.2.2",
     "node": "^21.2.0",
